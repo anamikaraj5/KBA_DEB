@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+
+    <style>
+        body{
+
+            display: flex;
+            justify-content: center;
+            background-color: #eae2f0;
+            /* margin-top: 200px */
+        }
+
+        form{
+            height: 490px;
+            width: 330px ;
+            background-color: white;
+            margin-top: 200px;
+            padding: 50px 40px;
+            border-radius: 10px;
+            /* box-shadow: 2px 2px 5px,rgba(0, 0, 0,0.10), -2px -2px 5px rgba(0, 0, 0,0.10); */
+
+        }
+
+        .signup h3{
+            color: darkviolet;
+            font-size: xx-large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+
+        }
+
+        input{
+            width: 290px;
+            height: 25px;
+        }
+
+        button{
+            color: white;
+            background-color: mediumorchid;
+            border-radius: 6px;
+            height: 30px;
+            width: 70px;
+            border-style: solid;
+        }
+
+        select{
+            width: 290px;
+            height: 30px;
+        }
+
+        p{
+            text-align: center;
+        }
+
+        a{
+            color: rebeccapurple;
+        }
+
+        label{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:medium;
+            font-weight:bold;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <form>
+        <div class="signup">
+            <h3>Sign Up</h3>
+            <label for="name" >Name :</label> <br><br>
+            <input type="text" required> <br><br>
+            <label for="email">Email :</label> <br><br>
+            <input type="email" required> <br><br>
+            <label for="password">Password :</label> <br><br>
+            <input type="password" required> <br><br>
+            <label for="price">Price :</label> <br><br>
+            <select name="price">
+                <option value="p1" selected>Admin</option>
+                <option value="p2">Others</option>
+            </select> <br><br>
+            <button value="submit">Sign Up</button> <br>
+            <p>Already have an Account? <a href="home.html">Login</a></p>
+        </div>
+    </form>
+</body>
+</html>

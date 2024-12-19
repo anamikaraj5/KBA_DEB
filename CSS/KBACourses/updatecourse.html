@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpdateCourse</title>
+
+    <style>
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: #eae2f0;
+            height: 60px;
+        }
+
+        nav img{
+            padding: 10px;
+        }
+
+        .nav {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .nav li a{
+            text-decoration: none;
+            padding-right: 30px;
+        }
+
+        form{ 
+          background-color:#eae2f0;  
+          height: 600px;
+          width: 500px;
+          margin-top: 20px;
+          margin-left: 700px;
+          padding: 10px 30px;
+          border-radius: 10px;
+        }
+
+        h3{
+            text-align: center;
+            color:darkviolet;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:xx-large;
+        }
+
+        label{
+            font-weight: bold;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        input{
+            width: 490px;
+            height: 30px;
+            margin: 10px 0px;
+        }
+
+        select{
+            width: 490px;
+            height: 30px;
+            margin: 10px 0px;
+        }
+
+        button{
+            color:white; 
+            background-color:mediumorchid;
+            padding: 5px 10px;
+            border-radius: 20px;
+            width: 490px;
+            margin: 20px 0px;
+        }
+
+        textarea{
+            margin: 10px 0px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="logo" height="40">
+        <ul class="nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="addcourse.html">Add Course</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <form>
+        <h3>Update Course</h3>
+        <label for="Coursename" >Course Name</label> <br>
+        <input type="text" required placeholder="eg: Certified Blockchain Associate"> <br>
+        <label for="coursetype">Course Type</label> <br>
+        <select name="course">
+            <option value="c1" selected>Hybrid</option>
+            <option value="c2">Instructor-Led</option>
+            <option value="c3">Self-Paced</option>
+        </select> <br>
+        <label for="Description">Description</label> <br>
+        <textarea rows="10" cols="67" placeholder="small description on the course"></textarea> <br>
+        <label for="price">Price</label> <br>
+        <select name="price">
+            <option value="p1">5000</option>
+            <option value="p2">10000</option>
+            <option value="p3">15000</option>
+        </select> <br>
+        <button type="submit">Update Course</button> <br>
+    </form>
+</body>
+</html>

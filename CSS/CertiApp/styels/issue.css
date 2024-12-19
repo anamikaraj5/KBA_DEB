@@ -1,0 +1,45 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+
+body{
+    background-color:#d5d8dc ;
+}
+
+form{
+    margin-left: 200px;
+    margin-top: 100px;
+    width: 50%;
+    border-radius: 2px;
+    border: 1px solid black;
+    padding: 40px;
+    background-color: white;
+}
+
+.p1{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav{
+    list-style-type: none;
+    display: flex;
+}
+
+.nav li a{
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.button1{
+    background-color:dodgerblue;
+    color: white;
+    border-radius: 4px;
+}
+
+.i1{
+    background-color:royalblue;
+    color: white;
+    border-radius: 4px;
+}

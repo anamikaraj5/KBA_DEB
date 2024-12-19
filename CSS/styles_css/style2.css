@@ -1,0 +1,31 @@
+.b1{
+    float: left;
+    width:33%;
+
+    height:350px;
+    border-left:1px solid green;
+}
+
+@media only screen and (max-width:600px){
+    .b1{
+        width:100%;
+        /* float: left; */
+        height: 300px;
+    }
+
+    img{
+        width: 350px;
+        height: 160px;
+    }
+  
+
+    h2{
+        font-size: medium;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    
+}

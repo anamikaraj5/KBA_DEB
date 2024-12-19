@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddCourse</title>
+
+    <style>
+        form{
+          background-color:#eae2f0;  
+          height: 700px;
+          width: 500px;
+          margin-top: 20px;
+          margin-left: 700px;
+          padding: 10px 30px;
+          border-radius: 10px;
+        }
+
+        h3{
+            text-align: center;
+            color:darkviolet;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:xx-large;
+        }
+
+        label{
+            font-weight: bold;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+        }
+
+        input{
+            width: 490px;
+            height: 30px;
+            margin: 10px 0px;
+        }
+
+        select{
+            width: 490px;
+            height: 30px;
+            margin: 10px 0px;
+        }
+
+        textarea{
+            margin: 10px 0px;
+        }
+
+        button{
+            color:white; 
+            background-color:mediumorchid;
+            padding: 5px 10px;
+            border-radius: 20px;
+            width: 490px;
+            margin: 20px 0px;
+        }
+
+        nav{
+           
+            background-color:#eae2f0;
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            
+        }
+
+        .nav{
+            display: flex;
+            list-style-type: none;
+        }
+        
+        nav img{
+            padding: 10px;
+        }
+
+        .nav li a{
+            text-decoration: none;
+            padding-right: 30px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="image" height="40">
+        <ul class="nav"> 
+            <li><a href="home.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="addcourse.html">Add Course</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+
+    </nav>
+    <form>
+        <div class="add">
+            <h3>Add Course</h3> <br>
+            <label for="Course Name">Course Name </label> <br>
+            <input type="text" placeholder="eg: Certified Blockchain Associate"> <br>
+            <label for="courseid">Course Id</label> <br>
+            <input type="text" placeholder="eg: 1"> <br>
+            <label for="coursetype">Course Type</label> <br>
+            <select name="course"> 
+                <option value="c1">Self-Paced</option> 
+                <option value="c2">Instructor-Led</option>
+                <option value="c3">Self-Paced</option>
+            </select> <br>
+            <label for="description">Description</label> <br>
+            <textarea rows="10" cols="67" placeholder="small description on the course"></textarea> <br>
+            <label for="price">Price</label> <br>
+            <select name="price">
+                <option value="p1">Rs.5000</option>
+                <option value="p2">Rs.10000</option>
+                <option value="p3">Rs.15000</option>
+            </select> <br>
+            <button name="submit">Add Course</button>
+        </div>
+    </form>
+</body>
+</html>

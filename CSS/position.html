@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 400px;
+            height: 4000px;
+            background-color:bisque;
+            /*position:relative*/
+        }
+
+        .b1{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            top: 5px;
+            left: 5px;
+            position: static;
+            
+
+        }
+
+        .b2{
+            width: 100px;
+            height: 100px;
+            background-color:chocolate;
+            top: 10px;
+            left: 10px;
+            position: relative;
+        }
+
+        .b3{
+            width: 100px;
+            height: 100px;
+            background-color:darkgreen;
+            top: 400px;
+            left: 20px;
+            position: absolute;
+        }
+
+        .b4{
+            width: 100px;
+            height: 100px;
+            background-color:darkviolet;
+            top: 550px;
+            left: 20px;
+            position: fixed;
+        }
+
+        h2{
+            top: 10px;
+            position: sticky;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <h2>Welcome</h2>
+    <div class="main">
+        <div class="b1"></div>
+        <div class="b2"></div>
+        <div class="b3"></div>
+        <div class="b4"></div>
+        <!-- <div class="b5">Welcome</div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body{
+    background-color: #d5d8dc ;
+}
+
+.cert1{
+    background-color: white;
+    padding-top: 20px;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    width: 60%;
+    margin-left: 400px;
+    margin-top: 150px;
+    border-width: 1px;
+    height: 600px;
+    
+}
+
+.cert{
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 600px;
+    margin-left: 280px;
+    margin-top: 68px;
+}

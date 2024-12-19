@@ -1,0 +1,156 @@
+.c1{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-left: 20px;
+    
+}
+
+h3{
+    margin-top: 50px;
+}
+
+.c1b{
+    display: flex;
+}
+
+.c1b{
+    display: flex;
+    margin-right: 50px;
+}
+
+.p1{
+    padding-left: 60px;
+}
+.c1b2{
+    background-color:lavenderblush;
+    height: 30px;
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+/* .box1{
+    background-color: blue;
+    width: 40px;
+    height: 50px;
+} */
+
+button{
+    padding:60px auto;
+    margin-bottom: 10px;
+    width:80px;
+    height: 50px;
+    
+}
+
+
+.calculator{
+    background-color:black;
+    height: 720px;
+    width: 700px;
+    margin:80px auto;
+    border-radius: 20px;
+    
+}
+
+.c2{
+    background-color:rgb(160, 163, 168);
+    height: 100px;
+    border-color: white;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+}
+
+.c4{
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 4px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.c5{
+    margin-left: 40px;
+    margin-right: 10px;
+    padding-top: 4px;
+    display: flex;
+}
+
+.style1{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    height: 40px;
+    
+}
+
+.style2{
+    color: white;
+    background-color: rgb(14, 43, 78);
+    border-radius: 10px;
+    height: 40px; 
+}
+
+.style3{
+    color:black;
+    background-color:rgb(250, 186, 48);
+    border-radius: 10px;
+    height: 40px;
+}
+
+.style4{
+    color: white;
+    background-color: grey;
+    border-radius: 10px;
+    height: 70px;
+}
+
+.style5{
+    color: white;
+    background-color:rgb(180, 69, 134);
+    border-radius: 10px;
+    height: 70px;
+    
+}
+
+.style6{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    height: 70px;
+}
+
+.plus {
+    margin-left: 30px;
+    height: 153px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.c4b{
+    display: flex;
+}
+
+.c4b1{
+    margin-left: 27px;
+}
+
+.c4a1{
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.c4a2{
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+}

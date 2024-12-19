@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-300">
+    
+    <nav class="flex justify-between bg-sky-950 text-white">
+        <img src="logo1.png" alt="logo" class="h-[40px]">
+        <div class="mt-[40px] mr-[10px] flex gap-3">
+            <a href="home.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="addcourse.html">Add Course</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <form class="bg-indigo-100 mt-[10px] h-[600px] w-[600px] rounded-md mx-auto flex flex-col gap-5">
+
+            <p class="text-sky-950 text-2xl font-bold text-center pt-[20px]">Update Course</p> 
+
+            <div class="mt-[10px] mx-[20px]">
+                <p class="font-bold">Course Name </p> 
+                <input type="text" placeholder="eg: Certified Blockchain Associate " class="w-[550px] h-[35px]  hover:ring-2  rounded-sm "> 
+            </div>
+            
+            
+            <div class="mt-[10px] mx-[20px]">
+                <p class="font-bold">Course Type</p> 
+                <select name="course" class="w-[550px] h-[35px] bg-white hover:ring-2  rounded-sm "> 
+                    <option value="c1">Self-Paced</option> 
+                    <option value="c2">Instructor-Led</option>
+                    <option value="c3">Self-Paced</option>
+                </select> 
+            </div>
+            
+            <div class="mt-[10px] mx-[20px]">
+                <p class="font-bold">Description</p> 
+                <textarea rows="5" cols="54" placeholder="small description on the course" class="hover:ring-2  rounded-sm "></textarea> 
+            </div>
+            
+            <div class="mt-[10px] mx-[20px]">
+                <p class="font-bold">Price</p> 
+                <select name="price" class="w-[550px] h-[35px] bg-white hover:ring-2  rounded-sm ">
+                    <option value="p1">Rs.5000</option>
+                    <option value="p2">Rs.10000</option>
+                    <option value="p3">Rs.15000</option>
+                </select> 
+            </div>
+            
+            <button name="submit" class=" bg-sky-950 text-white mt-2 ml-[20px] w-[550px] py-2 inline-block rounded-full">Update Course</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learnmore</title>
+    <style>
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: #eae2f0;
+            height: 60px;
+        }
+
+        nav img{
+            padding: 10px;
+            
+        }
+
+        .nav {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .nav li a{
+            text-decoration: none;
+            padding-right: 30px;
+        }
+
+
+        .block1{
+            background-color: #eae2f0;
+            height:680px;
+            width: 750px;
+            padding-top: 20px;
+            padding-left: 20px;
+            margin-left: 600px;
+        }
+        /* .block2{
+            background-color: #eae2f0;
+            height: 500px;
+        } */
+
+        .block3 h3{
+            color: rebeccapurple;
+        }
+
+        .block1 img{
+            padding-left: 100px;
+        }
+
+        .block{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .x2{
+            display: flex;
+            justify-content: space-between;
+            padding-right: 30px;
+        }
+
+        .x2 button{
+            color:white; 
+            background-color:mediumorchid;
+            height: 40px;
+            margin-left: 20px;
+        }
+
+        .block2{
+            /* padding-left: 1000px; */
+            margin-left: 1400px;
+            margin-top: 50px;
+            /* display: flex;
+            justify-content: space-between; */
+        }
+
+        .b2{
+            color: white;
+            background-color:cornflowerblue;
+            border-radius: 15px;
+            height: 30px;
+          
+        }
+
+
+        .b3{
+            color: white;
+            background-color: red;
+            border-radius: 15px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="logo" height="40">
+        <ul class="nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="addcourse.html">Add Course</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <h4 style="margin-left: 600px;">Back to Courses</h4>
+    <div class="block1">
+        <img src="bd.jpg" alt="image" height="170" width="450">
+
+    
+
+        <div class="block">
+
+        <div class="x1">
+            <h3>Certified Blockchain Developer</h3>
+        </div>
+        
+        <div class="x2">
+            <h3 style="color: red;">Rs.15000</h3>
+            <button type="button">Add to Cart</button>
+        </div>
+        
+        
+    </div>
+    
+    <div class="block3">
+        <h3>Description</h3>
+        <p>Dive into the world of blockchain technology with this comprehensive training course. Designed for beginners and professionals alike, this course covers the fundamentals of blockchain, smart contracts, and decentralized applications. Learn hands-on coding skills using popular platforms like Ethereum and Hyperledger.</p>
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Basic Understanding of blockchain technology</li>
+            <li>Familiarity with programming languages</li>
+            <li>Internet access</li>
+        </ul>
+
+        <h3>Features</h3>
+        <ul>
+            <li>40 hours of content</li>
+            <li>Certificate of completion</li>
+            <li>Access to community forums</li>
+            <li>Download resources</li>
+            <li>24/7 support</li>
+        </ul>
+    </div>
+
+</div>
+    <div class="block2">
+        <button type="button" class="b2">Edit Course</button>
+        <button type="button" class="b3">Remove Course</button>
+    </div>
+
+</body>
+</html>

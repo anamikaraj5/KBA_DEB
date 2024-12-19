@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-100">
+    
+    <div class="flex justify-between">
+        <h2 class="mt-5 ml-3 text-3xl font-medium">Certificate Dapp</h2>
+        <nav class="flex justify-end">
+            <a href="front.html" class="mt-1 mr-1 ">Home</a>
+            <a href="issuecerti.html" class="bg-sky-500 h-[35px] w-[130px] text-center pt-1 text-white rounded-sm mr-2 ">Issue Certificate</a>
+        </nav>
+    </div>
+
+    <form class="bg-gray-100 ml-[100px] mt-[70px] w-[1500px] h-[550px] pt-[60px] pl-[40px] border-solid border-gray-400 border">
+        <p class="text-3xl font-light">Issue New Certificate<p>
+
+         <div>
+            <p class="mt-[20px]">Select Course*</p> 
+            <select name="course" class="hover:ring-2  rounded-sm border-solid border-2 border-gray-500 bg-white w-[400px] h-[30px] pl-1" required>          
+                <option value="c1" selected>Certified Blockchain Associate</option> 
+                <option value="c2">Certified Blockchain Developer</option>
+            </select> 
+         </div>   
+        
+        <div class="mt-[20px]">
+            <p>Certificate Id*</p> 
+            <input type="text" class="hover:ring-2  rounded-sm border-solid border-2 border-gray-500 bg-white w-[400px] h-[30px] pl-1" required placeholder="Certificate Id"> 
+        </div>
+        
+        <div class="mt-[20px]">
+            <p>Candidate Name*</p> 
+            <input type="text" class="hover:ring-2  rounded-sm border-solid border-2 border-gray-500 bg-white w-[400px] h-[30px] pl-1" required placeholder="Name"> 
+        </div>
+        
+        <div class="mt-[20px]">
+            <p>Select Grade*</p> 
+            <select name="grade" class="hover:ring-2  rounded-sm border-solid border-2 border-gray-500 bg-white w-[400px] h-[30px] pl-1" required>
+                <option value="g1" selected>S</option>
+                <option value="g2">A</option>
+                <option value="g3">B</option>
+            </select> 
+        </div>
+        
+        <div class="mt-[20px]">
+            <p>Issue Date*</p>
+            <input type="date" class="hover:ring-2  rounded-sm border-solid border-2 border-gray-500 bg-white w-[400px] h-[30px] pl-1"> 
+        </div>
+        
+        <button name="submit" class="mt-[30px] bg-sky-500 h-[30px] w-[150px] text-center  text-white rounded-md ">Issue Certificate</button>
+    </form>
+</body>
+</html>

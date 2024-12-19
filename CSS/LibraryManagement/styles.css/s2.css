@@ -1,0 +1,65 @@
+body{
+
+    display: flex;
+    justify-content: center;
+    background-color: sienna;
+    /* margin-top: 200px */
+}
+
+form{
+    height: 490px;
+    width: 330px ;
+    background-color: #ece8e5;
+    margin-top: 200px;
+    padding: 50px 40px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.15), -4px -4px 5px rgba(0, 0, 0, 0.15); 
+
+}
+
+.signup h2{
+    color:midnightblue;
+    font-family:'Times New Roman', Times, serif;
+    font-size:xx-large;
+    text-align: center;
+
+}
+
+input{
+    width: 290px;
+    height: 25px;
+}
+
+button{
+    background-color:midnightblue;
+    color: white;
+    border-radius: 6px;
+    height: 40px;
+    width: 300px;
+    border-style: solid;
+}
+
+
+p{
+    text-align: center;
+}
+
+a{
+    color: rebeccapurple;
+}
+
+label{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:medium;
+    font-weight:bold;
+}
+
+.background{ 
+    background: /*linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  */
+    url('/home/anamika/KBA_DEB/CSS/LibraryManagement/l4.jpg'); /* Replace 'your-image.jpg' with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full screen height */
+    display: flex;
+
+    } 

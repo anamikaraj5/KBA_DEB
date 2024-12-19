@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="act">Activities</p>
+
+    <script>
+
+
+        document.getElementById("act").innerHTML="&nbsp; &nbsp; &nbsp;*<br>&nbsp;&nbsp; * *<br>* * *  <br><br><br>1 <br>1 2<br>1 2 3 <br><br>1 <br>2 3<br>4 5 6 <br><br>The value of 3+4-1 is "+((3+4)-1)+"<br><br>The value of (3*5)+1 is "+((3*5)+1)+"<br><br>The value of (5*2)/2 is "+((5*2)/2)+"<br><br>The value of 10*2+3-1 is "+((10*3)+(3-1))+"<br><br>The value of 10%2 is "+(10%2)+"<br><br>The value of 17%2 is "+(17%2)+"<br><br>The value of (5*6)%4 is "+(5*6)%4+"<br><br>The value of 3.5+2.4 is "+(3.5+2.4)+"<br><br>The value of 104.5/5 is "+104.5/5+"<br><br>The value of 4.5*2 is "+4.5*2
+
+        document.write("<br> &nbsp; &nbsp; &nbsp;*<br>&nbsp;&nbsp; * *<br>* * *")
+        console.log("    *\n  * *\n* * *")
+
+        document.write("<br><br>1 <br>1 2<br>1 2 3")
+        console.log("\n1 \n1 2\n1 2 3")
+
+        document.write("<br><br>1 <br>2 3<br>4 5 6")
+        console.log("\n1 \n2 3\n4 5 6")
+
+        document.write("<br><br>The value of 3+4-1 is ",(3+4)-1)
+        console.log("\nThe value of 3+4-1 is ",(3+4)-1)
+
+        document.write("<br><br>The value of (3*5)+1 is ",(3*5)+1)
+        console.log("\nThe value of 3*5+1 is ",(3*5)+1)
+
+        document.write("<br><br>The value of (5*2)/2 is ",(5*2)/2)
+        console.log("\nThe value of (5*2)/2 is ",(5*2)/2)
+
+        document.write("<br><br>The value of 10*2+3-1 is ",(10*3)+(3-1))
+        console.log("\nThe value of 10*2+3-1 is ",(10*3)+(3-1))
+
+        document.write("<br><br>The value of 10%2 is ",10%2)
+        console.log("\nThe value of 10%2 is ",10%2)
+
+        document.write("<br><br>The value of 17%2 is ",17%2)
+        console.log("\nThe value of 17%2 is ",17%2)
+
+        document.write("<br><br>The value of (5*6)%4 is ",(5*6)%4)
+        console.log("\nThe value of (5*6)%4 is ",(5*6)%4)
+
+        document.write("<br><br>The value of 3.5+2.4 is ",3.5+2.4)
+        console.log("\nThe value of 3.5+2.4 is ",3.5+2.4)
+
+        document.write("<br><br>The value of 104.5/5 is ",104.5/5)
+        console.log("\nThe value of 104.5/5 is ",104.5/5)
+
+        document.write("<br><br>The value of 4.5*2 is ",4.5*2)
+        console.log("\nThe value of 4.5*2 is ",4.5*2)
+
+
+        //TASK2
+        document.write("<br><br><br>Task2")
+
+        let a=100, b=200
+        document.write("<br><br> The values before swapping a : ",a,", b : ",b)
+        c=a
+        a=b
+        b=c
+        document.write("<br> The values after swapping  using temporary variable - a : ",a,", b : ",b)
+
+        a=10,b=20
+        document.write("<br><br> The values before swapping a : ",a,", b : ",b)
+        a=a+b  //a=10+20=30
+        b=a-b  //b=30-20=10
+        a=a-b  //a=30-10=20
+        document.write("<br> The values after swapping  without using temporary variable - a : ",a,", b : ",b)
+
+
+
+
+
+        let C=20
+        F=C*(9/5)+32
+        document.write("<br><br>",C,"C in Farenheit is ",F)
+
+        let x=2
+        document.write("<br><br> Square of ",x," is ",x**2)
+
+        x=2
+        document.write("<br><br> Cube of ",x," is ",x**3)
+
+        s=4,l=2,b=4,h=6,r=10
+        document.write("<br><br> Area of square of side ",s," is ",s*s,"<br> Area of circle of radius ",r," is ",3.14*r**2,"<br> Area of rectangle of length ",l," and breadth ",b," is ",l*b,"<br> Area of traingle of breadth ",b," and height ",h," is",1/2*(b*h))
+        document.write("<br><br> Perimeter of square of side ",s," is ",2*s,"<br> Perimeter of circle of radius ",r," is ",2*3.14*r,"<br> Perimeter of rectangle of length ",l," and breadth ",b," is ",2*(l+b),"<br> Perimeter of traingle of sides ",b,",",h," and ",l," is ",l+b+h)
+
+        
+
+        let P=100,R=10,T=2
+        SI=(P*R*T)/100
+        CI=(P*(1+R/100)**T)-P
+        document.write("<br><br>Simple Interest : ",SI)
+        document.write("<br>Compound Interest : ",CI)
+
+        a=10
+        b=30
+        c=40
+        document.write("<br><br>The greatest among ",a," and ",b," is ",a>b?a:b)
+        document.write(`<br><br>The smallest among ${a},${b} and ${c} is `,(a<b && a<c)?a:(b<a && b<c)?b:c)
+
+        let no=12
+        document.write(`<br><br>The given number ${no} is `,(no>0)? "positive":(no<0)? "negative":"zero")
+
+        const age=23
+        document.write(`<br><br>The person of age ${age} `,age>18? "is eligible for voting":"is not eligible for voting")
+
+        let n1=55,n2=34
+        sum=n1+n2
+        document.write("<br><br>",(sum>50 && sum<80)? 65:80)
+
+
+        
+
+    </script>
+</body>
+</html>

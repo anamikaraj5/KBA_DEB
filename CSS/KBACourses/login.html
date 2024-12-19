@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+
+
+        /*To make the box at center and give features to the whole page*/
+
+        body{
+            display: flex;
+            justify-content: center;
+            margin-top: 200px;
+            background-color:#eae2f0;
+        }
+
+        /* To make the changes to the form and its structure*/
+
+        form{
+           
+            height: 350px;
+            width: 370px;
+            border-radius: 10px;
+            padding: 50px 10px;
+            background-color:white;
+            /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10), -2px -2px 5px rgba(0, 0, 0, 0.10); */
+        }
+
+        /*To make changes to heading*/
+
+        h3{
+            text-align: center;
+            color:darkviolet;
+            font-family:'Times New Roman', Times, serif;
+            font-size:xx-large;
+        }
+
+        
+        .login{
+            /* padding:0 25px; */
+            margin-left: 30px;
+            margin-right: 10px;
+        }
+
+
+        input{
+            width: 320px;
+            height: 20px;
+        }
+
+        .buttons{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0 ;
+        }
+
+        .buttons button{
+            color:white; 
+            background-color:mediumorchid;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+        a{
+            
+            color:rebeccapurple; 
+
+        }
+
+        label{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:medium;
+            font-weight:bold;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <form>
+
+        <h3>Login</h3>
+    <div class="login">
+       
+        <label for="Email:">Email:</label> <br><br>
+        <input type="email" required> <br><br>
+        <label for="Password">Password:</label> <br><br>
+        <input type="password" required> <br>
+
+        <div class="buttons">
+            <button name="submit">Login</button>
+            <a  href="forgotpswd">Forgot Password?</a>
+        </div>
+
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        
+    </div>
+</form>
+</body>
+</html>

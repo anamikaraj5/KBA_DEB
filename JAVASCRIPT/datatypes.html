@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="x">Hi</p>
+
+    <script>
+        let a=10
+        let b="hello"
+        let c=true
+        let d=null
+
+        document.write("The value of a is : ",a,"<br> The type of a is ",typeof a)
+        document.write("<br><br>The value of b is : ",b,"<br>The type of b is ",typeof b)
+        document.write("<br><br>The value of c is : ",c,"<br>The type of c is ",typeof c)
+        document.write("<br><br>The value of d is : ",d,"<br>The type of d is ",typeof d)
+
+        let e=25, f="years", g=7, h="months"
+        document.getElementById("x").innerHTML="<br>"+e+" "+f+" "+g+" "+h
+
+        const i=20
+        document.write("<br><br>The value of i is : ",i)
+
+        a=30 //reintialized
+        {
+            let a=40 //redeclared
+            const i=50
+            document.write("<br><br>The value of a here is : ",a," and i is ",i)
+        }
+        document.write("<br><br>The value of a now is : ",a)
+
+
+    </script>
+</body>
+</html>
