@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin View Book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="flex justify-end bg-amber-950 text-white  h-[90px] pt-[30px] pr-[50px] text-3xl">
+
+        <div class="flex gap-6">
+            <a href="/Admin/Adminhome.html" class="hover:text-5xl hover:bg-amber-400">Home</a>
+            <a href="/Admin/Addbook.html" class="hover:text-5xl hover:bg-amber-400">Add Book</a>
+            <a href="/Admin/A_Viewbook.html" class="hover:text-5xl hover:bg-amber-400">View Book</a>
+            <a href="/Admin/Adminprofile.html" class="hover:text-5xl hover:bg-amber-400">Dashboard</a>
+            <a href="/frontpage.html" class="hover:text-5xl hover:bg-amber-400">Logout</a>
+        </div>  
+    </nav>
+
+    <div class="bg-fixed bg-cover h-[878px] flex " style="background-image: url(/images/book2.jpg)">
+
+        <div class="grid grid-cols-3  gap-9 mt-[70px] ml-[150px]">
+            <div class="bg-white h-[700px] w-[500px] flex flex-col justify-center items-center rounded-full  border-8 border-amber-800 shadow-xl shadow-amber-600">
+                <p class="text-3xl font-bold text-amber-950">To Kill A Mocking Bird</p>
+                <img src="/images/b1.jpg" class="w-[300px] h-[400px] mt-[20px]">
+                <a href="/Admin/Remove.html" class=" bg-amber-950 h-[30px] w-[200px] text-center  text-white rounded-full mt-[20px] pt-1 hover:bg-amber-700">Remove</a>
+            </div>
+
+            <div class="bg-white h-[700px] w-[500px] flex flex-col justify-center items-center rounded-full  border-8 border-amber-800 shadow-xl shadow-amber-600">
+                <p class="text-3xl font-bold text-amber-950">The Martian</p>
+                <img src="/images/b2.jpg" class="w-[300px] h-[400px] mt-[20px]">
+                <a href="/Admin/Remove.html" class=" bg-amber-950 h-[30px] w-[200px] text-center  text-white rounded-full mt-[20px] pt-1 hover:bg-amber-700">Remove</a> 
+            </div>
+
+            <div class="bg-white h-[700px] w-[500px] flex flex-col justify-center items-center rounded-full  border-8 border-amber-800 shadow-xl shadow-amber-600">
+                <p class="text-3xl font-bold text-amber-950">The Girl With <br> The Dragon Tattoo</p>
+                <img src="/images/b3.jpg" class="w-[300px] h-[400px] mt-[20px]">
+                <a href="/Admin/Remove.html" class=" bg-amber-950 h-[30px] w-[200px] text-center  text-white rounded-full mt-[20px] pt-1 hover:bg-amber-700">Remove</a>
+            </div>
+           
+
+        </div>
+        
+
+    </div>   
+</body>
+</html>

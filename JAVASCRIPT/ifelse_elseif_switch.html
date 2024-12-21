@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=10, b=20, c=5
+
+        //if else
+
+        if (a<b)
+        {
+            document.write(`${a} is smaller`)
+        }
+        else
+        {
+            document.write(`${b} is smaller`)
+        }
+
+        //else if
+
+        if (a<b && a<c)
+        {
+            document.write(`<br> ${a} is smaller`)
+        }
+        else if (b<a && b<c)
+        {
+            document.write(`<br> ${b} is smaller`)
+        }
+
+        else{
+            document.write(` <br> ${c} is smaller`)
+        }
+
+        x='10'
+        if (a==x)
+        {
+            document.write(`<br> a=${a} and x=${x} are equal <br>`)
+        }
+
+        
+        else
+        {
+            document.write(`<br> a=${a} and x='${x}' values are not equal <br>`)
+        }
+
+        //switch
+
+        x='+'
+
+        switch(x)
+        {
+            case '+':
+                {
+                    document.write('The sum is ',a+b)
+                    break
+                }
+
+            case '-':
+                {
+                    document.write('The difference is ',a-b)
+                    break
+                }
+
+            case '*':
+                {
+                    document.write('The product is ',a*b)
+                    break
+                }
+
+            case '/':
+                {
+                    document.write('The qoutient is ',a/b)
+                    break
+                }
+            default:
+                {
+                    document.write('Please enter a valid operator')
+                }
+                
+        }
+    </script>
+</body>
+</html>

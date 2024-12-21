@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <p>Welcome</p>
+    </div>
+    <script>
+        let element1=document.createElement("p")
+        element1.textContent="Javascript"
+        document.getElementById("demo").appendChild(element1)
+
+        let element2=document.createElement("input")
+        element2.placeholder="Enter your name"
+        document.getElementById("demo").appendChild(element2)
+
+        let label=document.createElement("label")
+        label.innerHTML="Name : "
+        document.getElementById("demo").insertBefore(label,element2)
+    </script>
+</body>
+</html>
