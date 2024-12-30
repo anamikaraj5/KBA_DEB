@@ -16,14 +16,14 @@
         }
         document.write("Sum = ",sum)
 
+
         document.write("<br> <br> Q2) Program to store and print even numbers in an array ")
-        even = []  // Declare an empty array
-
-        for (i=2; i<=20; i+=2) {
-            even[even.length] = i;  // Directly assign to the array index
+        even = []  
+        for (i=2; i<=20; i+=2)
+        {
+            even[even.length] = i
         }
-
-        document.write(even);
+        document.write(even)
 
 
         document.write("<br><br> Q3) Program to check if an element is present and its position")
@@ -57,10 +57,11 @@
             if (arr[i] === ele_remove) 
             {
                 arr.splice(i,1);
-                break;  // Remove only the first occurrence
             }
         }
         document.write(arr)
+        
+
         
         document.write("<br><br> Q5) Program to copy an element in an array to another array")
         a1=[1,2,3,4,5]
