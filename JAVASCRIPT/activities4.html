@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Q1) Program to find sum of elements in an array <br>")
+        a=[1,2,3,4,5]
+        sum=0
+        for(i=0;i<a.length;i++)
+        {
+            sum+=a[i]
+        }
+        document.write("Sum = ",sum)
+
+        document.write("<br> <br> Q2) Program to store and print even numbers in an array ")
+        even = []  // Declare an empty array
+
+        for (i=2; i<=20; i+=2) {
+            even[even.length] = i;  // Directly assign to the array index
+        }
+
+        document.write(even);
+
+
+        document.write("<br><br> Q3) Program to check if an element is present and its position")
+        ele=6
+        a=[2,4,6,8]
+        flag=false
+        for(i=0;i<a.length;i++)
+        {
+            if(a[i]==ele)
+            {
+                flag=true
+                break
+            }
+        }
+        if(flag==true)
+        {
+            document.write(` <br> Element ${ele} is present and position is ${i}`)
+
+        }
+        else{
+            document.write("Element is not presesnt")
+        }
+
+        
+        document.write("<br><br> Q4) Program to remove an element in array")
+        let arr = [1, 2, 3, 4, 5]
+        let ele_remove = 3
+
+        for (i=0;i<arr.length;i++) 
+        {
+            if (arr[i] === ele_remove) 
+            {
+                arr.splice(i,1);
+                break;  // Remove only the first occurrence
+            }
+        }
+        document.write(arr)
+        
+        document.write("<br><br> Q5) Program to copy an element in an array to another array")
+        a1=[1,2,3,4,5]
+        ele=5
+        a2=[]
+        for(i=0;i<a1.length;i++)
+        {
+            if(a1[i]==ele)
+            {
+                a2[0]=a1[i]
+            }
+            
+        }
+        document.write(`<br> a1 = ${a1} and a2 = ${a2}`)
+
+
+
+        document.write("<br><br>Pattern1 <br>")
+        for(i=1;i<4;i++)
+        {
+            for(j=1;j<=i;j++)
+            {
+                document.write(i," ")
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br><br>Pattern2 <br>")
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                document.write("2 ")
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br><br>Pattern3 <br>")
+        for(i=1;i<4;i++)
+        {
+            for(j=1;j<=4-i;j++)
+            {
+                document.write(i," ")
+            }
+            document.write("<br>")
+        }
+
+    </script>
+</body>
+</html>
