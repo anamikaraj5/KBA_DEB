@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <label>Enter name</label>
+        <input type="text" id="name">
+        <label>Enter class</label>
+        <input type="text" id="class">
+        <button onclick="Generate()">Generate ID</button>
+        <p id="idcard"></p>
+
+
+    <script>
+        const Student1={
+            fname:"Anamika",
+            lname:"Raj",
+            phoneno:"123455688",
+            address:{
+                housename:"xyz",
+                houseno:"12",
+                place:"TCR"
+            }
+        }
+        Student2={
+            fname:"Ranjana",
+            lname:"Ranjan",
+            phoneno:"123455688"
+        }
+        Student3={
+            fname:"Anjana",
+            lname:"U",
+            phoneno:"123455688"
+        }
+        
+        document.write("<br> The first name of student1 : ",Student1.fname)
+        document.write("<br> The last name of student2 : ",Student2.lname)
+        document.write(" <br> The contact no of student3 : ",Student3.phoneno)
+
+        //adding new feature to existing object
+        Student3.class="2 A"
+        document.write("<br> The class of student3 : ",Student3.class)
+
+        //to print the data which is inside an obj and it is inside another obj
+        document.write("<br> The place of student1 : ",Student1.address.place)
+
+
+        //id card
+        Generate()
+        {
+            name=document.getElementById("name").value
+            cl=document.getElementById("class").value
+            Student4={
+                sname:name,
+                sclass:cl
+        }
+            document.getElementById("idcard").innerHTML=Student4.sname
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Map Methods</h1>
+    <h2>Map Operations</h2>
+    <button onclick="MapFn()">Map Methods</button>
+    <p id="get"></p>
+    <p id="has"></p>
+    <p id="delete"></p>
+    <p id="role"></p>
+    <p id="clear"></p>
+    <h2>Map Iteration</h2>
+    <p id="iteration"></p>
+
+    <script>
+        function MapFn()
+
+        {
+
+            //initializing values using set
+            // const mymap1=new Map()
+            // mymap1.set("name","Anu")
+            // mymap1.set("age",23)
+            // mymap1.set("employee",true)
+            // mymap1.set("Roles",['admin','user'])
+
+            //inintializing using array
+            const mymap=new Map([
+                ['name','Anamika'],
+                ['age',23],
+                ['employee',false],
+                ['Roles',['Btech','PG Diploma']]
+            ])
+
+
+            console.log(mymap)
+            document.getElementById("get").innerHTML="Name : "+mymap.get("name")
+            document.getElementById("has").innerHTML="Has a key : "+mymap.has('age')
+            document.getElementById("delete").innerHTML="Deleted key : "+mymap.delete('employee')
+            
+            //since there are two values in role, we have to store these values into a variable
+            roles=mymap.get('Roles')
+            document.getElementById("role").innerHTML="Elements in roles : "+roles.join(" and ")
+
+            // mymap.clear(mymap)
+            document.getElementById("clear").innerHTML="After clearing all elements : "+mymap.size //size- will print the size of map
+            
+            
+            //iteration
+            object=''
+            mymap.forEach((value,key)=>{
+                if(Array.isArray(value))   //to check whether value is array
+                {
+                    object+=key+" = "+value.join(" and ")+"<br>"
+                }
+                else{
+                    object+=key+" = "+value+"<br>"
+                }
+                
+            })
+            document.getElementById("iteration").innerHTML=object
+        }        
+        
+
+
+    </script>
+</body>
+</html>

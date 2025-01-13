@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function average()
+        {
+            a=10,b=20
+            sum=a+b
+            avg=sum/2
+            document.write("Average = ",avg)
+        }
+        average()
+
+        //using parameters
+        function Average(a,b)
+        {
+            
+            sum=a+b
+            avg1=sum/2
+            document.write("<br>Average = ",avg1)
+            
+        }
+        x=20,y=40
+        Average(x,y)
+
+        //Using return statement
+        function Sum(a,b)
+        {
+            sum=a+b
+            return sum
+        }
+        x=10,y=10
+        s=Sum(x,y)
+        document.write("<br>Sum = ",s)
+
+        //Area of a square
+        function Square(s)
+        {
+            area=s*s
+            return area
+        }
+        s=10
+        document.write("<br> Area of Square : ",Square(s))
+        
+        //anonymous function
+        document.write("<br><br> Anonymous Function")
+        sum=function(a,b)
+        {
+            return a+b
+        }
+        document.write("<br> Sum = ",sum(2,3))
+
+        //arrow function
+        document.write("<br><br> Arrow Function")
+        prod=(a,b)=>{
+            return a*b
+        }
+        document.write("<br> Product = ",prod(2,3))
+
+
+        
+    </script>
+</body>
+</html>

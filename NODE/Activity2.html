@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center mt-[30px]">
+    <div class="border-2 border-black border-solid h-[250px] w-[300px] flex flex-col justify-center items-center rounded-md">
+        <h1 class="text-2xl font-bold text-blue-900">Movie Playlist</h1> <br>
+        <div>
+            <input id="movie" type="text" placeholder="Enter any movie name" class="border solid black 1px rounded-md"> <br><br>
+            <input id="prio" type="number" placeholder="Enter Priority (1-3)" class="border rounded-md"> <br> <br>
+            <button onclick="addMovie()" class="bg-red-500 text-white px-4 py-2 rounded-md ml-[60px]">Add Movie</button>
+        </div>
+    </div>
+    <ul id="movieList" class="list-none "></ul>
+    <p id="display"></p>
+
+
+    <script>
+
+        movies = []
+        priority = []
+        function addMovie()
+        {
+            movie=document.getElementById("movie").value
+            prior=document.getElementById("prio").value
+
+            if(movie!='' && (prior>=1 && prior<=3))
+            {
+                movies.push(movie)
+                priority.push(prior)
+            }
+            else{
+                document.write("Please check if you have entered correct values")
+            }
+            
+           movies()
+        }
+
+        function movies()
+        {
+            
+        }
+    </script>
+</body>
+</html>

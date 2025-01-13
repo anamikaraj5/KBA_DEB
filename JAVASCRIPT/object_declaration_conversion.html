@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person=new Object()
+        person.fname='Anamika'
+        person.lname='Raj'
+        person.hobby='Dancing'
+        person.basicpay=10000
+        person.ta=10000
+        person.da=10000
+        person.getdetails=function()
+        {
+
+            sal=this.basicpay+this.ta+this.da
+            return `Salary : ${sal}`
+        }
+        document.write("Person name : ",person.fname+" "+person.lname,"<br> Person hobby : ",person.hobby,"<br> Person Salary Details : ",person.getdetails())
+
+        //format conversion
+
+        person1=new Object()
+        person1.fname1='Anamika'
+        person1.lname1='Raj'
+        person1.class='Blockchain'
+        person1.phone=9876543210
+
+        arr=Object.values(person1)
+        console.log("Array : ",arr)
+        str=JSON.stringify(person1)
+        console.log("String : ",str)
+        json1=JSON.parse(str)
+        console.log("JSON : ",json1)
+    </script>
+    
+</body>
+</html>

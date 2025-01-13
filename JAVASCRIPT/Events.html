@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Program to get age using onchange and also by clicking button-->    
+    <label>Age</label>
+    <input type="text" onchange="handlechange(event)">
+    <button onclick="handlechange1()">Submit</button>
+    <p id="x"></p>
+
+    <br>
+    
+    <!--Program to find area of a square-->
+    <label>Enter length of square</label> <br>
+    <input type="text" id="side"> <br>
+    <button onclick="Area(event)">Area</button>
+    <p id="y"></p>
+
+    <!--Program to generate id card-->
+    <form onsubmit="Generate(event)">
+        <label>Enter name</label>
+        <input type="text" id="name">
+        <label>Enter class</label>
+        <input type="text" id="class">
+        <input type="submit" value="Generate ID" >
+    </form>
+    
+
+    <br><br>
+    <div style='border:1px solid black; width: 300px; height: 100px; display: flex; justify-content: center; padding-top: 20px;' id="div1">
+        <h3 id="school"></h3> <br>
+        <p id="id"></p>
+        
+    </div>
+    
+
+    <script>
+        let age
+        function handlechange(event)
+        {
+            // age=document.getElementById("age").value
+            age=event.target.value
+            
+        }
+        function handlechange1()
+        {
+            document.getElementById("x").innerHTML=age
+        }
+    
+    // <input type="text" id="age">
+    // <button onclick="handlechange1(event)">Submit</button>
+
+    // <p id="x"></p>
+    // <script>
+    //     function handlechange1(event)
+    //     {
+    //         age=document.getElementById("age").value
+    //         document.getElementById("x").innerHTML=age
+            
+    //     }
+
+    
+        function Area(event)
+        {
+            s=document.getElementById("side").value
+            area=s*s
+            document.getElementById("y").innerHTML=`Area of side ${s} is ${area}`
+        }
+
+
+        function Generate(event)
+        {
+            event.preventDefault() //prevent default behavior of form that is refreshing
+            // name1=event.target.elements['name'].value//used in form
+
+            name=document.getElementById("name").value
+            cl=document.getElementById("class").value
+            // document.getElementById("div").style.border='1px solid black '
+            s=document.getElementById("school").innerHTML="Blooming Buds Bethania"
+            document.getElementById("div1").innerHTML=`${s} <br> Name : ${name} <br> Class : ${cl}`
+        }
+    </script>
+</body>
+</html>

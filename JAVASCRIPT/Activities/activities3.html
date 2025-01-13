@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <div id="name"></div>
+    <div id="languages"></div> -->
+    <script>
+        //set1
+        document.write("SET1")
+
+        document.write("<br> Q1) ")
+        para = document.createElement("p")  
+        para.textContent = "Hello, I am Anamika Raj. I enjoy coding and learning new technologies." 
+        document.body.appendChild(para)
+
+        document.write("<br> Q2) ")
+        const ul=document.createElement("ul")
+        const li1=document.createElement("li")
+        li1.textContent="MINIONS"
+        ul.appendChild(li1)
+        const li2=document.createElement("li")
+        li2.textContent="UP"
+        ul.appendChild(li2)
+        const li3=document.createElement("li")
+        li3.textContent="COCO"
+        ul.appendChild(li3)
+        document.body.appendChild(ul)
+
+
+        document.write("<br> Q3)")
+        // languages=document.getElementById("languages")
+        select=document.createElement("select")
+        d1=document.createElement("option")
+        d1.textContent="HTML"
+        select.appendChild(d1)
+        d2=document.createElement("option")
+        d2.textContent="CSS"
+        select.appendChild(d2)
+        d3=document.createElement("option")
+        d3.textContent="Tailwind"
+        select.appendChild(d3)
+        document.body.appendChild(select)
+
+
+        document.write("<br> Q4)")
+        radio=document.createElement("input")
+        radio.name='choice'
+        radio.type="radio"
+        radio.id="button1"
+        radio.value='button1'
+        document.body.appendChild(radio)
+        label1=document.createElement('label')
+        label1.textContent="Good"
+        label1.setAttribute("for", "button1")
+        document.body.appendChild(label1)
+
+        radio1=document.createElement("input")
+        radio1.name='choice'
+        radio1.type="radio"
+        radio1.id="button2"
+        radio1.value='button2'
+        document.body.appendChild(radio1)
+        label2=document.createElement('label')
+        label2.textContent="Average"
+        label2.setAttribute("for", "button2")
+        document.body.appendChild(label2)
+
+        radio2=document.createElement("input")
+        radio2.name='choice'
+        radio2.type="radio"
+        radio2.id="button3"
+        radio2.value='button3'
+        document.body.appendChild(radio2)
+        label3=document.createElement('label')
+        label3.textContent="Bad"
+        label3.setAttribute("for", "button3")
+        document.body.appendChild(label3)
+
+
+        
+
+
+        document.write("<BR> Q5) ")
+        select=document.createElement("select")
+        d1=document.createElement("option")
+        d1.textContent="Red Velvet Cake"
+        select.appendChild(d1)
+        d2=document.createElement("option")
+        d2.textContent="Caramel Cake"
+        select.appendChild(d2)
+        d3=document.createElement("option")
+        d3.textContent="Blackforest Cake"
+        select.appendChild(d3)
+        d4=document.createElement("option")
+        d4.textContent="Chocolate"
+        select.appendChild(d4)
+        document.body.appendChild(select)
+        p=document.createElement("p")
+        p.textContent="Caramel Cake"
+        document.body.appendChild(p)
+    
+        
+
+        document.write("<br> Q6) ")
+        fname="Anamika"
+        lname="Raj"
+        fullname=fname+""+lname
+        document.write(fullname.toUpperCase())
+
+        document.write("<br> Q7) ")
+        str = "You can study anything if you have a will to do it"
+
+        
+        part1 = str.substring(0, 13)  // "You can study"
+        part2 = str.substring(26, 29) // "you"
+        part3 = str.substring(36, 40) // "will"
+        part4 = str.substring(45)    // "do it"
+
+        
+        combined = part1 + " " + part2 + " " + part3 + " " + part4
+        document.write(combined)
+
+        document.write("<br>Q8) ")
+        s="MongoDB is a decentralised distributed ledger. MongoDB can eliminate centralisation"
+        news=s.split("MongoDB").join("Blockchain")
+        document.write("Original  : ",s," | New : ",news)
+
+
+        document.write("<br> Q9) ")
+        str = "MongoDB is a decentralised distributed ledger"
+        part1 = str.substring(0, 7);    // "MongoDB"
+        part2 = str.substring(8, 10);   // "is"
+        part3 = str.substring(11);      // "a decentralised distributed ledger"
+        document.write("Using Substring : ",part1 + " " + part2 + " " + part3);
+        
+        part12 = str.substr(0, 7);    // "MongoDB"
+        part22 = str.substr(8, 10);   // "is"
+        part32 = str.substr(11);      // "a decentralised distributed ledger"
+        document.write(" | Using Substr : ",part1 + " " + part2 + " " + part3);
+
+
+
+        document.write("<br>Q10) ")
+        s1="Hello World"
+        s2="hEllO World"
+        if(s1==s2)
+        {
+            document.write("They are same.")
+        }
+        else{
+            document.write("They are not same.")
+        }
+        document.write(" | Type of s1 : ",typeof(s1)," and s2 : ",typeof(s2))
+
+
+        document.write("<br> Q11) ")
+        yr=20
+        document.write(`I am ${yr}yrs of old and my brother is 10 yrs older to me. He is now ${yr+10}years old.`)
+
+
+        document.write("<br> Q12) ")
+        fname="ANAMIKA"
+        lname="RAJ"
+        place="THRISSUR"
+        document.write(`My name is ${fname} ${lname}. I live in ${place}.`)
+
+
+        document.write("<br> Q13) ")
+        s1 = "I like to play video games."
+        news= s1.replace("like", "don't like");
+        document.write("Original Sentence : ",s1)
+        document.write(" | New Sentence : ",news)
+    
+
+        document.write("<br> Q14) ")
+        num1=10, num2=40
+        sum=num1+num2
+        document.write(sum>=50 && sum<=80 ? 65:80)
+
+
+        document.write("<br> Q15) ")
+        age=23
+        document.write(age>=18 ? "Person is eligible to vote" : "person is not eligible to vote")
+        
+
+
+
+
+
+        //set2
+        document.write("<br><br>SET2")
+        document.write("<BR> Q1) ")
+        num=9
+        if (num%3==0 || num%7==0)
+        {
+            document.write(`${num} is a multiple of 3 or 7`)
+        }
+        else{
+            document.write(`${num} is not a multiple of 3 or 7`)
+        }
+
+        document.write("<br> Q2) ")
+        x=3, y=-1, z=6
+        prod=x*y*z
+        if (prod > 0) 
+        {
+            document.write("The product is positive (+)")
+        } 
+        else if (prod< 0) 
+        {
+            document.write("The product is negative (-)")
+        } 
+        else 
+        {
+            document.write("The product is zero (0)")
+        }
+
+
+        document.write("<br> Q3) ")
+        x=10
+        switch(x)
+        {
+            case 7:
+                {
+                    document.write("You got 7 CGPA")
+                    break
+                }
+
+            case 8:
+                {
+                    document.write("You got 8 CGPA")
+                    break
+                }
+
+            case 10:
+                {
+                    document.write("You got 10 CGPA")
+                    break
+                }
+
+            default:
+                {
+                    document.write("Please enter a valid number")
+                }
+        }
+
+        document.write("<br> Q4) ")
+        month=6
+        switch(month)
+        {
+            case 1:
+                {
+                    document.write("January")
+                    break
+                }
+
+            case 2:
+                {
+                    document.write("February")
+                    break
+                }   
+                
+            case 3:
+                {
+                    document.write("March")
+                    break
+                } 
+
+            case 4:
+                {
+                    document.write("April")
+                    break
+                } 
+
+            case 5:
+                {
+                    document.write("May")
+                    break
+                } 
+
+            case 6:
+                {
+                    document.write("June")
+                    break
+                } 
+
+            case 7:
+                {
+                    document.write("July")
+                    break
+                } 
+
+            case 8:
+                {
+                    document.write("August")
+                    break
+                } 
+
+            case 9:
+                {
+                    document.write("September")
+                    break
+                } 
+
+            case 10:
+                {
+                    document.write("October")
+                    break
+                } 
+
+            case 11:
+                {
+                    document.write("November")
+                    break
+                } 
+
+            case 12:
+                {
+                    document.write("December")
+                    break
+                } 
+
+            default:
+                {
+                    document.write("Please enter a valid number")
+                }
+        }
+
+        document.write("<br> Q5) ")
+        let a = 1, b = -3, c = 2
+
+        let d = (b*b) - (4*a*c)
+
+        if (d > 0) {
+            r1 = (-b + Math.sqrt(d)) / (2 * a)
+            r2 = (-b - Math.sqrt(d)) / (2 * a)
+            document.write(`Roots are real and different: ${r1}, ${r2}`)
+        } 
+        else if (d === 0) {
+            r = -b / (2 * a)
+            document.write(`Roots are real and equal: ${r}`)
+        } 
+
+        document.write("<br> Q6) ")
+        temp=5
+        if(temp<0)
+        {
+            document.write("Freezing Weather")
+        }
+        else if(temp>=0 && temp<10) 
+        {
+            document.write("Very Cold Weather")
+        }
+        else if(temp>=10 && temp<20)
+        {
+            document.write("Cold Weather")
+        }
+        else if(temp>=20 && temp<30)
+        {
+            document.write("Normal in Temp")
+        }
+        else if(temp>=30 && temp<40)
+        {
+            document.write("It's Hot")
+        }
+        else{
+            document.write("It's very Hot")
+        }
+
+        
+    </script>
+</body>
+</html>

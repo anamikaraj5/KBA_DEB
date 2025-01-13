@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="flex justify-between bg-purple-300  h-[90px]  pr-[50px] text-3xl">
+
+        <div class="flex ">
+            <img src="/Images/logo1.png" class="ml-[20px] h-12 w-14 bg-purple-300 mt-[20px]">
+            <p class="pl-[10px] text-white pt-[30px] ">Budget Buddy</p>
+        </div>
+
+        <div class="flex gap-6 pt-[30px] ">
+            <a href="home.html" class="hover:text-5xl hover:bg-purple-500">Home</a>
+            <a href="about.html" class="hover:text-5xl hover:bg-purple-500">About</a>
+            <a href="contact.html" class="hover:text-5xl hover:bg-purple-500">Contact</a>
+            <a href="front.html" class="hover:text-5xl hover:bg-purple-500">Logout</a>
+        </div>  
+        
+        <div class="flex justify-end gap-3 pt-[20px]">
+            <a href="user.html" ><img src="/Images/user1.png" class=" h-14 w-14 "></a>
+            <a href="notification.html"><img src="Images/bell1.png" class="h-14 w-14 " ></a>
+        </div>
+    </nav>
+
+    <div class="flex ">
+        <div class="mt-[30px] flex flex-col gap-6 ml-[20px]">
+            <div class="flex flex-col gap-3">
+                <img src="Images/Records.svg" class="h-12 w-12 ">
+                <a href="records.html" >Records</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <img src="Images/Plus.png" class="h-12 w-12 ">
+                <a href="add.html" class="ml-[10px] ">Add</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <img src="Images/charts.png" class="h-12 w-12 ">
+                <a href="charts.html">Charts</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <img src="Images/Wallet.svg" class="h-12 w-12 ">
+                <a href="budget.html">Budgets</a>
+            </div>
+        </div>
+
+        <div >
+            <div class="ml-[500px] mt-[50px]  text-purple-900 text-8xl h-[300px] w-[700px] flex flex-col text-center rounded-lg border border-purple-900 border-4 shadow-black-800">
+                <p class="py-[30px]">Total Balance</p>
+                <p >$50,000</p>
+            </div>
+
+            <div class="flex gap-6 mt-[80px] ml-[150px]">
+                <div class=" text-8xl h-[300px] w-[700px] flex flex-col text-center rounded-lg bg-purple-900 text-white">
+                    <p class="py-[30px]">Total Expense</p>
+                    <p >$30,000</p>
+                </div>
+
+                <div class=" text-8xl h-[300px] w-[700px] flex flex-col text-center rounded-lg bg-purple-900 text-white border border-purple-300 border-8">
+                    <p class="py-[30px]">Total Income</p>
+                    <p >$80,000</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+    
+
+</body>
+</html>

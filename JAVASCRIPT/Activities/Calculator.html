@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="display">
+        <div>
+            <button onclick="Button('7')">7</button>
+            <button onclick="Button('8')">8</button>
+            <button onclick="Button('9')">9</button>
+            <button onclick="Operation('%')">%</button>
+            <button>C</button>
+        </div>
+        <div>
+            <button onclick="Button('4')">4</button>
+            <button onclick="Button('6')">6</button>
+            <button onclick="Operation('*')">X</button>
+            <button onclick="Operation('/')">÷</button>
+        </div>
+        <div>
+            <button onclick="Button('1')">1</button>
+            <button onclick="Button('2')">2</button>
+            <button onclick="Button('3')">3</button>
+            <button onclick="Operation('+')">+</button>
+            <button onclick="Operation('-')">-</button>
+        </div>
+        <div>
+            <button onclick="Button('0')">0</button>
+            <button onclick="Button('00')">00</button>
+            <button>AC</button>
+            <button onclick="Operation5('-')">=</button>
+        </div>
+    </div>
+
+    <script>
+        function Button(number)
+        {
+            
+            document.getElementById("display").value+=number
+        }
+        
+
+        function Operation(op)
+
+        {
+            const s = document.getElementById("display").value;
+            console.log(s);
+            
+            switch(op)
+            {
+                case '+':
+                {
+                    sum=x+x
+                    display.getElementById("display").value=sum
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

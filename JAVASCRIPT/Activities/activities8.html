@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Shopping Cart</h2>
+    <p id="details"></p>
+    <button onclick="Shopping()">Add to cart</button>
+    <p id="cart"></p>
+
+    <script>
+    //     function Shopping()
+    //     {
+    //         const shop=new Map([
+    //             ['Orange',[50,3]],
+    //             ['Grapes',[100,8]],
+    //             ['Apple',[70,5]]
+    //         ])
+        
+
+    
+    //     sum=0
+    //     shop.forEach((value,key) => {
+    //         if(Array.isArray(value)){
+    //            [price,qty]=value
+    //            total=price*qty
+    //            sum+=total
+    //         }
+    //         else{
+    //             document.write('exit')
+    //         }
+    //     })
+    //     document.getElementById("cart").innerHTML="Total : "+sum
+    // }
+
+        function Shopping()
+        {
+            shop=new Map([
+            ['Item1','Apple'],
+            ['P1',70],
+            ['Qty1',5],
+            ['Item2','Orange'],
+            ['P2',50],
+            ['Qty2',3],
+            ['Item3','Grapes'],
+            ['P3',100],
+            ['Qty3',8],
+        ])
+
+        n1=shop.get('Item1') , n2=shop.get('Item2') , n3=shop.get('Item3')
+        p1=shop.get('P1') , p2=shop.get('P2') , p3=shop.get('P3')
+        q1=shop.get('Qty1') , q2=shop.get('Qty2') , q3=shop.get('Qty1')
+        document.getElementById("details").innerHTML=` ${n1} - Price : ${p1} , Quantity : ${q1} <br>  ${n2} - Price : ${p2} , Quantity : ${q2} <br> ${n3} - Price : ${p3} , Quantity : ${q3}`
+
+        total=0
+        total=p1*q1 + p2*q2 + p3*q3
+        // total=shop.get('P1')*shop.get('Qty1')+shop.get('P2')*shop.get('Qty2')+shop.get('P3')*shop.get('Qty3')
+        document.getElementById("cart").innerHTML="Total Price = "+total
+        }
+
+        
+        
+    </script>
+</body>
+</html>

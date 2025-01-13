@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1Dimensional
+        // 2 position element changed
+        document.write("1 Dimensional Array <br><br>")
+        a=[1,2,3,4,5]
+        document.write(a)
+        for(i=0;i<5;i++)
+        {
+            if(i==2)
+            {
+                a[i]=10
+                
+            }
+        }
+        document.write("<br>",a)
+        
+        //add 2 to every element
+        a1=[2,4,6,8]
+        document.write("<br><br>The original array : ",a1)
+        for(i=0;i<4;i++)
+        {
+            a1[i]=a1[i]+2
+        }
+        document.write("<br>The new array : ",a1)
+
+        //values using for
+        a2=[]
+        for(i=1;i<=10;i++)
+        {
+            a2[i-1]=i
+        }
+        document.write("<br>Array: ",a2)
+
+        //to check if a string is in array
+        a3=['anamika','sandra','avanthika','gowri']
+        flag=false
+        for(i=0;i<a3.length;i++)
+        {
+            if(a3[i]=='sandra')
+            {
+                flag=true
+                break
+            }
+        }
+        if(flag==true)
+        {
+            document.write('<br><br> sandra is in array')
+        }
+        else
+        {
+            document.write('sandra is not in array')
+        }
+
+
+        //2Dimensional
+        document.write("<br><br>2 Dimensional Array <br>")
+        b1=[[1,2,3],[4,5,6],[7,8,9]]
+        document.write(b1,"<br>")
+        document.write(b1[2][1])
+
+        document.write("<br><br>")
+        arr=[[],[],[]]
+        count=1
+        sum=0
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                arr[i][j]=count
+                sum+=count
+                count++
+                document.write(arr[i][j]," ")
+            }
+            document.write("<br>")
+        }
+        document.write("Sum of elements of 2D-Array ",sum)
+
+        //for in
+        document.write("<br><br> for - in")
+        a=[1,2,3,4]
+        for(i in a)
+        {
+            a[i]=a[i]+2
+        }
+        document.write("<br>",a)
+
+        //for-of
+        document.write("<br><br> for - of")
+        arr=[10,20,30,40,50]
+        sum=0
+        for(i of arr)
+        {
+            sum+=i
+        }
+        document.write("<br> Sum = ",sum)
+
+        //To push elements of an array except a given element
+        document.write("<br><br> Q) To push elements of an array except a given element")
+        ele=40
+        arr2=[]
+        arr.push(60)
+        document.write("<br> Original array : ",arr)
+        for(i of arr)
+        {
+            if(i!=ele)
+            {
+
+                arr2.push(i)
+            }
+        }
+        document.write("<br> New Array : ",arr2)
+
+        //pop
+        document.write("<br><br> Q) To pop an element")
+        x=arr.pop()
+        document.write("<br> The popped element is ",x)
+
+        //to check if a character is present in a string
+        document.write("<br><br> Q) To check if a character is present in a string")
+        str="paste"
+        flag=false
+        char='z'
+        for(i in str)
+        {
+            if(str[i]==char)
+            {
+                flag=true
+                break
+            }
+           
+        }
+        if(flag==true)
+        {
+            document.write("<br>",char," is present in string ",str," at position ",i)
+        }
+        else{
+                document.write("<br>",char," is not present in the string ",str)
+            }
+
+
+        //for each
+        document.write("<br><br><br> for - each")
+        document.write("<br><br> Q) To add 2 to each elements of an array and push to another array")
+        a=[1,2,3,4,5]
+        b=[]
+        a.forEach(function(x){
+            b.push(x+2)
+        })
+
+        // a.forEach((x)=>{
+        //     b.push(x+2)
+        //})
+        document.write("<br> Orginal Array a : ",a)
+        document.write("<br> New Array b : ",b)
+    </script>
+</body>
+</html>

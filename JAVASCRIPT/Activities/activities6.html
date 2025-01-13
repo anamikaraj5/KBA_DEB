@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter temperature in Celsius</label>
+    <input type="text" id="temp">
+    <button onclick="Farenheit()">Submit</button>
+    <p id="cel"></p>
+
+
+    <label>Enter name</label>
+    <input type="text" id="name"> <br><br>
+    <label>Enter date of birth</label> 
+    <input type="date" id="dob"> <br>
+    <button onclick="Generate()">Generate ID</button>
+    <p id="idcard"></p>
+
+
+    <label>Enter a number</label>
+    <input type="text" id="no">
+    <button onclick="Square()">Submit</button>
+    <p id="square"></p>
+
+    <label>Enter name of Fruit</label>
+    <input type="text" id="fruit">
+    <button onclick="Add(event)">Add Fruit</button>
+    <select id="index">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+    <button id="Display()">Submit</button>
+    <p id="fruits"></p>
+
+    <script>
+
+        function Farenheit()
+        {
+            temp=document.getElementById("temp").value
+            F=(temp*9/5)+32
+            document.getElementById("cel").innerHTML=`Temperature in celsius : ${temp} and in farenheit : ${F}`
+        }
+
+        function Square()
+        {
+            number=document.getElementById("no").value
+            square=number*number
+            document.getElementById("square").innerHTML=`Square of ${number} is ${square}`
+        }
+
+        function Generate()
+        {
+            name=document.getElementById("name").value
+            dob=document.getElementById("dob").value
+            document.getElementById("idcard").innerHTML=`Name : ${name} <br> Date of Birth : ${dob}`
+        }
+
+        arr=[]
+        function Add()
+        {
+            fruits=document.getElementById("fruit").value
+            arr.push(fruits)
+        }
+
+
+        function Display()
+        {
+            index=document.getElementById("index").value
+            document.getElementById("fruits").innerHTML="abc"+arr[index]
+        }
+    </script>
+</body>
+</html>
