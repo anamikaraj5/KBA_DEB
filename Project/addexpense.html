@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddExpense</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="flex items-center gap-3 bg-purple-300 px-[5px] h-[90px] w-full text-sm md:h-[90px] md:text-3xl md:justify-between md:pr-[50px]">
+
+        <div class="flex items-center gap-2">
+            <img src="/Images/logo1.png" class="h-10 w-10 bg-purple-300 md:h-12 md:w-14">
+            <p class="text-white font-bold">Budget Buddy</p>
+        </div>
+
+        <div class="flex gap-2 md:gap-6">
+            <a href="home.html" class="hover:text-5xl hover:bg-purple-500">Home</a>
+            <a href="about.html" class="hover:text-5xl hover:bg-purple-500">About</a>
+            <a href="contact.html" class="hover:text-5xl hover:bg-purple-500">Contact</a>
+            <a href="front.html" class="hover:text-5xl hover:bg-purple-500">Logout</a>
+        </div>  
+        
+        <div class="flex justify-end gap-1  md:gap-3">
+            <a href="user.html" ><img src="/Images/user1.png" class="h-7 w-9 md:h-14 md:w-14 "></a>
+            <a href="notification.html"><img src="Images/bell1.png" class="h-7 w-9 md:h-14 md:w-14" ></a>
+        </div>
+    </nav>
+
+    <div class="md:flex ">
+        <div class="mt-[10px] flex gap-9 md:flex md:flex-col md:gap-6 md:ml-[20px] ml-[60px]">
+            <div class="flex flex-col text-center">
+                <img src="Images/Records.svg" class="md:h-12 md:w-12 h-8 w-8">
+                <a href="records.html" >Records</a>
+            </div>
+            <div class="flex flex-col">
+                <img src="Images/Plus.png" class="md:h-12 md:w-12 h-8 w-8">
+                <a href="add.html" class="ml-[10px] ">Add</a>
+            </div>
+            <div class="flex flex-col">
+                <img src="Images/charts.png" class="md:h-12 md:w-12 h-8 w-8">
+                <a href="charts.html">Charts</a>
+            </div>
+            <div class="flex flex-col">
+                <img src="Images/Wallet.svg" class="md:h-12 md:w-12 h-8 w-8">
+                <a href="budget.html">Budgets</a>
+            </div>
+        </div>
+
+        <div>
+            <p class="md:mt-[20px] md:ml-[750px] mt-[40px] mx-[160px] text-5xl text-purple-950 ">Add</p>
+
+            <div class="bg-purple-200 h-[430px] md:w-[800px] w-[370px] md:ml-[450px] mx-[20px] mt-[40px] pt-[20px]">
+                <div class="bg-purple-950 pt-[10px] mx-[20px] h-[60px] text-xl md:text-4xl text-white pl-[20px] flex justify-between">
+                    <p>Enter a note ...</p>  
+                    <img src="Images/mic.svg" class="md:h-[40px] h-[30px] mt-[5px] mr-[10px]">
+                </div>
+
+                <div class="grid grid-cols-4 gap-5 mt-[20px] mx-[20px] md:text-4xl text-2xl text-white text-center">
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">7</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">8</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">9</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px] text-sm">Calendar</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">4</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">5</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">6</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">+</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">1</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">2</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">3</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">-</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">.</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">0</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg">
+                        <p class="mt-[10px]">C</p>
+                    </div>
+
+                    <div class="bg-purple-950 h-[60px] rounded-lg flex items-center justify-center">
+                        <img src="Images/tick.svg" class="md:h-[60px] md:mx-[50px] h-[30px]">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+    
+
+</body>
+</html>

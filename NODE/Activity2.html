@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .priority-high { color: red; }
+        .priority-medium { color: yellow; }
+        .priority-low { color: green; }
+        .watched { text-decoration: line-through; color: gray; }
+    </style>
 </head>
 <body class="flex justify-center mt-[30px]">
     <div class="border-2 border-black border-solid h-[250px] w-[300px] flex flex-col justify-center items-center rounded-md">
@@ -42,7 +48,27 @@
 
         function movies()
         {
-            
+            const movieList = document.getElementById("movieList");
+            movieList.innerHTML = '';
+
+            movies.forEach((movie, index) => {
+                const li = document.createElement("li");
+                
+                // Set priority classes
+                if (priorities[index] === 1)
+                {
+                    li.classList.add("priority-high");
+                } 
+                else if (priorities[index] === 2){
+                    li.classList.add("priority-medium");
+                } 
+               
+                else if (priorities[index] === 3){
+                    li.classList.add("priority-low");
+                } 
+
+                movieList.appendChild(li);
+            });
         }
     </script>
 </body>

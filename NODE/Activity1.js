@@ -35,8 +35,8 @@ function handleOption(option){
             break
         case '2':
             {
-                const tasks=tasks.length?tasks.join(','):"No task specified"
-                console.log(`Tasks : ${tasks}`)
+                const tasks1=tasks.length?tasks.join(','):"No task specified"
+                console.log(`Tasks : ${tasks1}`)
                 ShowMenu()
                 break
             }

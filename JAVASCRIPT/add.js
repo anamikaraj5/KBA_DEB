@@ -12,19 +12,20 @@ let qty1,qty2,qty3
                 P1:500
             }
         
-            Q2={
-                I2:"Item2",
-                Qty:qty2,
-                P2:1000
-            }    
+            // Q2={
+            //     I2:"Item2",
+            //     Qty:qty2,
+            //     P2:1000
+            // }    
 
-            Q3={
-                I3:"Item3",
-                Qty:qty3,
-                P3:700
-            }
+            // Q3={
+            //     I3:"Item3",
+            //     Qty:qty3,
+            //     P3:700
+            // }
 
-            arr=[Q1,Q2,Q3]
+            // arr=[Q1,Q2,Q3]
+            arr.push(Q1);
             console.log(arr)
         }
 

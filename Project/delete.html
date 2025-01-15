@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Delete</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -47,29 +47,46 @@
             </div>
         </div>
 
-        <div class="md:ml-[100px] mx-[55px] ">
-            <div class="md:ml-[450px] mt-[50px]  text-purple-900 md:text-6xl md:h-[250px] md:w-[600px] text-4xl h-[200px] w-[300px] flex flex-col text-center rounded-lg  border-purple-900 border-4 shadow-purple-600 shadow-lg">
-                <p class="py-[30px]">Total Balance</p>
-                <p >$50,000</p>
+        <div class="md:ml-[550px] mx-[15px] mt-[40px]">
+            <div class="bg-purple-200 h-[430px] w-[380px] md:w-[500px] pt-[10px] rounded-lg">
+                <div class="flex mt-[20px]">
+                    <div class="ml-[70px] bg-purple-950 h-[40px] w-[50px] flex flex-col justify-center items-center rounded-full ">
+                        <img src="Images/snacks.svg" class=" h-[30px]">      
+                    </div>
+                    <p class="text-4xl text-purple-950 md:ml-[70px] pl-[30px]">Snacks</p>
+                </div>
+    
+                <div class="grid grid-cols-2 gap-10 mx-[50px] mt-[60px] text-2xl md:text-3xl">
+                    <p>Type</p>
+                    <p>Expense</p>
+                    <p>Amount</p>
+                    <p>500</p>
+                    <p>Date</p>
+                    <p>Jan 5, 2025</p>
+                </div>
             </div>
 
-            <div class="md:flex md:gap-6 md:mt-[80px] md:ml-[150px] mt-[20px] grid grid-cols-1 gap-5">
-                <div class="text-purple-900 md:text-6xl md:h-[250px] md:w-[600px] text-4xl h-[200px] w-[300px] flex flex-col text-center rounded-lg border-purple-900 border-4 shadow-purple-600 shadow-lg">
-                    <p class="py-[30px]">Total Expense</p>
-                    <p >$30,000</p>
+            <div class="md:flex md:gap-6 mt-[30px]">
+                <div class="flex gap-24 md:gap-60 ">
+                    <a href="addexpense.html" class="bg-purple-950 h-[50px] w-[130px] rounded-lg text-center text-white text-xl pt-[10px] shadow-purple-700 shadow-md hover:bg-purple-500">EDIT</a>
+                    <a href="delete.html" class="bg-purple-950 h-[50px] w-[130px] rounded-lg text-center text-white text-xl pt-[10px] shadow-purple-700 shadow-md hover:bg-purple-500">DELETE</a>
                 </div>
 
-                <div class="text-purple-900 md:text-6xl md:h-[250px] md:w-[600px] text-4xl h-[200px] w-[300px] flex flex-col text-center rounded-lg border-purple-900 border-4 shadow-purple-600 shadow-lg">
-                    <p class="py-[30px]">Total Income</p>
-                    <p >$80,000</p>
+                <div class="bg-purple-200 rounded-lg h-[150px] w-[300px]  ml-[40px]">
+                    <p class="text-red-700 text-xl text-center mt-[10px]">Are you sure to delete ?</p>
+                    <div class="flex justify-between mt-[30px] mx-[30px]">
+                        <a href="edit.html" class="bg-purple-400 rounded-lg h-[30px] w-[70px] text-center">Cancel</a>
+                        <a href="records.html" class="bg-purple-400 rounded-lg h-[30px] w-[70px] text-center">Delete</a>
+                    </div>
                 </div>
+            </div>
+           
+
+                
             </div>
         </div>
+        
 
     </div>
-    
-
-    
-
 </body>
 </html>

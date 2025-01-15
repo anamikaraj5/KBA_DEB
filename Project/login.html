@@ -3,37 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="flex items-center justify-center">
+    <div class="md:flex md:justify-center  gap-0 w-fit h-fit ml-[15px] mt-[100px] md:mt-[170px] md:ml-[540px] shadow-lg shadow-gray-800 overflow-hidden rounded-lg">
 
-        <div class="h-[800px] w-[500px] mt-[40px]">
-            <img src="Images/lavbg.jpg">
-            <p>WELCOME BACK</p>
+        <div class="md:h-[550px] md:w-[400px]  bg-cover h-[60px]" 
+            style="background-image: url('Images/lavbg.jpg');">
+            <p class="text-white  font-bold flex justify-center md:mt-[255px] text-5xl">
+                WELCOME BACK
+            </p>
         </div>
-        <div >
-            <form class="mt-[50px] w-[450px] h-[550px] rounded-lg border-2 shadow-lg shadow-gray-800">
-                <p class="pt-[30px] text-center text-violet-900 text-4xl font-medium">LOGIN</p>
+
+        <div class=" md:w-[400px] md:h-[550px] ">
+            <form >
+                <p class="mt-[30px] text-center text-violet-900 text-4xl font-medium">LOGIN</p>
     
                 <div class="flex flex-col ml-[30px] mt-[40px] mr-[30px]">
                     <label class="text-violet-600 text-xl">Email</label>
-                    <input type="text" class="bg-purple-300 rounded-md border-solid border border-black h-[40px] mt-[20px]">
+                    <input type="text" placeholder="Enter your email id" class="bg-purple-300 rounded-md border-solid border border-black h-[40px] mt-[20px] pl-[10px] placeholder:text-purple-400">
                 </div>
     
                 <div class="flex flex-col ml-[30px] mt-[40px] mr-[30px]">
                     <label class="text-violet-600 text-xl">Password</label>
-                    <input type="text" class="bg-purple-300 rounded-md border-solid border border-black h-[40px] mt-[20px]">
+                    <input type="text" placeholder="Enter your password" class="bg-purple-300 rounded-md border-solid border border-black h-[40px] mt-[20px] pl-[10px] placeholder:text-purple-400">
                 </div>
                 
-                <button type="submit" class="bg-violet-900 text-white text-xl rounded-md h-[35px] w-[100px] mt-[60px] ml-[180px]">Login</button>
+                <button type="submit" class="bg-violet-900 text-white text-xl rounded-md h-[55px] w-[160px] mt-[60px] md:ml-[150px] ml-[100px]"><a href="home.html">Login</a></button>
     
-                <div class="flex justify-between mt-[40px] mx-[20px]">
+                <div class="flex justify-between mt-[60px] mx-[20px]">
                     <div class="flex gap-3">
-                        <p class="text-violet-600">New User</p>
+                        <p class="text-violet-600">New User ?</p>
                     <div>
-                        <a href="xyz" class="text-purple-500">Register</a>
+                        <a href="register.html" class="text-purple-500">Register</a>
                     </div>
                     </div>
                     
