@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Task Manager</h1>
+        <input type="text" placeholder="Enter task name" id="taskname">
+        <input type="date" placeholder="Enter due date" id="duedate">
+        <input type="text" placeholder="Enter priority" id="priority">
+        <button onclick="Add()">Add Task</button>
+    </div>
+    <ul id="list"></ul>
+
+    <script>
+        tasks=[]
+        details=[]
+
+        function Add(){
+            taskname=document.getElementById("taskname").value 
+            date=document.getElementById("duedate").value 
+            prioity=parseInt(document.getElementById("priority").value)
+            tasklist=document.getElementById("list")
+
+            if(taskname==="" || date==="" || (prioity<1 || prioity>3))
+            {
+                alert("Please enter valid details")
+                return
+            }
+
+            tasks.push(taskname)
+            details.push({duedate:date , priority:prioity})
+
+            list=document.createElement("li")
+            list.innerHTML=taskname
+
+            document.getElementById("taskname").value=""
+            document.getElementById("duedate").value=""
+            document.getElementById("priority").value=""
+
+            if(prioity===1)
+            {
+            list.classList.add("prio-high")
+            }
+            else if(prioity===2)
+            {
+            list.classList.add("prio-med")
+            }
+            else{
+                list.classList.add("prio-low")
+            }
+
+            tasklist.appendChild(list)
+
+            completed=document.createElement("button")
+            completed.innerHTML="Completed"
+            list.appendChild(completed)
+            completed.onclick=function(){
+                list.className="strike"
+            }
+
+            edit=document.createElement("button")
+            edit.innerHTML="Edit"
+            list.appendChild(edit)
+            edit.onclick=function(){
+                edittask(taskname,date,prioity,list)
+            }
+
+            removet=document.createElement("button")
+            removet.innerHTML="Remove"
+            list.appendChild(removet)
+            removet.onclick=function(){
+                removetask(taskname,date,prioity,list)
+            }
+
+            function removetask(taskname,date,prioity,list){
+                list.remove()
+
+                index=tasks.indexOf(taskname)
+                if(index!=-1)
+            {
+                tasks.splice(index,1)
+                details.splice(index,1)
+            }
+            }
+
+            function edittask(taskname,date,prioity,list)
+            {
+                newtask=prompt("Enter taskname",taskname)
+                newdate=prompt("Enter new date ",date)
+                newpriority=prompt("Enter new priority",prioity)
+
+                if(newtask==="" || newdate==="" || (newpriority<1 || newpriority>3))
+            {
+                alert("Please enter valid details")
+                return
+            }
+
+                tasks.push(newtask)
+                details.push({duedate:newdate , priority:newpriority})
+
+                
+                list.innerHTML=newtask
+
+                list.className=""
+                if(prioity===1)
+                {
+                list.classList.add("prio-high")
+                }
+                else if(prioity===2)
+                {
+                list.classList.add("prio-med")
+                }
+                else{
+                    list.classList.add("prio-low")
+                }
+
+                tasklist.appendChild(list)
+
+                completed=document.createElement("button")
+                completed.innerHTML="Completed"
+                list.appendChild(completed)
+                completed.onclick=function(){
+                    list.className="strike"
+                }
+
+                edit=document.createElement("button")
+                edit.innerHTML="Edit"
+                list.appendChild(edit)
+                edit.onclick=function(){
+                    edittask(taskname,date,prioity,list)
+                }
+
+                removet=document.createElement("button")
+                removet.innerHTML="Remove"
+                list.appendChild(removet)
+                removet.onclick=function(){
+                    removetask(taskname,date,prioity,list)
+                }
+            }
+        }
+        
+
+
+
+
+    </script>
+</body>
+</html>

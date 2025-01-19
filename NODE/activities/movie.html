@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .priority-low{
+            color: green;
+        }
+        .priority-medium{
+            color: yellow;
+        }
+        .priority-high{
+            color: red;
+        }
+        .strike{
+        text-decoration: line-through;
+        color: grey;}
+        .button1{
+            width: 80px;
+            height: 50px;
+            background-color:blueviolet;
+            color: black;
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-top: 2px;
+        }
+
+        .button2{
+            width: 80px;
+            height: 50px;
+            background-color:crimson;
+            color: black;
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-top: 2px;
+        }
+
+        .button3{
+            width: 80px;
+            height: 50px;
+            background-color:saddlebrown;
+            color: black;
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-top: 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="w-[400px] h-[300px] mt-[200px] mx-auto bg-blue-100 shadow-md rounded-lg p-8">
+        <h1 class="text-2xl ml-[40px] text-blue-900 font-bold mb-4">Movie Playlist Manager</h1>
+        <input type="text" class="border p-2 w-full mb-4" placeholder="Movie Name" id="Mname">
+        <input type="number" class="border p-2 w-full mb-2"  placeholder="Priority(1-3)" id="Mpriority">
+        <button class="bg-blue-400 text-white px-4 py-2 mt-[30px] ml-[110px] rounded" onclick="AddMovie()">Add Movie</button>
+    </div>
+    <ul id="list1" class="ml-[780px] mt-[50px]"></ul>
+
+    <script>
+            
+        //Arrarys to store movie name and priority    
+        let movie=[]; 
+        let priority=[]; 
+
+        //On clicking addmovie
+        function AddMovie(){
+            const Moviename=document.getElementById("Mname").value.trim() 
+            const Movieprio=parseInt(document.getElementById("Mpriority").value)
+            const movieList=document.getElementById("list1")   
+
+            //checking the conditions
+            if(Moviename.trim()===" " || (Movieprio<1 && Movieprio>3))
+            {
+                alert("Enter a valid movie name and priority (1,2 or 3)!")
+                return;
+            }
+            movie.push(Moviename);
+            priority.push(Movieprio);
+
+
+            //create a list to dsiplay the movie names
+            const list=document.createElement("li");
+            list.innerHTML=Moviename;
+
+            //clearing the i/p fields after adding
+            document.getElementById("Mname").value=" "
+            document.getElementById("Mpriority").value=" "
+
+            
+            //inorder to style the moviename(list element) according to priority
+            if(Movieprio==1){
+                list.classList.add("priority-low") //The classList property is used to manage the CSS classes applied to an HTML element //The add() method adds one or more classes to the element.
+            }
+            else if(Movieprio==2){
+                list.classList.add("priority-medium")
+            }
+            else {
+                list.classList.add("priority-high")
+            }
+            movieList.appendChild(list);        
+
+            
+            //creating watch,edit,remove buttons 
+
+            //watched button
+            let watched=document.createElement("button");
+            watched.textContent="Watched";
+            watched.className="button1" //to style the button give the classname
+            list.appendChild(watched);
+            //function to make the text strike
+            watched.onclick=function(){
+            list.className="strike"
+            }
+
+            //edit button
+            let edit=document.createElement("button")
+            edit.textContent="Edit"
+            edit.className="button3"
+            list.appendChild(edit)
+            //function to edit/or create a prompt
+            edit.onclick = function () {
+            editMovie(Moviename, Movieprio, list);
+            }
+
+            //remove button
+            let removeb=document.createElement("button")
+            removeb.textContent="Remove"
+            removeb.className="button2"
+            list.appendChild(removeb)
+            //to remove the items call a function
+            removeb.onclick = function () {
+            removeMovie(Moviename, Movieprio, list);
+            }
+
+
+            //Functions to perform on clicking each buttons
+
+            // Function to remove a movie
+            function removeMovie(Moviename, Movieprio, list) {
+                // Remove the list item from the DOM
+                list.remove();
+
+                // Remove the movie and priority from the arrays
+                const index = movie.indexOf(Moviename);    //Finds the index of the Moviename in the movie array.
+                if (index !== -1) {
+                    movie.splice(index, 1);
+                    priority.splice(index, 1);
+                }
+            }
+
+
+            //Function to edit a movie
+            function editMovie(Moviename, Movieprio, list) {
+                // Prompt the user for new movie name and priority
+                const NewMovieName = prompt("Enter a new movie name:", Moviename).trim();
+                const NewMoviePrio = parseInt(prompt("Enter a new priority (1, 2, or 3):", Movieprio));
+
+                //Redo all the steps as new movie and new priority is added
+                
+                if (NewMovieName === "" || (NewMoviePrio !== 1 && NewMoviePrio !== 2 && NewMoviePrio !== 3)) {
+                    alert("Invalid input! Please enter a valid movie name and priority (1, 2, or 3).");
+                    return;
+                }
+
+                movie.push(NewMovieName)
+                priority.push(NewMoviePrio)
+                // Update the movie and priority arrays
+                // const index = movie.indexOf(Moviename);
+                // if (index !== -1) {
+                //     movie[index] = NewMovieName;
+                //     priority[index] = NewMoviePrio;
+                // }
+
+                list.innerHTML =NewMovieName
+
+                // Update CSS class based on new priority
+                list.className = ""; // Reset class
+                if (NewMoviePrio === 1) {
+                    list.classList.add("priority-low");
+                } else if (NewMoviePrio === 2) {
+                    list.classList.add("priority-medium");
+                } else {
+                    list.classList.add("priority-high");
+                }
+
+                // Re-add buttons to the updated list item
+                let watched = document.createElement("button");
+                watched.textContent = "Watched";
+                watched.className = "button1";
+                list.appendChild(watched);
+                watched.onclick=function(){
+                list.className="strike"
+                }
+
+                let edit = document.createElement("button");
+                edit.textContent = "Edit";
+                edit.className = "button3";
+                list.appendChild(edit);
+                edit.onclick = function () {
+                    editMovie(NewMovieName, NewMoviePrio, list);
+                };
+
+                let removeb = document.createElement("button");
+                removeb.textContent = "Remove";
+                removeb.className = "button2";
+                list.appendChild(removeb);
+                removeb.onclick = function () {
+                    removeMovie(NewMovieName, NewMoviePrio, list);
+                };
+            }   
+
+
+        }
+    </script>
+
+ 
+</body>
+</html>
+
+<!-- <div class="w-[400px] h-[300px] mt-[200px] mx-auto bg-blue-100 shadow-md rounded-lg p-8 ">
+    <h1 class="text-2xl ml-[40px] text-blue-900 font-bold mb-4">Movie Playlist Manager</h1>
+    <input type="text" id="movieName" placeholder="Enter movie name" class="border p-2 w-full mb-4">
+    <input type="number" id="priority" placeholder="Enter priority (1-3)" class="border p-2 w-full mb-2">
+    <button id="addMovie" class="bg-blue-400 text-white px-4 py-2 mt-[30px] ml-[110px] rounded" onclick="getmovieInput()">Add Movie</button>
+    <ul id="movieList" class="mt-4"></ul> -->

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .strke{
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .prio-high{
+            color: green;
+        }
+
+        .prio-medium{
+            color: yellow;
+        }
+
+        .prio-low{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Movie Manager</h1>
+        <input type="text" placeholder="Enter a movie name" id="mname">
+        <input type="text" placeholder="Enter priority" id="mprio">
+        <button onclick="Add()">Add Movie</button>
+    </div>
+    <ul id="list"></ul>
+
+
+    <script>
+        let movie=[]
+        let priority=[]
+
+        function Add()
+        {
+            moviename=document.getElementById("mname").value
+            moviepriority=parseInt(document.getElementById("mprio").value)
+            movielist=document.getElementById("list")
+
+            if(moviename==="" || (moviepriority<1 || moviepriority>3))
+            {
+                alert("Please enter valid details")
+                return
+            }
+
+            movie.push(moviename)
+            priority.push(moviepriority)
+
+            let list=document.createElement("li")
+            list.innerHTML=moviename
+
+            document.getElementById("mname").value=""
+            document.getElementById("mprio").value=""
+
+            if(moviepriority===1)
+            {
+                list.classList.add("prio-high")
+            }
+            else if(moviepriority===2)
+            {
+                list.classList.add("prio-medium")
+            }
+            else{
+                list.classList.add("prio-low")
+            }
+            movielist.appendChild(list)
+
+            watched=document.createElement("button")
+            watched.innerHTML="Watched"
+            list.appendChild(watched)
+            watched.onclick=function(){
+                list.className="strike"
+            }
+            
+
+            edit=document.createElement("button")
+            edit.innerHTML="Edit"
+            list.appendChild(edit)
+            edit.onclick=function(){
+                editmovie(moviename,moviepriority,list)
+            }
+
+
+            remove=document.createElement("button")
+            remove.innerHTML="Remove"
+            list.appendChild(remove)
+            remove.onclick=function(){
+                removemovie(moviename,moviepriority,list)
+            }
+
+            function removemovie(moviename,moviepriority,list)
+            {
+                list.remove()
+
+                index=movie.indexOf(moviename)
+                if(index!=-1)
+            {
+                movie.splice(index,1)
+                priority.splice(index,1)
+            }
+            }
+
+            function editmovie(moviename,moviepriority,list)
+            {
+                NewMoviename=prompt("Enter movie name : ",moviename)
+                NewMoviepriority=parseInt(prompt("Enter Priority : ",moviepriority))
+
+                if(NewMoviename==="" || (NewMoviepriority<1 || NewMoviepriority>3))
+            {
+                alert("Please enter valid details")
+                return
+            }
+
+            movie.push(NewMoviename)
+            priority.push(NewMoviepriority)
+
+            list.innerHTML=NewMoviename
+
+            if(NewMoviepriority===1)
+            {
+                list.classList.add("prio-high")
+            }
+            else if(NewMoviepriority===2)
+            {
+                list.classList.add("prio-medium")
+            }
+            else{
+                list.classList.add("prio-low")
+            }
+            movielist.appendChild(list)
+
+            list.className = ""
+            watched=document.createElement("button")
+            watched.innerHTML="Watched"
+            list.appendChild(watched)
+            watched.onclick=function(){
+                list.className="strike"
+            }
+            
+
+            edit=document.createElement("button")
+            edit.innerHTML="Edit"
+            list.appendChild(edit)
+            edit.onclick=function(){
+                editmovie(moviename,moviepriority,list)
+            }
+
+
+            remove=document.createElement("button")
+            remove.innerHTML="Remove"
+            list.appendChild(remove)
+            remove.onclick=function(){
+                removemovie(moviename,moviepriority,list)
+            }
+
+
+            }
+        }
+    </script>
+</body>
+</html>
