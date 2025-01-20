@@ -53,10 +53,12 @@
     <option value="3">3</option>
     <option value="4">4</option>
    </select> 
-   <!-- <label>Price</label> -->
-   <p id="price-snick" > Price : 50</p>
+   <label>Price</label>
+   <p id="price-snick" >50</p>
    <button  onclick="handleCart('qty-snick','price-snick')">Add to Cart</button>
    <br>
+
+
    <label>Lux</label>
    <label>Qty:</label>
    <select id="qty-lux">
@@ -65,14 +67,15 @@
     <option value="3">3</option>
     <option value="4">4</option>
    </select> 
-   <!-- <label>Price</label> -->
-   <p id="price-lux" > Price : 250</p>
-   <button  onclick="handleCart('qty-lux','price-lux')">Add to Cart</button> <br> <br>
-   <button onclick="handleOut()">Checkout</button>
+   <label>Price</label>
+   <p id="price-lux" >250</p>
+   <button  onclick="handleCart('qty-lux','price-lux')">Add to Cart</button>
 
+
+   <button onclick="handleOut()">Checkout</button>
    <p id="display"></p>
 
-
+   
    <script>
     const cart=[];
     let item;
@@ -100,7 +103,6 @@
         })
         console.log(totalPrice);
         document.getElementById("display").innerHTML=totalPrice
-
     }
    </script>
 </body>
