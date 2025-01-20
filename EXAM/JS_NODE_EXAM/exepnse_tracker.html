@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-[450px] h-[390px] bg-blue-200 mx-[auto] mt-[250px] rounded-lg">
+        <h1 class="text-3xl font-bold flex justify-center p-6 text-red-900">Expense Tracker</h1>
+
+        <label class="mx-[30px]">Categories</label>
+        <select id="categories">
+            <option value="1">Shopping</option>
+            <option value="2">Health</option>
+            <option value="3">Food</option>
+            <option value="4">Travel</option>
+            <option value="5">Housing</option>
+            <option value="6" onclick="Others()">Others</option>
+        </select>  <br>
+        <p id="others1" class="ml-[100px] mt-[10px]"></p>
+        <label class="mx-[30px]">Amount</label>
+        <input type="text" id="amount" class="ml-[20px] mt-[20px]"> <br>
+        <label class="mx-[30px]">Date</label>
+        <input type="date" id="date" class="ml-[40px] mt-[20px]"> <br>
+        <button onclick="Submit()" class="bg-blue-600 text-xl text-white rounded-md w-[100px] ml-[170px] mt-[30px] h-[35px]">Submit</button> <br>
+
+        <button onclick="Show()" class="bg-purple-900 text-white rounded-md w-[200px] h-[35px] mt-[30px] ml-[100px]">Show My Expense</button>
+        <select id="month" class="h-[35px] ml-[20px] bg-blue-300">
+            <option value="1">JAN</option>
+            <option value="2">FEB</option>
+            <option value="3">MAR</option>
+            <option value="4">APR</option>
+            <option value="5">MAY</option>
+            <option value="6">JUN</option>
+            <option value="7">JUL</option>
+            <option value="8">AUG</option>
+            <option value="9">SEP</option>
+            <option value="10">OCT</option>
+            <option value="11">NOV</option>
+            <option value="12">DEC</option>
+        </select>
+        <p id="dis" class="ml-[190px] mt-[5px] text-xl text-red-600"></p>
+
+        <script>
+            arr=[]
+            let datemonth
+            let total=0
+            let Obj
+            let jan=0,feb=0,mar=0,apr=0,may=0,jun=0,jul=0,aug=0,sep=0,oct=0,nov=0,dec=0
+
+            function Others()
+            {
+                display=document.getElementById("others1")
+                other=document.createElement("input")
+                display.appendChild(other)
+                
+            }
+
+            function Submit()
+            {
+                cat=document.getElementById("categories").value 
+                amount=parseInt(document.getElementById("amount").value)
+                date=document.getElementById("date").value
+
+                 Obj={
+                    Categories:cat,
+                    Amount:amount,
+                    Date:date
+                }
+
+                // arr.push(Obj)
+                // console.log(Obj)
+                // document.getElementById("dis").innerHTML=Obj
+                datemonth=Object.values(Obj.Date)
+                // console.log(datemonth)
+            }
+
+            function Show()
+            {
+                month=document.getElementById("month").value
+                switch(month)
+                {
+                    case '1':
+                            if(datemonth[5]=="0" && datemonth[6]=="1")
+                            {
+                                
+                                jan+=Obj.Amount
+                                // console.log(jant)
+                            }
+                            document.getElementById("dis").innerHTML=jan
+                            break
+                            
+                    case '2':
+                            if(datemonth[5]=="0" && datemonth[6]=="2")
+                            {
+                                feb+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=feb
+                            break
+
+                    case '3':
+                            if(datemonth[5]=="0" && datemonth[6]=="3")
+                            {
+                                mar+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=mar
+                            break
+
+                    case '4':
+                            if(datemonth[5]=="0" && datemonth[6]=="4")
+                            {
+                                apr+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=apr
+                            break
+
+                    case '5':
+                            if(datemonth[5]=="0" && datemonth[6]=="5")
+                            {
+                                may+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=may
+                            break
+
+                    case '6':
+                            if(datemonth[5]=="0" && datemonth[6]=="6")
+                            {
+                                jun+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=jun
+                            break
+
+                    case '7':
+                            if(datemonth[5]=="0" && datemonth[6]=="7")
+                            {
+                                jul+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=jul
+                            break
+
+                    case '8': 
+                            if(datemonth[5]=="0" && datemonth[6]=="8")
+                            {
+                                aug+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=aug
+                            break
+
+                    case '9': 
+                            if(datemonth[5]=="0" && datemonth[6]=="9")
+                            {
+                                sep+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=sep
+                            break
+
+                    case '10': 
+                            if(datemonth[5]=="1" && datemonth[6]=="0")
+                            {
+                                oct+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=oct
+                            break
+
+                    case '11': 
+                            if(datemonth[5]=="1" && datemonth[6]=="1")
+                            {
+                                nov+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=nov
+                            break
+                    
+                    case '12': 
+                            if(datemonth[5]=="1" && datemonth[6]=="2")
+                            {
+                                dec+=Obj.Amount
+                            }
+                            document.getElementById("dis").innerHTML=dec
+                            break
+                }
+
+
+            }
+           
+        </script>
+    </div>
+</body>
+</html>

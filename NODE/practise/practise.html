@@ -1,11 +1,11 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .strke{
+        .strike{
             text-decoration: line-through;
             color: gray;
         }
@@ -27,7 +27,12 @@
     <div>
         <h1>Movie Manager</h1>
         <input type="text" placeholder="Enter a movie name" id="mname">
-        <input type="text" placeholder="Enter priority" id="mprio">
+        <select id="mprio">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <!-- <input type="text" placeholder="Enter priority" id="mprio"> -->
         <button onclick="Add()">Add Movie</button>
     </div>
     <ul id="list"></ul>
@@ -43,7 +48,7 @@
             moviepriority=parseInt(document.getElementById("mprio").value)
             movielist=document.getElementById("list")
 
-            if(moviename==="" || (moviepriority<1 || moviepriority>3))
+            if(moviename.trim()===" " || (moviepriority<1 && moviepriority>3))
             {
                 alert("Please enter valid details")
                 return
@@ -108,20 +113,28 @@
 
             function editmovie(moviename,moviepriority,list)
             {
-                NewMoviename=prompt("Enter movie name : ",moviename)
-                NewMoviepriority=parseInt(prompt("Enter Priority : ",moviepriority))
+                const NewMovieName = prompt("Enter a new movie name:", moviename).trim();
+                const NewMoviePrio = parseInt(prompt("Enter a new priority (1, 2, or 3):", moviepriority));
 
-                if(NewMoviename==="" || (NewMoviepriority<1 || NewMoviepriority>3))
-            {
-                alert("Please enter valid details")
-                return
-            }
+                //Redo all the steps as new movie and new priority is added
+                
+                if (NewMovieName === "" || (NewMoviePrio !== 1 && NewMoviePrio !== 2 && NewMoviePrio !== 3)) {
+                    alert("Invalid input! Please enter a valid movie name and priority (1, 2, or 3).");
+                    return;
+                }
 
-            movie.push(NewMoviename)
-            priority.push(NewMoviepriority)
+                // movie.push(NewMovieName)
+                // priority.push(NewMoviePrio)
+                // Update the movie and priority arrays
+                const index = movie.indexOf(Moviename);
+                if (index !== -1) {
+                    movie[index] = NewMovieName;
+                    priority[index] = NewMoviePrio;
+                }
 
-            list.innerHTML=NewMoviename
+                list.innerHTML =NewMovieName
 
+            list.className = ""
             if(NewMoviepriority===1)
             {
                 list.classList.add("prio-high")
@@ -133,9 +146,8 @@
             else{
                 list.classList.add("prio-low")
             }
-            movielist.appendChild(list)
+            
 
-            list.className = ""
             watched=document.createElement("button")
             watched.innerHTML="Watched"
             list.appendChild(watched)
@@ -164,19 +176,181 @@
         }
     </script>
 </body>
-</html> -->
+</html>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .prior-high{
+            color: green;
+        }
+        .prior-med{
+            color: yellow;
+        }
+        .prior-low{
+            color: red;
+        }
+        .strike{
+            text-decoration: line-through;
+            color: grey;
+        }
+    </style>
 </head>
 <body>
     <div>
         <h1>Movie Manager</h1>
-        <input type="text" placeholder="Enter movie name">
+        <input type="text" placeholder="Enter movie name" id="movie">
+        <input type="text" placeholder="Enter priority" id="prior">
+        <button onclick="Add()">Add Movie</button>
     </div>
+    <ul id="display"></ul>
+
+    <script>
+        movies=[]
+        prioritys=[]
+
+        function Add()
+        {
+            movie=document.getElementById("movie").value 
+            prior=parseInt(document.getElementById("prior").value)
+            movielist=document.getElementById("display")
+
+            if(movie==="" || (prior<1 || prior>3))
+            {
+                alert("Please enter a movie name and check priority")
+                return
+            }
+
+            movies.push(movie)
+            prioritys.push(prior)
+
+            list=document.createElement("li")
+            // list.innerHTML=`Movie : ${movie}  Priority : ${prior}`
+            list.innerHTML=movie
+
+            document.getElementById("movie").value = "";
+            document.getElementById("prior").value = "";
+
+
+            if(prior===1)
+            {
+                list.classList.add("prior-high")
+            }
+            else if(prior===2)
+            {
+                list.classList.add("prior-med")
+            }
+            else
+            {
+                list.classList.add("prior-low")
+            }
+            
+            movielist.appendChild(list)
+
+            watched=document.createElement("button")
+            watched.innerHTML="Watched"
+            list.appendChild(watched)
+            watched.onclick=function()
+            {
+                list.className="strike"
+            }
+
+            edit=document.createElement("button")
+            edit.textContent="Edit"
+            list.appendChild(edit)
+            edit.onclick=function()
+            {
+                edit(movie,prior,list)
+            }
+
+            removeb=document.createElement("button")
+            removeb.textContent="Remove"   
+            list.appendChild(removeb)
+            removeb.onclick=function()
+            {
+                removeb(movie,prior,list)
+            }
+
+
+            function removeb(movie,prior,list)
+            {
+                list.remove()
+
+                index=movies.indexOf(movie)
+                if(index!=-1)
+                {
+                    movies.splice(index,1)
+                    prioritys.splice(index,1)
+                }
+            }
+
+
+            function edit(movie,prior,list)
+            {
+                newmovie=prompt("Enter new movie name : ")
+                newprior=parseInt(prompt("Enter new priority : "))
+
+                if(newmovie==="" || (newprior<1 || newprior>3))
+                {
+                    alert("Enter valid details")
+                }
+
+                index=movies.indexOf(movie)
+                if(index!=-1)
+                {
+                    movies[index]=newmovie
+                    prioritys[index]=newprior
+                }
+
+                list.textContent=`Movie : ${newmovie}  Priority : ${newprior}`
+
+                list.className = ""
+                if(newprior===1)
+                {
+                    list.classList.add("prior-high")
+                }
+                else if(newprior===2)
+                {
+                    list.classList.add("prior-med")
+                }
+                else
+                {
+                    list.classList.add("prior-low")
+                }
+                
+                movielist.appendChild(list)
+
+                watched=document.createElement("button")
+                watched.textContent="Watched"
+                list.appendChild(watched)
+                watched.onclick=function()
+                {
+                    list.className="strike"
+                }
+
+                edit=document.createElement("button")
+                edit.textContent="Edit"
+                list.appendChild(edit)
+                edit.onclick=function()
+                {
+                    edit(movie,prior,list)
+                }
+
+                removeb=document.createElement("button")
+                removeb.textContent="Remove"   
+                list.appendChild(removeb)
+                removeb.onclick=function()
+                {
+                    removeb(movie,prior,list)
+                }
+
+            }
+
+        }
+    </script>
 </body>
-</html>
+</html> -->

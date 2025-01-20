@@ -166,14 +166,14 @@
                     return;
                 }
 
-                movie.push(NewMovieName)
-                priority.push(NewMoviePrio)
+                // movie.push(NewMovieName)
+                // priority.push(NewMoviePrio)
                 // Update the movie and priority arrays
-                // const index = movie.indexOf(Moviename);
-                // if (index !== -1) {
-                //     movie[index] = NewMovieName;
-                //     priority[index] = NewMoviePrio;
-                // }
+                const index = movie.indexOf(Moviename);
+                if (index !== -1) {
+                    movie[index] = NewMovieName;
+                    priority[index] = NewMoviePrio;
+                }
 
                 list.innerHTML =NewMovieName
 
