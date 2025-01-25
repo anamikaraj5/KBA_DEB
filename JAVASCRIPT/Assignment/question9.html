@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+ 
+    <table >
+        <tr>
+            <th>Student Name</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>David</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Vinoth</td>
+            <td>77</td>
+        </tr>
+        <tr>
+            <td>Divya</td>
+            <td>88</td>
+        </tr>
+        <tr>
+            <td>Ishitha</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>Thomas</td>
+            <td>68</td>
+        </tr>
+    </table>
+
+    <br>
+
+  
+    <label >Enter name: </label>
+    <input type="text" id="studentName" placeholder="Enter student name">
+
+    <br><br>
+
+    <label >Enter mark: </label>
+    <input type="number" id="mark" placeholder="Enter mark">
+    <button onclick="submitMark()">Submit</button>
+
+    <br><br>
+
+
+    <p id="gradeResult"></p>
+
+
+    <button onclick="ClassAverage()">Class Average</button>
+    <p id="average"></p>
+
+    <script>
+      
+        const students = [
+            { name: 'David', marks: 80 },
+            { name: 'Vinoth', marks: 77 },
+            { name: 'Divya', marks: 88 },
+            { name: 'Ishitha', marks: 95 },
+            { name: 'Thomas', marks: 68 }
+        ];
+
+    
+        function calculateGrade(marks) {
+            if (marks >= 90) return 'A';
+            if (marks >= 80) return 'B';
+            if (marks >= 70) return 'C';
+            if (marks >= 60) return 'D';
+            return 'F';
+        }
+
+       
+        function submitMark() {
+            const name = document.getElementById('studentName').value;
+            const marks = parseInt(document.getElementById('mark').value, 10);
+            const result = document.getElementById('gradeResult');
+
+            if (name && marks!=0) {
+                let student = null;
+                for (let i = 0; i < students.length; i++) {
+                    if (students[i].name.toLowerCase() === name.toLowerCase()) {
+                        student = students[i];
+                        break;
+                    }
+                }
+
+                if (student) {
+                    if (student.marks === marks) {
+                        const grade = calculateGrade(marks);
+                        result.textContent = `Grade for ${name}: ${grade}`;
+                    } else {
+                        result.textContent = `The entered mark does not match the record for ${name}.`;
+                    }
+                } else {
+                    result.textContent = 'Student not found.';
+                }
+            } else {
+                result.textContent = 'Please enter a valid name and mark.';
+            }
+        }
+
+        function ClassAverage() {
+            let totalMarks = 0;
+            for (let i = 0; i < students.length; i++) {
+                totalMarks += students[i].marks;
+            }
+            const average = totalMarks / students.length;
+            document.getElementById('average').textContent = `Class Average: ${average}`;
+        }
+    </script>
+</body>
+</html>
+
+
