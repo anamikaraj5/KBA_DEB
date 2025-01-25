@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+</head>
+<body>
+    <h3>Array Operations</h3>
+    
+    <!-- Input for adding elements -->
+    <label>Enter element:</label>
+    <input type="text" id="ele" placeholder="Enter a number">
+    <button onclick="addElement()">Add</button>
+    <p id="dis"></p>
+
+    <!-- Dropdown for selecting an index -->
+    <label>Select index:</label>
+    <select id="dropdown" onchange="getElementByIndex()">
+        <option value="">Select Index</option>
+    </select>
+    <p id="indexDisplay"></p>
+
+    <!-- Display sorted array -->
+    <button onclick="sortDescending()">Sort Array (Descending)</button>
+    <p id="sorted"></p>
+
+    <!-- Input for searching an element -->
+    <label>Search for an element:</label>
+    <input type="text" id="searchEle" placeholder="Enter a number">
+    <button onclick="searchElement()">Search</button>
+    <p id="searchResult"></p>
+
+    <!-- Reverse the array -->
+    <button onclick="reverseArray()">Reverse Array</button>
+    <p id="reversed"></p>
+
+    <script>
+        let arr = [];
+
+        // Function to add an element to the array
+        function addElement() {
+            const ele = parseInt(document.getElementById("ele").value);
+
+            if (isNaN(ele)) {
+                alert("Please enter a valid number!");
+                return;
+            }
+
+            arr.push(ele);
+            document.getElementById("ele").value = ""; // Clear the input
+            document.getElementById("dis").innerHTML = "The entered array is: " + arr;
+
+            // Update the dropdown with new indices
+            updateDropdown();
+        }
+
+        // Function to update the dropdown with array indices using a for loop
+        function updateDropdown() {
+            const dropdown = document.getElementById("dropdown");
+            dropdown.innerHTML = "<option value=''>Select Index</option>";
+
+            for (let i = 0; i < arr.length; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.text = `Index ${i}`;
+                dropdown.appendChild(option);
+            }
+        }
+
+        // Function to get the element at the selected index
+        function getElementByIndex() {
+            const index = document.getElementById("dropdown").value;
+
+            if (index === "") {
+                document.getElementById("indexDisplay").innerHTML = "Please select an index.";
+                return;
+            }
+
+            document.getElementById("indexDisplay").innerHTML = `Index ${index} element is: ${arr[index]}`;
+        }
+
+        // Function to sort the array in descending order using the provided logic
+        function sortDescending() {
+            let temp;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] < arr[j]) {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            document.getElementById("sorted").innerHTML = "The array in sorted (descending) order is: " + arr;
+        }
+
+        // Function to search for an element in the array
+        function searchElement() {
+            const searchEle = parseInt(document.getElementById("searchEle").value);
+
+            if (isNaN(searchEle)) {
+                alert("Please enter a valid number to search!");
+                return;
+            }
+
+            const index = arr.indexOf(searchEle);
+            if (index !== -1) {
+                document.getElementById("searchResult").innerHTML = `Element ${searchEle} found at index ${index}.`;
+            } else {
+                document.getElementById("searchResult").innerHTML = `Element ${searchEle} not found in the array.`;
+            }
+        }
+
+        // Function to reverse the array elements using the correct logic
+        function reverseArray() {
+            let reversedArr = [];
+            
+            // Loop through the array and reverse the digits of each element
+            for (let i = 0; i < arr.length; i++) {
+                let number = arr[i];
+                let reverse = 0;
+                let temp = number;
+
+                // Reverse digits of each number
+                while (temp > 0) {
+                    let digit = temp % 10;
+                    reverse = reverse * 10 + digit;
+                    temp = Math.floor(temp / 10);
+                }
+
+                reversedArr.push(reverse);
+            }
+
+            document.getElementById("reversed").innerHTML = "The reversed array is: " + reversedArr;
+        }
+    </script>
+</body>
+</html>
+
+

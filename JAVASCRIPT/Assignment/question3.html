@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>First Number : </label>
+    <input type="text" id="first">
+    <label>Second Number : </label>
+    <input type="text" id="second">
+    <button onclick="Compare()">Compare</button>
+    <p id="display"></p>
+
+    <script>
+        function Compare()
+        {
+            
+            first=document.getElementById("first").value
+            second=document.getElementById("second").value
+
+            document.getElementById("first").value=""
+            document.getElementById("second").value=""
+
+            if(first===second)
+            {
+                document.getElementById("display").innerHTML=`${first} is equal to ${second}`
+            }
+            else if(first>second)
+            {
+                document.getElementById("display").innerHTML=`${first} is greater than ${second}`           
+            }
+            else
+            {
+                document.getElementById("display").innerHTML=`${first} is smaller than ${second}`
+            }
+        }
+    </script>
+</body>
+</html>

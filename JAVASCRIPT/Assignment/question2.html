@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name : </label>
+    <input type="text">
+    <label>Address</label>
+    <input type="text">
+    <label>Degree</label>
+    <input type="radio">Btech
+    <input type="radio">Mtech
+    <input type="radio">MCA
+    <input type="radio" onclick="Others()">Others
+    <p id="others1"></p>
+
+    <script>
+       function Others()
+       {
+            display=document.getElementById("others1")
+            other=document.createElement("select")
+            op1=document.createElement("option")
+            op1.textContent="BCA"
+            other.appendChild(op1)
+            op1=document.createElement("option")
+            op1.textContent="PGDCA"
+            other.appendChild(op1)
+            op1=document.createElement("option")
+            op1.textContent="BCom"
+            other.appendChild(op1)
+            op1=document.createElement("option")
+            op1.textContent="MPhil"
+            other.appendChild(op1)
+
+            display.appendChild(other)
+       }
+    </script>
+</body>
+</html>

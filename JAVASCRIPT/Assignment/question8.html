@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name of Subject : </label>
+    <input type="text" id="sub">
+    <label>Mark : </label>
+    <input type="text" id="mark">
+    <button onclick="Grade()">Submit</button>
+    <p id="x"></p>
+
+    <script>
+        let arr = []
+        let obj , total_marks , sum_marks = 0 ,percentage
+        function Grade()
+        {
+            subj=document.getElementById("sub").value 
+            mark=parseInt(document.getElementById("mark").value) 
+
+            if (mark==0 || mark < 0 || mark > 100) {
+                alert("Please enter a valid mark between 0 and 100.");
+                return;
+            }
+
+            arr.push({ subj, marks: mark });
+            console.log(arr);
+
+            document.getElementById("sub").value=""
+            document.getElementById("mark").value =""
+
+            total_marks=arr.length * 100 
+           
+            sum_marks+=mark
+
+            if(sum_marks!=0)
+            {
+                percentage= (sum_marks/total_marks) *100 
+                console.log(percentage)
+            }
+            else
+            {
+                document.getElementById("x").innerHTML="Please enter any marks"
+            }
+            
+            if(percentage>=90)
+            {
+                document.getElementById("x").innerHTML="Grade : A+"
+            }
+
+            else if(percentage<90 && percentage>=80)
+            {
+                document.getElementById("x").innerHTML="Grade : A"
+            }
+
+            else if(percentage<80 && percentage>=70)
+            {
+                document.getElementById("x").innerHTML="Grade : B+"
+            }
+
+            else if(percentage<70 && percentage>=60)
+            {
+                document.getElementById("x").innerHTML="Grade : C+"
+            }
+
+            else if(percentage<60 && percentage>=50)
+            {
+                document.getElementById("x").innerHTML="Grade : C"
+            }
+        }
+    </script>
+</body>
+</html>

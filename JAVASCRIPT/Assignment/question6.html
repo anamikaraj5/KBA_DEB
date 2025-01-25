@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter element</label>
+    <input type="text" id="ele">
+    <p id="dis"></p>
+    <button onclick="Elements()">Submit</button>
+
+    <script>
+        arr=[]
+
+        function Elements()
+        {
+            ele=parseInt(document.getElementById("ele").value)
+            document.getElementById("ele").value=""
+            arr.push(ele)
+            document.getElementById("dis").innerHTML="The entered array is : "+[arr]
+        }
+        
+    </script>
+</body>
+</html>

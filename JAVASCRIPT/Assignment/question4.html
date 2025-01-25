@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name</label>
+    <input type="text" id="name" placeholder="please enter any 5 names"> <br> <br>
+    <button onclick="Student()">Submit</button> <br><br>
+    <label>Enter Roll no</label>
+    <select onclick="Rollno(value)">
+        <option value="0">1</option>
+        <option value="1">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+        <option value="4">5</option>
+    </select>
+    <p id="display"></p>
+
+    <script>
+        arr=[]
+        function Student()
+        {
+            names=document.getElementById("name").value
+            
+            if (arr.length >= 5) {
+                alert("You can only enter up to 5 names.");
+                return;
+            }
+
+            arr.push(names)
+            console.log(arr)
+        }
+
+        function Rollno(values)
+        {
+            switch(values)
+            {
+                case '0':
+                        document.getElementById("display").innerHTML=arr[0]
+                        break
+
+                case '1':
+                        document.getElementById("display").innerHTML=arr[1]
+                        break
+
+                case '2':
+                        document.getElementById("display").innerHTML=arr[2]
+                        break
+
+                case '3':
+                        document.getElementById("display").innerHTML=arr[3]
+                        break
+
+                case '4':
+                        document.getElementById("display").innerHTML=arr[4]
+                        break
+
+                default: 
+                        document.getElementById("display").innerHTML="Please enter a valid roll no"
+                        break
+            }
+
+            
+        }
+    </script>
+</body>
+</html>

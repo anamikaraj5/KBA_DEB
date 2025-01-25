@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter side of square : </label>
+    <input type="text" id="side"> <br>
+    <button onclick="SquareArea()">Area of Square</button>
+    <p id="area1"></p>
+
+    <label>Enter the length : </label>
+    <input type="text" id="l"> <br>
+    <label>Enter the breadth : </label>
+    <input type="text" id="b"> <br>
+    <button onclick="RectangleArea()">Area of Rectangle</button>
+    <p id="area2"></p>
+
+    <label>Enter radius : </label>
+    <input type="text" id="rad"> <br>
+    <button onclick="CircleArea()">Area of Circle</button>
+    <p id="area3"></p>
+
+    <script>
+        function SquareArea()
+        {
+            side=document.getElementById("side").value
+            area=side*side
+            document.getElementById("area1").innerHTML=area
+        }
+
+        function RectangleArea()
+        {
+            side1=document.getElementById("l").value
+            side2=document.getElementById("b").value
+            area=side1*side2
+            document.getElementById("area2").innerHTML=area
+        }
+
+        function CircleArea()
+        {
+            r=document.getElementById("rad").value
+            area=3.14*r**2
+            document.getElementById("area3").innerHTML=area
+        }
+    </script>
+    
+</body>
+</html>
