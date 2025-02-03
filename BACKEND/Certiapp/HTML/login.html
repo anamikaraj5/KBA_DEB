@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-100  flex justify-center pt-36 ">
+    <form class="bg-white w-96 h-[370px] rounded-lg" onsubmit="Login(event)">
+        <p class="text-center pt-6 text-3xl text-purple-600 font-bold">Login</p>
+        <div>
+            <div class="pt-8 pl-7">
+                <p class="text-1xl font-bold">Email:</p>
+                <input type="email" class="hover:ring-2 hover:ring-red-400 rounded-sm border-solid border-2 border-slate-300 w-80 h-[35px]" id="email">
+            </div>
+
+            <div class="pt-5 pl-7">
+                <p class="text-1xl font-bold">Password:</p>
+                <input type="password" class="hover:ring-2 hover:ring-red-400 rounded-sm border-solid border-2 border-slate-300 w-80 h-[35px]" id="pswd">
+            </div>
+
+            <div class="pt-7 pl-7 pr-14 flex justify-between">
+                <a href="abc">Forgot Password?</a>
+                <button class="text-center bg-purple-500 rounded w-[100px] h-[30px]">Login</button>
+            </div>
+
+            <div class="pt-5 pl-7 pr-16 flex justify-between">
+                <p>Don't have an account?</p>
+                <a href="signup.html" class="text-purple-600">Sign Up</a>
+            </div>
+
+        </div>
+    </form>
+
+    <script>
+        async function Login(event) {
+            event.preventDefault()
+
+            const email=document.getElementById("email").value 
+            const paswd = document.getElementById("pswd").value 
+
+            const response = await fetch("http://127.0.0.1:9000/login",{
+                method:"POST",
+                credentials:"include",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                    Email:email,
+                    Password:paswd
+                })
+            })
+            console.log(response.status)
+
+            const data = await response.text()
+
+            if(response.status == 200)
+            {
+                console.log("Login Succesfull....")
+            }
+            else if(response.status == 401)
+            {
+                alert("Unauthorized Access!!!!")
+            }
+            else if(response.status == 400)
+            {
+                alert("Email not registered")
+            }
+            else
+            {
+                alert("Please try again later.....")
+            }
+        }
+    </script>
+</body>
+</html>

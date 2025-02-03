@@ -50,7 +50,7 @@
         <div>
             <p class="md:mt-[20px] md:ml-[750px] mt-[40px] mx-[160px] text-5xl text-purple-950 ">Add</p>
 
-            <div class="bg-purple-200 h-[430px] md:w-[800px] w-[370px] md:ml-[450px] mx-[20px] mt-[40px] pt-[20px]">
+            <!-- <div class="bg-purple-200 h-[430px] md:w-[800px] w-[370px] md:ml-[450px] mx-[20px] mt-[40px] pt-[20px]">
                 <div class="bg-purple-950 pt-[10px] mx-[20px] h-[60px] text-xl md:text-4xl text-white pl-[20px] flex justify-between">
                     <p>Enter a note ...</p>  
                     <img src="Images/mic.svg" class="md:h-[40px] h-[30px] mt-[5px] mr-[10px]">
@@ -121,7 +121,38 @@
                         <img src="Images/tick.svg" class="md:h-[60px] md:mx-[50px] h-[30px]">
                     </div>
 
-                </div>
+                </div> -->
+
+                <form class="flex flex-col gap-2 md:ml-[550px] mt-[50px] px-[20px] pt-[30px] bg-purple-200 h-[460px] w-[380px] md:w-[500px] pt-[10px] rounded-lg text-2xl border-4 border-purple-950 shadow-lg shadow-purple-900">
+                    <label>Category</label>
+                    <select class="h-[40px] md:w-[450px] bg-purple-300">
+                        <option>Shopping</option>
+                        <option>Food</option>
+                        <option>Entertainment</option>
+                        <option>Transport</option>
+                        <option>Travel</option>
+                        <option>Education</option>
+                        <option>Health</option>
+                        <option>Furniture</option>
+                        <option>Fruits</option>
+                        <option>Clothing</option>
+                        <option>Pets</option>
+                        <option>Vegetables</option>
+                        <option>Phone</option>
+                        <option>Salary</option>
+                        <option>Others</option>
+                    </select>
+                  
+                    <label class="mt-[20px]">Expense</label>
+                    <input type="text" class="h-[40px] md:w-[450px] bg-purple-300"> 
+                    <label class="mt-[20px]">Date</label>
+                    <input type="date" class="h-[40px] md:w-[450px] bg-purple-300">
+
+                    <div class="flex justify-between mt-[30px] mx-[30px]">
+                        <button class="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl  border border-4 border-purple-950 hover:bg-purple-400">Cancel</button>
+                        <button class="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl border border-4 border-purple-950 hover:bg-purple-400">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
 

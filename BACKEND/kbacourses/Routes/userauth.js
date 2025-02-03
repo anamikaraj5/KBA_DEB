@@ -29,7 +29,9 @@ userauth.post('/signup',async(req,res)=>
 
 
     //same name given in body(postman) must be given here - destructuring
-    const {FirstName,LastName,Roles,Email,Password} = req.body
+    const {Name,Email,Password,Roles} = req.body
+    console.log(Email);
+    
     // console.log(FirstName,LastName,Email,Password)
 
     //before encryption making it as map
@@ -48,7 +50,7 @@ userauth.post('/signup',async(req,res)=>
         const newpswd= await bcrypt.hash(Password,10)
 
         //after encryption
-        user.set(Email,{FirstName,LastName,Roles,Password:newpswd})
+        user.set(Email,{Name,Password:newpswd,Roles})
         res.status(201).send("Successful Registration")
         console.log(user.get(Email))
     }
@@ -69,7 +71,11 @@ userauth.post('/login', async (req,res)=>
     try
     {
         const {Email,Password} = req.body
+        console.log(Email);
+        
         const result= user.get(Email)
+        console.log(result);
+        
         
         if(result)
         {
@@ -82,7 +88,7 @@ userauth.post('/login', async (req,res)=>
                 //sign - used to create token,in payload 1 field must be unique , for signing secret key is used
                 const token = jwt.sign({Email:Email,Roles:result.Roles},process.env.SECRET_KEY,{expiresIn:'1h'})
                 console.log(token)
-                res.cookie('userauthtoken',token,{httpOnly:true})
+                res.cookie('userauthtoken',token,{httpOnly:true, sameSite: 'none',secure: true})
                 res.status(200).send("Login Successfull")
             }
             else{
@@ -143,5 +149,14 @@ userauth.post('/login', async (req,res)=>
     
   
 // })
+
+
+//logout
+
+userauth.get('/logout',(req,res)=>
+{
+    res.clearCookie('userauthtoken')
+    res.status(200).send("Logged Out.....")
+})
 
 export {userauth}

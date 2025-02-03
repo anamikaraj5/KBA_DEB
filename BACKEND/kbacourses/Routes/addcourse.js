@@ -43,6 +43,7 @@ adminauth.post('/addcourse',authenticate,(req,res)=>
       
     })
 
+//VIEW - READ
 //GET METHOD
 
 //using params
@@ -77,7 +78,7 @@ adminauth.get('/getcourse',(req,res)=>
     }
 })
 
-
+//UPDATE
 //PUT METHOD
 
 adminauth.put('/updatecourse',authenticate,(req,res)=>
@@ -123,4 +124,25 @@ adminauth.patch('/updatecourse2',authenticate,admincheck,(req,res)=>
             }
 
 })
+
+//DELETE
+//delete course
+
+adminauth.delete('/deletecourse',authenticate,admincheck,(req,res)=>
+{
+    const name=req.query.coursename
+    // console.log(name)
+    const result=course.get(name)
+    if(result)
+    {
+        course.delete(name)
+        res.status(200).send("Course deleted")
+    }
+    else
+    {
+        res.status(404).send("Course not found")
+    }
+
+})
+
 export {adminauth}

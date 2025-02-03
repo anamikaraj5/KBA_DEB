@@ -24,7 +24,7 @@ user.post('/signup',async(req,res)=>
             const newpswd = await bcrypt.hash(Password,10)
 
             users.set(Email,{Name,Role,Password:newpswd})
-            res.status(201).send("Successfully signe up")
+            res.status(201).send("Successfully signed up")
             console.log(users.get(Email))
         }
     }

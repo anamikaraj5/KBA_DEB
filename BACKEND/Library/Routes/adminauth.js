@@ -1,5 +1,6 @@
 import {Router} from 'express'
-import {authenticate} from '../Middleware/auth.js'
+import {authenticate} from '../Middleware/authenticate.js'
+import { admincheck } from '../Middleware/admincheck.js'
 
 const adminauth=Router()
 const library = new Map()
@@ -103,4 +104,22 @@ adminauth.put('/updatebook',authenticate,(req,res)=>
         
     })
     
+
+//delete 
+
+adminauth.delete('/deletebook',authenticate,admincheck,(req,res)=>
+{
+    const bookid = req.query.bid
+    const result= library.get(bookid)
+    if(result)
+    {
+        library.delete(bookid)
+        res.status(200).send("Deleted a book")
+    }
+    else
+    {
+        res.status(404).send("Book not found")
+    }
+})
+
 export {adminauth}

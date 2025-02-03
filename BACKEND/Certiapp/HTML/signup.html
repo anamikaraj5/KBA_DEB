@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-100  flex justify-center pt-36">
+    <form class="w-96 h-[520px] bg-white rounded-lg" onsubmit="Sign(event)">
+    
+            <h3 class="text-center pt-6 text-3xl text-purple-600 font-bold">Sign Up</h3>
+
+            <div class="ml-7 mt-6 ">
+                <p class="text-1xl font-medium" >Name :</p>
+                <input type="text" class="hover:ring-2  rounded-sm border-solid border-2 border-slate-300 w-80 h-[35px]" id="name" required> 
+            </div>
+            
+            <div class="ml-7 mt-6 ">
+                <p class="text-1xl font-medium">Email :</p> 
+                <input type="email" class="hover:ring-2  rounded-sm border-solid border-2 border-slate-300 w-80 h-[35px]"  id="email" required> 
+            </div>
+            
+            <div class="ml-7 mt-6 ">
+                <p class="text-1xl font-medium">Password :</p> 
+                <input type="password" class="hover:ring-2  rounded-sm border-solid border-2 border-slate-300 w-80 h-[35px]" id="pswd"  required> 
+            </div>
+            
+            <div class="ml-7 mt-6 ">
+                <p class="text-1xl font-medium">Role :</p> 
+                <select name="price" class="hover:ring-2  rounded-sm border-solid border-2 border-slate-300 w-80 h-[35px]" id="role">
+                    <option value="p1" selected>Admin</option>
+                    <option value="p2">User </option>
+                </select> 
+            </div>
+            
+            <div class="ml-[140px] mt-6 pt-1.5 text-center bg-purple-500 rounded w-[100px] h-[40px]">
+                <button class="text-white" type="submit">Sign Up</button> 
+            </div>
+            
+            <div class="pt-6 flex justify-center">
+                <p>Already have an Account? &nbsp; <a href="login.html" class="text-purple-600">Login</a></p>
+            </div>
+            
+    </form>
+
+    <script>
+        async function Sign(event) {
+            event.preventDefault()
+
+            const name = document.getElementById("name").value 
+            const passd = document.getElementById("pswd").value 
+            const email = document.getElementById("email").value 
+            const roles = document.getElementById("role").value 
+
+            const response = await fetch("http://127.0.0.1:9000/signup",{
+                method:"POST",
+                credentials:"include",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                    Name:name,
+                    Email:email,
+                    Password:passd,
+                    Roles:roles
+                })
+            })
+            const rs= response.status
+            console.log(rs)
+
+            const data=await response.text()
+
+            if(rs==201)
+            {
+                window.location.href='login.html'
+            }
+            else if(rs==400)
+            {
+                alert("User already exists")
+            }
+            else
+            {
+                alert("Please try again later....")
+            }
+        }
+    </script>
+</body>
+</html>

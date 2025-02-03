@@ -2,7 +2,7 @@ import {Router} from 'express'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
-import {authenticate} from '../Middleware/auth.js'
+import {authenticate} from '../Middleware/authenticate.js'
 
 
 dotenv.config()
@@ -79,5 +79,12 @@ userauth.post('/login', async (req,res)=>
 })
 
 
+//LOGOUT
+
+userauth.get('/logout',(req,res)=>
+{
+    res.clearCookie('userauthtoken')
+    res.status(200).send("Logged out...")
+})
 
 export {userauth}
