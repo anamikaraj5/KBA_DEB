@@ -1,6 +1,7 @@
 import express,{json} from 'express'
 import { userauth } from './Routes/userauth.js'
 import { adminauth } from './Routes/addcourse.js'
+import { adminauth1 } from './Routes/multerbase64.js'
 import mongoose from 'mongoose'
 
 const app=express() 
@@ -10,6 +11,7 @@ app.use(json())
 
 app.use('/',userauth)
 app.use('/',adminauth)
+app.use('/',adminauth1)
 
 //connecting databases
 

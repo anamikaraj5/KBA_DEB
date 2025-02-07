@@ -5,6 +5,9 @@ import { Expenses } from '../Schema/expenses.js'
 
 const setbudget=Router()
 
+
+//SETTING BUDGET 
+
 setbudget.post('/setbudget',authenticate,async(req,res)=>
     {
         try{
@@ -29,6 +32,7 @@ setbudget.post('/setbudget',authenticate,async(req,res)=>
                         )
             
                         await newbudget.save()
+                        console.log(newbudget)
                         res.status(201).send("Successful added a budget.....")
               
                     }
@@ -42,10 +46,39 @@ setbudget.post('/setbudget',authenticate,async(req,res)=>
           
 })
 
+
+
+//VIEW BUDGET
+
+setbudget.get('/viewbudget',async(req,res)=>
+    {
+        try{
+            const month=req.query.monthname
+    
+            const result = await budgets.findOne({month:month})
+    
+            if(result)
+            {
+                res.send(result)
+                console.log(result)
+               
+            }
+            else
+            {
+                res.status(400).send("Budget not found for the given month")
+            }
+        }
+        catch
+        {
+            res.status(500).send("Internal server error")
+        }
+    })
+
+
 setbudget.get('/viewbudget',async(req,res)=>
 {
     try{
-        const cat=req.query.category
+        const cat=req.query.month
 
         const data = await Expenses.find({category:cat})
         console.log(data);
@@ -57,9 +90,14 @@ setbudget.get('/viewbudget',async(req,res)=>
             if(data.length>0)
             {
                 console.log(data)
-                const spent=data.amount
+                let spent = 0;
+                data.forEach(expense => {
+                    spent += expense.amount;
+                })
+
                 const limits = result.limit
                 const remaining = limits - spent 
+
                 if(remaining<=0)
                 {
                     return res.status(200).json({
@@ -93,4 +131,83 @@ setbudget.get('/viewbudget',async(req,res)=>
         res.status(500).send("Internal server error")
     }
 })
+
+
+
+//budgets page
+
+setbudget.get('/viewbudget2', async (req, res) => {
+    try {
+        const month = req.query.dates
+     
+        const data = await Expenses.find({date:month})
+        const AllBudgets = await budgets.find({});
+        const result = [];
+
+        for (const budget of AllBudgets) {
+            if (budget.date.slice(3, 10) === month) {
+                result.push(budget);
+            }
+        }
+
+        if (result.length === 0) {
+            return res.status(404).send("No budget details found for the given month");
+        }
+
+        let totalSpent = 0;
+expenses.forEach(expense => {
+    if (expense.category !== "Salary") {
+        totalSpent += expense.amount;
+    }
+});
+
+let totalBudget = 0;
+let formattedBudgets = [];
+
+result.forEach(entry => {
+    if (entry.category !== "Salary") {
+        totalBudget += entry.limit;
+    }
+
+    formattedBudgets.push({
+        category: entry.category,
+        budget: entry.limit,
+        spent: totalSpent,
+        remaining: entry.limit - totalSpent
+    });
+});
+
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).send("Internal server error");
+    }
+});
+
+
+
+//UPDATE BUDGET
+
+setbudget.put('/updatebudget',authenticate,async(req,res)=>
+    {
+        
+            const {Category,Limit,Month} = req.body
+            
+            const result = await Expenses.findOne({category:Category})
+            if(result)
+                {
+                    result.category=Category,
+                    result.limit=Limit,
+                    result.month=Month
+    
+                    await result.save()
+                    console.log(result)
+                    res.status(200).send("Budget Updated successfully...")
+                }
+            else
+                {
+                    res.status(400).send("Budget details not found")
+                }
+        
+    })
+
 export{setbudget}

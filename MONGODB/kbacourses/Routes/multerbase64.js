@@ -4,7 +4,7 @@ import { admincheck } from '../Middleware/admin.js'
 import { course } from '../schemas/schema2.js'
 import { upload } from '../Middleware/upload1.js'
 
-const adminauth = Router()
+const adminauth1 = Router()
 
 const convertToBase64=(buffer)=>{
     return buffer.toString("base64")
@@ -12,7 +12,7 @@ const convertToBase64=(buffer)=>{
 
 
 
-adminauth.post('/addcourse1',authenticate,upload.single('courseimg'),async(req,res)=>
+adminauth1.post('/addcourse1',authenticate,upload.single('courseimg'),async(req,res)=>
     {
         try{
     
@@ -32,7 +32,7 @@ adminauth.post('/addcourse1',authenticate,upload.single('courseimg'),async(req,r
                     else
                     {
                         let imageBase64 = null
-                        if(req.file && req.file.buffer)
+                        if(req.file)
                         {
                             imageBase64=convertToBase64(req.file.buffer)
                         }
@@ -73,5 +73,5 @@ adminauth.post('/addcourse1',authenticate,upload.single('courseimg'),async(req,r
           
         })
 
-    export {adminauth}
+    export {adminauth1}
                     
