@@ -4,6 +4,7 @@ import { adminauth } from './Routes/addcourse.js'
 // import { adminsign } from './Routes/adminsignup.js'
 import cors from 'cors'
 
+
 const app=express()  //any variable name can be given
 
 // app.use(cors({origin:'127.0.0.1:5500',credentials:true})) 
@@ -41,4 +42,3 @@ app.post('/',function(req,res){
 app.listen(8000,function(){
     console.log("server is listening at 8000")
 })
-

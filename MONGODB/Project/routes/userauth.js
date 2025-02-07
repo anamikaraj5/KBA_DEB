@@ -2,9 +2,9 @@ import {Router} from 'express'
 import dotenv from 'dotenv'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import { details } from '../Schema/account.js'
 
 const userauth = Router()
-const user= new Map()
 
 dotenv.config()
 
@@ -15,16 +15,25 @@ userauth.post('/signup',async(req,res)=>
     try{
         const {FullName,Email,Phone,Password} = req.body
 
-        if(user.get(Email))
+        const result = await details.findOne({email:Email})
+        if(result)
         {
             res.status(400).send("User already exists")
         }
         else
         {
             const newpswd = await bcrypt.hash(Password,10)
-            user.set(Email,{FullName,Phone,Password:newpswd})
+            const newuser = new details(
+                {
+                    fullname:FullName,
+                    email:Email,
+                    phone:Phone,
+                    password:newpswd
+                }
+            )
+
+            await newuser.save()
             res.status(201).send("Successfully Registered....")
-            console.log(user.get(Email))
         }
     }
     catch
@@ -40,13 +49,14 @@ userauth.post('/login',async(req,res)=>
 {
     try{
         const {Email,Password} = req.body 
-        const result= user.get(Email)
-        if(Email)
+        
+        const result = await details.findOne({email:Email})
+        if(result)
         {
-            const valid= await bcrypt.compare(Password,result.Password)
+            const valid= await bcrypt.compare(Password,result.password)
             if(valid)
             {
-                const token = jwt.sign({Email:Email,Role:result.Role},process.env.SECRET_KEY,{expiresIn:'2h'})
+                const token = jwt.sign({Email:Email},process.env.SECRET_KEY,{expiresIn:'2h'})
                 res.cookie('userauthtoken',token,{httpOnly:true})
                 res.status(200).send("Successfully logged in....")
             }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-[450px] h-[390px] bg-blue-200 mx-[auto] mt-[250px] rounded-lg">
+        <h1 class="text-3xl font-bold flex justify-center p-6 text-red-900">Expense Tracker</h1>
+
+        <label class="mx-[30px]">Categories</label>
+        <select id="categories">
+            <option value="1">Shopping</option>
+            <option value="2">Health</option>
+            <option value="3">Food</option>
+            <option value="4">Travel</option>
+            <option value="5">Housing</option>
+            <option value="6" onclick="Others()">Others</option>
+        </select>  <br>
+        <p id="others1" class="ml-[100px] mt-[10px]"></p>
+        <label class="mx-[30px]">Amount</label>
+        <input type="text" id="amount" class="ml-[20px] mt-[20px]"> <br>
+        <label class="mx-[30px]">Date</label>
+        <input type="date" id="date" class="ml-[40px] mt-[20px]"> <br>
+        <button onclick="Submit()" class="bg-blue-600 text-xl text-white rounded-md w-[100px] ml-[170px] mt-[30px] h-[35px]">Submit</button> <br>
+
+        <button onclick="Show()" class="bg-purple-900 text-white rounded-md w-[200px] h-[35px] mt-[30px] ml-[100px]">Show My Expense</button>
+        <select id="month" class="h-[35px] ml-[20px] bg-blue-300">
+            <option value="1">JAN</option>
+            <option value="2">FEB</option>
+            <option value="3">MAR</option>
+            <option value="4">APR</option>
+            <option value="5">MAY</option>
+            <option value="6">JUN</option>
+            <option value="7">JUL</option>
+            <option value="8">AUG</option>
+            <option value="9">SEP</option>
+            <option value="10">OCT</option>
+            <option value="11">NOV</option>
+            <option value="12">DEC</option>
+        </select>
+        <p id="dis" class="ml-[190px] mt-[5px] text-xl text-red-600"></p>
+
+        <script>
+            let expenses = new Map();
+
+            function Others() {
+                let display = document.getElementById("others1");
+                let other = document.createElement("input");
+                display.appendChild(other);
+            }
+
+            function Submit() {
+                let cat = document.getElementById("categories").value;
+                let amount = parseInt(document.getElementById("amount").value);
+                let date = document.getElementById("date").value;
+                let month = date.slice(5, 7); 
+
+                if (!expenses.has(month)) {
+                    expenses.set(month, 0);
+                }
+                expenses.set(month, expenses.get(month) + amount);
+
+                document.getElementById("amount").value = "";
+                document.getElementById("date").value = "";
+            }
+
+            function Show() {
+                let month = document.getElementById("month").value.padStart(2, '0')
+                document.getElementById("dis").innerHTML = expenses.get(month) || 0;
+            }
+        </script>
+    </div>
+</body>
+</html>
