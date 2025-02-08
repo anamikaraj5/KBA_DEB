@@ -48,10 +48,10 @@
         </div>
 
         <div class="md:ml-[550px] mx-[15px] mt-[40px]">
-            <div class="bg-purple-200 h-[430px] w-[380px] md:w-[500px] pt-[10px] rounded-lg">
-                <p class="text-4xl text-purple-950 text-center mt-[20px]">Set Budget</p>
+            <p class="text-4xl text-purple-950 text-center mt-[20px] font-bold">Set Budget</p>
+            <form class="bg-purple-200 h-[430px] w-[380px] md:w-[500px] pt-[10px] rounded-lg mt-[30px]">
     
-                <div class="flex flex-col gap-4 mx-[20px] mt-[50px] text-2xl">
+                <div class="flex flex-col gap-4 mx-[20px] mt-[10px] text-2xl">
                     <label >Category : </label>
                     <select  class="h-[40px] md:w-[450px] bg-purple-300">
                         <option>Shopping</option>
@@ -73,13 +73,16 @@
                   
                     <label>limit: </label>
                     <input type="text" class="h-[40px] md:w-[450px] bg-purple-300">
+                    <label>Date:</label>
+                    <input type="date" class="h-[40px] md:w-[450px] bg-purple-300"> 
                 </div>
 
                 <div class="flex justify-between mt-[50px] mx-[30px]">
-                    <a href="budget.html" class="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl pt-[10px] border border-4 border-purple-950 hover:bg-purple-400">CANCEL</a>
-                    <a href="budget.html" class="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl pt-[10px] border border-4 border-purple-950 hover:bg-purple-400">SET</a>
+                    <button class="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl pt-[10px] border border-4 border-purple-950 hover:bg-purple-400"><a href="budget.html" >CANCEL</a></button>
+                    <button class="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl pt-[10px] border border-4 border-purple-950 hover:bg-purple-400"><a href="budget.html" >SET</a></button>
+                    
                 </div>
-            </div>
+            </form>
 
             
         </div>

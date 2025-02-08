@@ -16,10 +16,7 @@ expensetrack.post('/addexpense',authenticate,async(req,res)=>
     
                 if (result)
                 {
-                    // If category already exists on the same date, update the amount
-                    result.amount += Expense
-                    await result.save()
-                    res.status(200).json({ message: "Expense updated successfully" })
+                    res.status(200).send("Expense already added!!!!!")
                 } 
                 else 
                 {
@@ -41,11 +38,10 @@ expensetrack.post('/addexpense',authenticate,async(req,res)=>
                 res.status(500).send("Internal Server error");
             }
             
-        
-        
-      
 })
 
+
+//VIEW EXPENSE
 
 expensetrack.get('/viewexpense',async(req,res)=>
     {
@@ -71,81 +67,61 @@ expensetrack.get('/viewexpense',async(req,res)=>
     })
 
 
-    expensetrack.get('/viewrecords', async (req, res) => {
-        try {
-            const { month } = req.query;
-            if (!month) {
-                return res.status(400).send("Month query parameter is required");
-            }
-    
-            const allExpenses = await Expenses.find({});
-            const result = allExpenses.filter(expense => expense.date.slice(0, 7) === month);
-    
-            if (!result.length) {
-                return res.status(404).send("No expense details found for the given month");
-            }
-    
-            let totalExpense = 0;
-            let totalIncome = 0;
-    
-            result.forEach(entry => {
-                if (entry.category.toLowerCase() === 'salary') {
-                    totalIncome += entry.amount;
-                } else {
-                    totalExpense += entry.amount;
-                }
-            });
-    
-            res.status(200).json({
-                expenses: result,
-                totalExpense,
-                totalIncome
-            });
-        } catch (error) {
-            console.error("Error:", error);
-            res.status(500).send("Internal server error");
-        }
-    });
 
 //total records page
-    expensetrack.get('/viewexpense2', async (req, res) => {
-        try {
+expensetrack.get('/viewexpense2', async (req, res) => 
+    {
+        try{
+
             const month = req.query.dates
          
-            const allExpenses = await Expenses.find({});
-            const result = [];
+            const Allexpenses = await Expenses.find()
+            const result = []
+            let TotalExpense = 0
+            let TotalIncome = 0
     
-            for (const expense of allExpenses) {
-                if (expense.date.slice(3, 10) === month) {
-                    result.push(expense);
+            for(const expense of Allexpenses) 
+            {
+                if(expense.date.slice(3, 10) === month) 
+                {
+                    result.push(expense)
                 }
             }
     
-            if (result.length === 0) {
-                return res.status(404).send("No expense details found for the given month");
+            if(result.length==0) 
+            {
+                 res.status(404).json({message: "No expense details found for the given month"})
             }
     
-            let totalExpense = 0;
-            let totalIncome = 0;
+            else
+            {
+                result.forEach(entry => 
+                    {
+                        if(entry.category.toLowerCase() === 'salary') 
+                        {
+                            TotalIncome += entry.amount
+                        } 
+                        else 
+                        {
+                            TotalExpense += entry.amount
+                        }
+                    })
+            
+                    res.status(200).json({
+                        expenses: result,
+                        TotalExpense,
+                        TotalIncome
+                    })
+            }
     
-            result.forEach(entry => {
-                if (entry.category.toLowerCase() === 'salary') {
-                    totalIncome += entry.amount;
-                } else {
-                    totalExpense += entry.amount;
-                }
-            });
-    
-            res.status(200).json({
-                expenses: result,
-                totalExpense,
-                totalIncome
-            });
-        } catch (error) {
-            console.error("Error:", error);
-            res.status(500).send("Internal server error");
+            
+        } 
+        catch(error) 
+        {
+            console.error("Error:", error)
+            res.status(500).send("Internal server error")
         }
-    });
+    })
     
 
 
@@ -156,7 +132,7 @@ expensetrack.put('/updateexpense',authenticate,async(req,res)=>
     
         const {Category,Expense,Date} = req.body
         
-        const result = await Expenses.findOne({category:Category})
+        const result = await Expenses.findOne({category:Category,date:Date})
         if(result)
             {
                 result.category=Category,
@@ -169,7 +145,7 @@ expensetrack.put('/updateexpense',authenticate,async(req,res)=>
             }
         else
             {
-                res.status(400).send("Category details not found")
+                res.status(400).send("Expense details not found")
             }
     
 })
