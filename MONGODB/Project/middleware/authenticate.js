@@ -19,7 +19,6 @@ const authenticate=(req,res,next)=>
         {
             const verified = jwt.verify(token,process.env.SECRET_KEY)
             console.log(verified)
-            
             next()
         }
         else

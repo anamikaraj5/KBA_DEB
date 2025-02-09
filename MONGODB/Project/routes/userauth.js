@@ -57,7 +57,7 @@ userauth.post('/login',async(req,res)=>
             const valid= await bcrypt.compare(Password,result.password)
             if(valid)
             {
-                const token = jwt.sign({Email:Email},process.env.SECRET_KEY,{expiresIn:'2h'})
+                const token = jwt.sign({Email:Email},process.env.SECRET_KEY,{expiresIn:'7h'})
                 res.cookie('userauthtoken',token,{httpOnly:true})
                 res.status(200).send("Successfully logged in....")
             }

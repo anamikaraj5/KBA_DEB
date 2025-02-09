@@ -9,18 +9,16 @@ const expensetrack = new Router()
 expensetrack.post('/addexpense',authenticate,async(req,res)=>
     {
         try{
-                console.log("hiii")
                 const {Category,Expense,Date} = req.body
            
                 const result = await Expenses.findOne({date:Date,category:Category }) 
     
                 if (result)
                 {
-                    res.status(200).send("Expense already added!!!!!")
+                    res.status(200).send("Expense details already added!!!!!")
                 } 
                 else 
                 {
-                    // If no entry exists for this category on the same date, add a new record
                     const newExpense = new Expenses({
                         date:Date,
                         category:Category,
@@ -69,11 +67,11 @@ expensetrack.post('/addexpense',authenticate,async(req,res)=>
 
 
 //total records page
-expensetrack.get('/viewexpense2', async (req, res) => 
+expensetrack.get('/viewexpense2', async(req,res) => 
     {
         try{
 
-            const month = req.query.dates
+            const month = req.query.dates  //(MM-YYYY)
          
             const Allexpenses = await Expenses.find()
             const result = []
