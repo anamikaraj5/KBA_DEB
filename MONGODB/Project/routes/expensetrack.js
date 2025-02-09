@@ -43,28 +43,28 @@ expensetrack.post('/addexpense',authenticate,async(req,res)=>
 
 //VIEW EXPENSE
 
-expensetrack.get('/viewexpense',async(req,res)=>
-    {
-        try{
-            const date1=req.query.dates
+// expensetrack.get('/viewexpense',async(req,res)=>
+//     {
+//         try{
+//             const date1=req.query.dates
     
-            const result = await Expenses.find({date:date1})
+//             const result = await Expenses.find({date:date1})
     
-            if(result)
-            {
-                res.send(result)
-                console.log(result)
-            }
-            else
-            {
-                res.status(400).send("Expense details not found")
-            }
-        }
-        catch
-        {
-            res.status(500).send("Internal server error")
-        }
-    })
+//             if(result)
+//             {
+//                 res.send(result)
+//                 console.log(result)
+//             }
+//             else
+//             {
+//                 res.status(400).send("Expense details not found")
+//             }
+//         }
+//         catch
+//         {
+//             res.status(500).send("Internal server error")
+//         }
+//     })
 
 
 

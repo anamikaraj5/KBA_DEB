@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { details } from '../Schema/account.js'
+import { authenticate } from '../middleware/authenticate.js'
 
 const userauth = Router()
 
@@ -76,6 +77,34 @@ userauth.post('/login',async(req,res)=>
     }
 })
 
+
+//VIEW PROFILE
+
+userauth.get('/viewprofile',authenticate,async(req,res)=>
+        {
+            try{
+                const email1=req.query.emailid
+        
+                const result = await details.findOne({email:email1})
+        
+                if(result)
+                {
+                    res.json({
+                        fullname:result.fullname,
+                        email:result.email,
+                        phone:result.phone
+                    })
+                }
+                else
+                {
+                    res.status(400).send("User  not found")
+                }
+            }
+            catch
+            {
+                res.status(500).send("Internal server error")
+            }
+        })
 
 //LOGOUT
 
