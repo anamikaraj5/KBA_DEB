@@ -26,6 +26,7 @@ expensetrack.post('/addexpense',authenticate,async(req,res)=>
                     })
         
                     await newExpense.save();
+                    console.log(newExpense)
                     res.status(201).send("Successfully added new expense");
                 }
             }

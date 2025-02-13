@@ -23,7 +23,7 @@ userauth.post('/signup',async(req,res)=>
         }
         else
         {
-            const newpswd = await bcrypt.hash(Password,10)
+            const newpswd = await bcrypt.hash(Password,10) 
             const newuser = new details(
                 {
                     fullname:FullName,

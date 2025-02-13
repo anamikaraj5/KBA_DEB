@@ -120,7 +120,7 @@ setbudget.get('/viewbudget1', async (req, res) =>
     
                 Totalspent += spent 
     
-                // Push category-wise budget details
+                // Push category-wise budget details(as array of objects)
                 Categorydata.push({
                     category: budget.category,
                     budget: budget.limit,

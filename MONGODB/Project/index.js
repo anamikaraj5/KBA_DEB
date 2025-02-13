@@ -15,7 +15,7 @@ app.use('/',userauth)
 app.use('/',expensetrack)
 app.use('/',setbudget)
 
-mongoose.connect('mongodb://localhost:27017/ExpenseTracker').then(()=>
+mongoose.connect('mongodb://localhost:27017/ExpenseTracker1').then(()=>
     {
         console.log("MongoBD connected successfully to Expense Tracker....")
     })
