@@ -1,7 +1,7 @@
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
 import Coursegrid from '../components/Coursegrid'
-import coursesdata from '../assets/data/courses.json'
+// import coursesdata from '../assets/data/courses.json'
 
 function Home() {
 
@@ -9,7 +9,7 @@ function Home() {
     <div>
       <Nav/>
       <Hero/>
-      <Coursegrid courses={coursesdata}/>
+      <Coursegrid />
     </div>
   )
 }

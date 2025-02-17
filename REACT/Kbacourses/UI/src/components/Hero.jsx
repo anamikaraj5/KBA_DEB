@@ -12,6 +12,10 @@ const Hero = () => {
                 <h1 className='font-bold text-2xl md:text-4xl text-purple-800'>BROWSE OUR TOP COURSES</h1>
                 <h2 className='font-medium text-lg md:text-xl text-purple-400 mt-4'>Choose the course that's right for your career goals.</h2>
             </div>
+
+            {/* <div class='flex justify-center mb-40'>
+        <button class='w-80 h-10 rounded-full bg-purple-500 text-white font-medium  hover:bg-purple-600' >View all Courses</button>
+    </div> */}
   </div>
   )
 }

@@ -1,6 +1,7 @@
 import {Router} from 'express'
 import {authenticate} from '../middleware/authenticate.js'
 import { Expenses } from '../Schema/expenses.js'
+import { details } from '../Schema/account.js'
 
 const expensetrack = new Router()
 
@@ -10,6 +11,8 @@ expensetrack.post('/addexpense',authenticate,async(req,res)=>
     {
         try{
                 const {Category,Expense,Date} = req.body
+
+                const data = await details.findOne({email:req.emails})
            
                 const result = await Expenses.findOne({date:Date,category:Category }) 
     
@@ -20,6 +23,7 @@ expensetrack.post('/addexpense',authenticate,async(req,res)=>
                 else 
                 {
                     const newExpense = new Expenses({
+                        userid:data._id,
                         date:Date,
                         category:Category,
                         amount:Expense
