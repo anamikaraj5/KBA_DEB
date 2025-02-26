@@ -11,7 +11,7 @@ const Coursegrid = ({isHome=false}) => {
        const fetchCourses = async()=>
         {
           try{
-            const res=await fetch("http:/localhost:5000/courses")
+            const res=await fetch("/api/getallcourses")
             const data = await res.json()
             setcourses(data)
           }
@@ -37,7 +37,7 @@ const Coursegrid = ({isHome=false}) => {
           <h1>Loading</h1>
         ):<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mx-5 my-10'>
         {courselist.map((course) =>( 
-            <Coursecard key={courses.courseId}
+            <Coursecard key={courses.courseid}
             course={course}/>
         ))
         }

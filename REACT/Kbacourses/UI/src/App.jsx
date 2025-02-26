@@ -1,27 +1,28 @@
-// import { useState } from 'react'
-// import Nav from './components/Nav'
-// import Hero from './components/Hero'
-import Coursegrid from './components/Coursegrid'
-// import coursesdata from './assets/data/courses.json'
+import React from 'react'
+
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Dashboard from './pages/Dashboard'
+
+
+//for routing b/w pages
+import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom'
 import Addcourse from './pages/Addcourse'
-import Courses from './pages/Courses'
-import Home from './pages/Home'
-import Notfound from './pages/Notfound'
+import Coursepage from './pages/Coursepage'
 
 function App() {
 
   return (
-    <div>
-      {/* <Nav/>
-      <Hero/>
-      <Coursegrid courses={coursesdata}/> */}
-      
-      <Home/>
-      
-      {/* <Notfound/> */}
-      {/* <Addcourse/> */}
-      {/* <Courses/> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element= {<Navigate to = "/signup"/>}/>   //ele-which react element to be loaded
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/addcourse' element={<Addcourse/>}/>
+        <Route path='/getallcourses' element={<Coursepage/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

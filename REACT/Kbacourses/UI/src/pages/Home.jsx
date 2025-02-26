@@ -9,7 +9,7 @@ function Home() {
     <div>
       <Nav/>
       <Hero/>
-      <Coursegrid />
+      <Coursegrid isHome={true} />
     </div>
   )
 }
