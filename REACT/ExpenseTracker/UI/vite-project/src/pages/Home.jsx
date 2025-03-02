@@ -4,6 +4,7 @@ import records from '../assets/images/Records.svg'
 import add from '../assets/images/Plus.png'
 import charts from '../assets/images/charts.png'
 import budgets from '../assets/images/Wallet.svg'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
 
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={add} className="md:h-[80px] h-[60px]"/>
-                <p className="md:text-5xl text-4xl font-bold"><a href="addexpense.html">ADD</a></p>
+                <p className="md:text-5xl text-4xl font-bold"><Link to={'/addexpense'}>ADD</Link></p>
             </div>
 
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">

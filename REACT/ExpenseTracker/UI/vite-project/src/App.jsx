@@ -10,6 +10,8 @@ import Logout from "./pages/Logout"
 import Userprofile from "./pages/Userprofile"
 
 import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom'
+import Addexpense from "./pages/Addexpense"
+import Addbudget from "./pages/Addbudget"
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/logout' element={<Logout/>}/>
         <Route path="/viewprofile" element={<Userprofile/>}/>
+        <Route path="/addexpense" element={<Addexpense/>}/>
+        <Route path="/addbudget" element={<Addbudget/>}/>
       </Routes>
     </BrowserRouter>
     </>
