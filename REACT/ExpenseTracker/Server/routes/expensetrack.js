@@ -58,42 +58,76 @@ expensetrack.post('/addexpense', authenticate, async (req, res) => {
 
 
 // VIEW EXPENSES FOR A SPECIFIC MONTH
+// expensetrack.get('/viewexpense', authenticate, async (req, res) => {
+//     try {
+//         const month = req.query.dates; // Expected format: MM-YYYY
+
+//         // Find the user's account and fetch only the expenses that match the given month
+//         const account = await Account.findOne(
+//             { userEmail: req.emails, "expenses.date": { $regex: month } }
+//         );
+
+//         if (!account || account.expenses.length === 0) {
+//             return res.status(404).json({ message: "No expense details found for the given month." });
+//         }
+
+//         let TotalExpense = 0;
+//         let TotalIncome = 0;
+
+//         account.expenses.forEach(entry => {
+//             if (entry.category.toLowerCase() === 'salary') {
+//                 TotalIncome += entry.amount;
+//             } else {
+//                 TotalExpense += entry.amount;
+//             }
+//         });
+
+//         res.status(200).json({
+//             expenses: account.expenses,
+//             TotalExpense,
+//             TotalIncome
+//         });
+//     } catch (error) {
+//         console.error("Error:", error);
+//         res.status(500).send("Internal Server Error");
+//     }
+// });
+
+    
 expensetrack.get('/viewexpense', authenticate, async (req, res) => {
     try {
         const month = req.query.dates; // Expected format: MM-YYYY
 
-        // Find the user's account and fetch only the expenses that match the given month
-        const account = await Account.findOne(
-            { userEmail: req.emails, "expenses.date": { $regex: month } }
-        );
+        // Fetch user account
+        const account = await Account.findOne({ userEmail: req.emails });
+        if (!account) {
+            return res.status(404).json({ message: "User account not found." });
+        }
 
-        if (!account || account.expenses.length === 0) {
+        let TotalExpense = 0, TotalIncome = 0;
+        let expenses = [];
+
+        // Loop through and process expenses
+        for (const entry of account.expenses) {
+            if (entry.date.includes(month)) {
+                expenses.push(entry);
+                entry.category.toLowerCase() === 'salary'
+                    ? (TotalIncome += entry.amount)
+                    : (TotalExpense += entry.amount);
+            }
+        }
+
+        if (!expenses.length) {
             return res.status(404).json({ message: "No expense details found for the given month." });
         }
 
-        let TotalExpense = 0;
-        let TotalIncome = 0;
-
-        account.expenses.forEach(entry => {
-            if (entry.category.toLowerCase() === 'salary') {
-                TotalIncome += entry.amount;
-            } else {
-                TotalExpense += entry.amount;
-            }
-        });
-
-        res.status(200).json({
-            expenses: account.expenses,
-            TotalExpense,
-            TotalIncome
-        });
+        res.status(200).json({ expenses, TotalExpense, TotalIncome });
     } catch (error) {
         console.error("Error:", error);
-        res.status(500).send("Internal Server Error");
+        res.status(500).json({ message: "Internal Server Error" });
     }
 });
 
-    
 
 
 // UPDATING EXPENSE

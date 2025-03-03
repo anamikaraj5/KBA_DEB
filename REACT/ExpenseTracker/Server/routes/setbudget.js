@@ -8,7 +8,7 @@ const setbudget = Router();
 // SETTING BUDGET
 setbudget.post('/setbudget', authenticate, async (req, res) => {
     try {
-        const { Category, Limit, Month } = req.body; // Month format: MM-YYYY
+        const { Category, Limit, Month } = req.body; 
 
         // Find the user first
         const user = await User.findOne({ email: req.emails });
@@ -88,7 +88,7 @@ setbudget.get('/viewbudget1', authenticate, async (req, res) => {
         for (const budget of Budgetdata) {
             let spent = 0;
             for (const exp of account.expenses) {
-                if (exp.category === budget.category && exp.date.slice(3) === monthname) {
+                if (exp.category === budget.category && exp.date.slice(0,8) === monthname) {
                     spent += exp.amount;
                 }
             }

@@ -12,6 +12,8 @@ import Userprofile from "./pages/Userprofile"
 import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom'
 import Addexpense from "./pages/Addexpense"
 import Addbudget from "./pages/Addbudget"
+import ExpenseTracker from "./pages/Viewexpense"
+import EditExpense from "./pages/Editexpense"
 
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
         <Route path="/viewprofile" element={<Userprofile/>}/>
         <Route path="/addexpense" element={<Addexpense/>}/>
         <Route path="/addbudget" element={<Addbudget/>}/>
+        <Route path="/viewexpense" element={<ExpenseTracker/>}/>
+        <Route path="/editexpense" element={<EditExpense/>}/>
       </Routes>
     </BrowserRouter>
     </>

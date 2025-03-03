@@ -4,6 +4,7 @@ import {userauth} from './routes/userauth.js'
 import {expensetrack} from './routes/expensetrack.js'
 import {setbudget} from './routes/setbudget.js'
 import mongoose from 'mongoose'
+import cors from 'cors';
 
 dotenv.config()
 
@@ -14,6 +15,11 @@ app.use(json())
 app.use('/',userauth)
 app.use('/',expensetrack)
 app.use('/',setbudget)
+
+app.use(cors({
+    origin:'*',
+    credentials:true
+}))
 
 mongoose.connect('mongodb://localhost:27017/Expenseupdated').then(()=>
     {

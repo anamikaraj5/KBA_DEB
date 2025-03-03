@@ -15,7 +15,7 @@ const Home = () => {
         <div className="grid md:grid-cols-2 md:gap-9 gap-7 md:ml-[340px] md:mt-[150px] ml-[5px] mt-[40px] ">
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={records} className="md:h-[80px] h-[60px]"/>
-                <p className="md:text-5xl text-4xl font-bold"><a href="records.html">RECORDS</a></p>
+                <p className="md:text-5xl text-4xl font-bold"><Link to={'/viewexpense'}>RECORDS</Link></p>
             </div>
 
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
