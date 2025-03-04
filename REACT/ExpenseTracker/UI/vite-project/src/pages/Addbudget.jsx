@@ -10,7 +10,6 @@ const Addbudget = () => {
   const handleBudget = async (e) => {
     e.preventDefault();
 
-    const formattedMonth = month.split("-").reverse().join("-"); // Convert YYYY-MM to MM-YYYY
 
     try {
       const response = await fetch('/api/setbudget', {
@@ -22,7 +21,7 @@ const Addbudget = () => {
         body: JSON.stringify({
           Category: category,
           Limit: Number(limit),
-          Month: formattedMonth, // Send MM-YYYY to backend
+          Month: month, // Send MM-YYYY to backend
         }),
       });
 
@@ -38,7 +37,9 @@ const Addbudget = () => {
       setCategory("");
       setLimit("");
       setDate("");
-    } catch (err) {
+    } 
+    
+    catch (err) {
       console.error(err);
       alert("Something went wrong: " + err.message);
     }

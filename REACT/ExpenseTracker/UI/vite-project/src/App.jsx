@@ -14,6 +14,7 @@ import Addexpense from "./pages/Addexpense"
 import Addbudget from "./pages/Addbudget"
 import ExpenseTracker from "./pages/Viewexpense"
 import EditExpense from "./pages/Editexpense"
+import BudgetTracker from "./pages/Viewbudget"
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/addbudget" element={<Addbudget/>}/>
         <Route path="/viewexpense" element={<ExpenseTracker/>}/>
         <Route path="/editexpense" element={<EditExpense/>}/>
+        <Route path='/viewbudget' element={<BudgetTracker/>}/>
       </Routes>
     </BrowserRouter>
     </>

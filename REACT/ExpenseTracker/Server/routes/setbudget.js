@@ -61,7 +61,7 @@ export default setbudget;
 
 setbudget.get('/viewbudget1', authenticate, async (req, res) => {
     try {
-        const { monthname } = req.query;
+        const  monthname  = req.query.dates
 
         const account = await Account.findOne({ userEmail: req.emails })
 
@@ -88,7 +88,7 @@ setbudget.get('/viewbudget1', authenticate, async (req, res) => {
         for (const budget of Budgetdata) {
             let spent = 0;
             for (const exp of account.expenses) {
-                if (exp.category === budget.category && exp.date.slice(0,8) === monthname) {
+                if (exp.category === budget.category && exp.date.slice(0,7) === monthname) {
                     spent += exp.amount;
                 }
             }

@@ -25,12 +25,12 @@ const Home = () => {
 
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={charts} className="md:h-[80px] h-[60px]"/>
-                <p className="md:text-5xl text-4xl font-bold"><a href="charts.html">CHARTS</a></p>
+                <p className="md:text-5xl text-4xl font-bold"><Link to={'/addbudget'}>CHARTS</Link></p>
             </div>
 
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={budgets} className="md:h-[80px] h-[60px]"/>
-                <p className="md:text-5xl text-4xl font-bold"><a href="budget.html">BUDGETS</a></p>
+                <p className="md:text-5xl text-4xl font-bold"><Link to={'/viewbudget'}>BUDGETS</Link></p>
             </div>
         </div>
 
