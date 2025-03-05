@@ -1,6 +1,7 @@
 import React from "react";
 import edit from '../assets/images/edit.svg'
 import { Link } from "react-router-dom";
+import DeleteBudget from "../pages/Deletebudget";
 
 const BudgetCard = ({ date, transactions }) => {
   let transactionElements = []
@@ -18,11 +19,11 @@ const BudgetCard = ({ date, transactions }) => {
         )}
 
         <div class="flex items-center gap-4">
-            <Link to={`/editbudget?category=${entry.category}&month=${entry.month}&amount=${entry.amount}`}>
+            <Link to={`/editbudget?category=${entry.category}&month=${entry.month}&amount=${entry.budget}`}>
                 <img src={edit} className="h-[25px]" alt="Edit" />
             </Link>
 
-            {/* <DeleteBudget category={entry.category} date={entry.month}/> */}
+            <DeleteBudget category={entry.category} month={entry.month}/>
         </div>
       </div>
     )

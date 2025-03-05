@@ -60,11 +60,12 @@ userauth.post('/login', async (req, res) => {
 
 
 // VIEW PROFILE
+
 userauth.get('/viewprofile', authenticate, async (req, res) => {
     try {
-        const email = req.query.emailid;
+        const name = req.name;
 
-        const user = await User.findOne({ email: email });
+        const user = await User.findOne({ fullname: name });
         if (!user) {
             return res.status(400).send("User not found");
         }
@@ -79,10 +80,34 @@ userauth.get('/viewprofile', authenticate, async (req, res) => {
     }
 });
 
+userauth.put('/updateprofile', authenticate, async (req, res) => {
 
-userauth.get('/profile',authenticate,(req,res)=>{
-    res.status(200).json({fullname:req.name})
+    try {
+        const {FullName,Email,Phone } =req.body
+
+        const user = await User.findOne({ fullname: req.name });
+        if (!user) {
+            return res.status(400).send("User not found");
+        }
+
+        user.fullname=FullName
+        user.email=Email
+        user.phone=Phone
+
+        await user.save()
+
+        res.status(200).send("User profile updated successfully.")
+       
+    } 
+    catch (error) {
+        res.status(500).send("Internal Server Error");
+    }
+    
 });
+
+// userauth.get('/profile',authenticate,(req,res)=>{
+//     res.status(200).json({fullname:req.name})
+// });
 
 // LOGOUT
 userauth.get('/logout', (req, res) => {

@@ -12,7 +12,7 @@ const Home = () => {
 
         <Nav/>
 
-        <div className="grid md:grid-cols-2 md:gap-9 gap-7 md:ml-[340px] md:mt-[150px] ml-[5px] mt-[40px] ">
+        <div className="grid md:grid-cols-3 md:gap-9 gap-7 md:ml-[30px] md:mt-[50px] ml-[5px] mt-[40px]  ">
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={records} className="md:h-[80px] h-[60px]"/>
                 <p className="md:text-5xl text-4xl font-bold"><Link to={'/viewexpense'}>RECORDS</Link></p>
@@ -20,17 +20,22 @@ const Home = () => {
 
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={add} className="md:h-[80px] h-[60px]"/>
-                <p className="md:text-5xl text-4xl font-bold"><Link to={'/addexpense'}>ADD</Link></p>
+                <p className="md:text-5xl text-4xl font-bold"><Link to={'/addexpense'}>ADD EXPENSE</Link></p>
             </div>
 
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={charts} className="md:h-[80px] h-[60px]"/>
-                <p className="md:text-5xl text-4xl font-bold"><Link to={'/addbudget'}>CHARTS</Link></p>
+                <p className="md:text-5xl text-4xl font-bold"><Link to={'/addbudget'}>ADD BUDGET</Link></p>
             </div>
 
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={budgets} className="md:h-[80px] h-[60px]"/>
                 <p className="md:text-5xl text-4xl font-bold"><Link to={'/viewbudget'}>BUDGETS</Link></p>
+            </div>
+
+            <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px]  flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
+                <img src={charts} className="md:h-[80px] h-[60px]"/>
+                <p className="md:text-5xl text-4xl font-bold"><Link to={'/charts'}>CHARTS</Link></p>
             </div>
         </div>
 

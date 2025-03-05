@@ -10,8 +10,6 @@ expensetrack.post('/addexpense', authenticate, async (req, res) => {
     try {
         const { Category, Expense, Date } = req.body;
 
-        console.log(req.emails);
-
         // Find the user first
         const user = await User.findOne({ email: req.emails });
         if (!user) {

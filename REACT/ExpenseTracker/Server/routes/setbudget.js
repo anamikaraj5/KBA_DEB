@@ -99,6 +99,7 @@ setbudget.get('/viewbudget1', authenticate, async (req, res) => {
             Categorydata.push({
                 category: budget.category,
                 budget: budget.limit,
+                month:budget.month,
                 spent: spent,
                 remaining: budget.limit - spent,
                 message: spent >= budget.limit ? "Budget limit reached!" : ""

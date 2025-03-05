@@ -40,7 +40,8 @@ const BudgetTracker = () => {
       }
     } catch (err) {
       console.error("Error:", err);
-      setError("Something went wrong");
+      // setError("No budget details found for this month!!!!");
+      setError(err.message)
     } finally {
       setLoading(false);
     }
