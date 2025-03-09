@@ -1,6 +1,6 @@
 //we are creating a userdefined (custom) hook bcoz we have to use this in many pages
 
-import { useState,useEffect } from "react";
+import { useState,useEffect } from "react"
 
 export default function useprofile()
 {
@@ -12,7 +12,6 @@ export default function useprofile()
         {
             try{
                 const res = await fetch('/api/viewprofile',{
-                    
                     credentials:'include'
                 })
 

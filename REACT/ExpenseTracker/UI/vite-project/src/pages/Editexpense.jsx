@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
-import Sidebar from "../components/Sidebar";
+import { useState, useEffect } from "react"
+import { useSearchParams, useNavigate } from "react-router-dom"
+import Nav from "../components/Nav"
+import Sidebar from "../components/Sidebar"
 
 const EditExpense = () => {
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
 
   // Extract query parameters (existing expense details)
-  const [category, setCategory] = useState(searchParams.get("category") || "");
-  const [amount, setAmount] = useState(searchParams.get("amount") || "");
-  const [date, setDate] = useState(searchParams.get("date") || "");
-  const [error, setError] = useState("");
+  const [category, setCategory] = useState(searchParams.get("category") || "")
+  const [amount, setAmount] = useState(searchParams.get("amount") || "")
+  const [date, setDate] = useState(searchParams.get("date") || "")
+  const [error, setError] = useState("")
 
 
-  // Function to update expense
+
   const handleUpdate = async (e) => {
-    e.preventDefault();
-    setError("");
+    e.preventDefault()
+    setError("")
 
     try {
       const response = await fetch("/api/updateexpense", {
@@ -29,21 +29,24 @@ const EditExpense = () => {
           Expense: amount,
           Date: date,
         }),
-      });
+      })
 
-      const data = await response.text(); // If backend sends a plain string
+      const data = await response.json()
 
       if (!response.ok) {
-        setError(data.message || "Failed to update expense");
-      } else {
-        alert("Expense updated successfully!");
-        navigate("/viewexpense"); // Redirect back to Expense Tracker
+        setError(data.message || "Failed to update expense")
+      } 
+      else {
+        alert("Expense updated successfully!")
+        navigate("/viewexpense") 
       }
-    } catch (err) {
-      console.error("Error:", err);
-      setError("Something went wrong");
     }
-  };
+    
+    catch (err) {
+      console.error("Error:", err)
+      setError("Something went wrong")
+    }
+  }
 
   return (
 
@@ -100,7 +103,7 @@ const EditExpense = () => {
     </div>
 </div>
 
-  );
-};
+  )
+}
 
-export default EditExpense;
+export default EditExpense

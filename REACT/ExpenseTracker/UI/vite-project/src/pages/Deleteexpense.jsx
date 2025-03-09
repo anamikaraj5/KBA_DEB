@@ -1,14 +1,14 @@
-import React from "react";
+import React from "react"
 import delete1 from '../assets/images/delete.svg'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 
 const DeleteExpense = ({ category, date }) => {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const handleDelete = async () => {
-        if (!window.confirm("Are you sure you want to delete this expense?")) return;
+        if (!window.confirm("Are you sure you want to delete this expense?")) return
 
         try {
         const response = await fetch("/api/deleteexpense", {
@@ -16,13 +16,13 @@ const DeleteExpense = ({ category, date }) => {
             headers: { "Content-Type": "application/json" },
             credentials: "include",
             body: JSON.stringify({ Category: category, Date: date }),
-        });
+        })
 
         if (!response.ok) {
-            alert("Failed to delete expense");
+            alert("Failed to delete expense")
         } 
 
-        alert("Expense deleted successfully!");
+        alert("Expense deleted successfully!")
         navigate('/viewexpense')
         } 
         
@@ -30,7 +30,7 @@ const DeleteExpense = ({ category, date }) => {
         console.error("Error:", error);
         alert("Error deleting expense");
         }
-    };
+    }
 
     return (
         <button onClick={handleDelete}>

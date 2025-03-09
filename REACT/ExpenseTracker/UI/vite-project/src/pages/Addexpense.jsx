@@ -9,7 +9,7 @@ const Addexpense = () => {
   const [date, setDate] = useState("")
 
   const handleExpense = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
         const response = await fetch('/api/addexpense',{
             method:'POST',
@@ -18,21 +18,22 @@ const Addexpense = () => {
                 'Content-Type':'application/json',
             },
             body: JSON.stringify({Category:category,Expense:expense,Date:date}),
-        });
+        })
 
       if (!response.ok) {
-        throw new Error("Error adding expense");
+        throw new Error("Error adding expense")
       }
 
-      alert("Expense added successfully!!!");
+      alert("Expense added successfully!!!")
      
       setCategory("")
-      setExpense("");
-      setDate("");
+      setExpense("")
+      setDate("")
     } 
+
     catch (err) {
-      console.error(err);
-      alert("Something went wrong: " + err.message);
+      console.error(err)
+      alert("Something went wrong: " + err.message)
     }
   }
 

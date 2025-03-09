@@ -12,7 +12,7 @@ const Signup = () => {
     const navigate  = useNavigate()
 
     const handleSignup = async (e) =>{
-        e.preventDefault();
+        e.preventDefault()
         try{
             const response = await fetch('/api/signup',{
                 method:'POST',
@@ -21,18 +21,20 @@ const Signup = () => {
                     'Content-Type':'application/json',
                 },
                 body:JSON.stringify({FullName:fullName,Email:email,Phone:phone,Password:password})
-            });
+            })
 
             if(!response.ok) {
-                const errData = await response.json();
-                throw new Error(errData.msg || 'Signup failed');
+                const errData = await response.json()
+                throw new Error(errData.msg || 'Signup failed')
             }
 
             navigate('/login');
-        } catch(err) {
+        } 
+        
+        catch(err) {
             setError(err.message || 'Signup failed: Please try again!')
         }
-    };
+    }
 
 
   return (
@@ -50,7 +52,7 @@ const Signup = () => {
             </div>
 
             <div className="md:w-[450px] md:h-[550px] -[400px]">
-            {error && <p className='text-red-500 mb-4'>{error}</p>}
+            {error && <p className='text-red-500 mb-4'>{error}</p>}  //to insert js expression in jsx
                 <form onSubmit={handleSignup}>
                     <p className="pt-[30px] text-center text-violet-900 text-4xl font-bold">REGISTER</p>
 

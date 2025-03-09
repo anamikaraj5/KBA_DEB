@@ -1,11 +1,11 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/images/logo1.png";
-import useProfile from "../hooks/Userprofile.js";
+import React from "react"
+import { Link, useNavigate } from "react-router-dom"
+import logo from "../assets/images/logo1.png"
+import useProfile from "../hooks/Userprofile.js"
 
 const Nav = () => {
-    const { profile } = useProfile();
-    const navigate = useNavigate();
+    const { profile } = useProfile()
+    const navigate = useNavigate()
 
     // Logout function
     const handleLogout = async () => {
@@ -13,18 +13,21 @@ const Nav = () => {
             const response = await fetch("/api/logout", {
                 method: "GET",
                 credentials: "include",
-            });
+            })
 
             if (response.ok) {
-                alert("Logged out successfully!");
-                navigate("/front"); // Redirect to front page
-            } else {
-                console.error("Logout failed");
+                alert("Logged out successfully!")
+                navigate("/front") // Redirect to front page
+            } 
+            else {
+                console.error("Logout failed")
             }
-        } catch (error) {
-            console.error("Error during logout:", error);
+        } 
+        
+        catch (error) {
+            console.error("Error during logout:", error)
         }
-    };
+    }
 
     return (
         <div>
@@ -53,7 +56,7 @@ const Nav = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Nav;
+export default Nav

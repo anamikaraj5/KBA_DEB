@@ -10,10 +10,11 @@ const BudgetCard = ({ date, transactions }) => {
     const entry = transactions[i]
 
     transactionElements.push(
-      <div key={i} className="flex justify-between items-center border-b py-2 text-white">
+      <div key={i} className="flex justify-between items-center border-b py-2 text-white font-bold">
         <p>{entry.category}</p>
-        <p className="font-bold text-white">${entry.budget}</p>
-        
+        <p className="font-bold text-white">Budget : ${entry.budget}</p>
+        <p className="font-bold text-white">Spent : ${entry.spent}</p>
+        <p className="font-bold text-white">Remaining : ${entry.remaining}</p>
         {entry.message && (
           <p className="text-red-500 font-semibold">{entry.message}</p>
         )}

@@ -11,17 +11,18 @@ const ExpenseTracker = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
 
-  // Fetch expenses from backend
-  const fetchExpenses = async (month) => {
-    setLoading(true);
-    setError("");
+  
+const fetchExpenses = async (month) => {
+    setLoading(true)
+    setError("")
 
     try {
-            const response = await fetch(`/api/viewexpense?dates=${month}`, {
+            const response = await fetch(`/api/viewexpense?dates=${month}`, 
+            {
                 method: "GET",
-                headers: { "Content-Type": "application/json" },
                 credentials: "include",
-            });
+                headers: { "Content-Type": "application/json" }        
+            })
 
             const data = await response.json()
 

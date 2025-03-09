@@ -8,10 +8,10 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
    
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     
     const handleLogin = async (e) =>{
-        e.preventDefault();
+        e.preventDefault()
         try{
             const response = await fetch('/api/login',{
                 method:'POST',
@@ -23,15 +23,17 @@ const Login = () => {
             });
 
             if(!response.ok) {
-                const errData = await response.json();
-                throw new Error(errData.msg || 'Login failed');
+                const errData = await response.json()
+                throw new Error(errData.msg || 'Login failed')
             }
 
-            navigate('/home');
-        } catch(err) {
+            navigate('/home')
+        } 
+        
+        catch(err) {
             setError(err.message || 'Invalid credentials: Please try again!')
         }
-    };
+    }
 
   return (
     <div>
