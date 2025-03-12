@@ -1,32 +1,29 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import useProfile from "../hooks/Userprofile.js"; // Fetch user profile
-import Nav from "../components/Nav";
-import Sidebar from "../components/Sidebar";
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import useProfile from "../hooks/Userprofile.js" 
+import Nav from "../components/Nav"
+import Sidebar from "../components/Sidebar"
 
 const Editprofile = () => {
-    const { profile } = useProfile();
-    const navigate = useNavigate();
+    const { profile } = useProfile()
+    const navigate = useNavigate()
 
-    // Form state with profile details
-    const [fullname, setFullname] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [error, setError] = useState("");
+    const [fullname, setFullname] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [error, setError] = useState("")
 
-    // Populate form with existing profile data
     useEffect(() => {
         if (profile) {
-            setFullname(profile.fullname || "");
-            setEmail(profile.email || "");
-            setPhone(profile.phone || "");
+            setFullname(profile.fullname || "")
+            setEmail(profile.email || "")
+            setPhone(profile.phone || "")
         }
-    }, [profile]);
+    }, [profile])
 
-    // Handle form submission
     const handleUpdate = async (e) => {
-        e.preventDefault();
-        setError("");
+        e.preventDefault()
+        setError("")
 
         try {
             const response = await fetch("/api/updateprofile", {
@@ -34,21 +31,24 @@ const Editprofile = () => {
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",
                 body: JSON.stringify({ FullName:fullname,Email:email,Phone:phone }),
-            });
+            })
 
-            const data = await response.text();
+            const data = await response.text()
 
             if (!response.ok) {
-                setError(data.message || "Failed to update profile");
-            } else {
-                alert("Profile updated successfully!");
-                navigate("/viewprofile"); // Redirect to profile page
+                setError(data.message || "Failed to update profile")
+            } 
+            else {
+                alert("Profile updated successfully!")
+                navigate("/viewprofile") 
             }
-        } catch (err) {
-            console.error("Error:", err);
-            setError("Something went wrong");
+        } 
+        
+        catch (err) {
+            console.error("Error:", err)
+            setError("Something went wrong")
         }
-    };
+    }
 
     return (
         <div>
@@ -123,7 +123,7 @@ const Editprofile = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Editprofile;
+export default Editprofile

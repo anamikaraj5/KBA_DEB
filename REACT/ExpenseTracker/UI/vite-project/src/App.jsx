@@ -8,7 +8,6 @@ import About from "./pages/About"
 
 
 
-
 import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom'
 import Addexpense from "./pages/Addexpense"
 import Addbudget from "./pages/Addbudget"
@@ -28,8 +27,7 @@ function App() {
 
      <BrowserRouter>
       <Routes>
-        <Route path='/' element= {<Navigate to = "/front"/>}/>   //ele-which react element to be loaded
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/' element= {<Navigate to = "/front"/>}/>   
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/front' element={<Front/>}/>

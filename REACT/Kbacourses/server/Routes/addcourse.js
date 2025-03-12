@@ -50,7 +50,7 @@ adminauth.post('/addcourse',authenticate,upload.single('CourseImage'),async(req,
             }
         else
         {
-            res.status(401).send("Unauthorized access")
+            res.status(401).json({message:"Unauthorized access"})
         }
     }
     catch(error)

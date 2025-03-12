@@ -52,7 +52,7 @@ const Signup = () => {
             </div>
 
             <div className="md:w-[450px] md:h-[550px] -[400px]">
-            {error && <p className='text-red-500 mb-4'>{error}</p>}  //to insert js expression in jsx
+            {error && <p className='text-red-500 mb-4'>{error}</p>}  
                 <form onSubmit={handleSignup}>
                     <p className="pt-[30px] text-center text-violet-900 text-4xl font-bold">REGISTER</p>
 

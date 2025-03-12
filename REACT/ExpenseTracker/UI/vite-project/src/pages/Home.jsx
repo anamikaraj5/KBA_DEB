@@ -12,7 +12,7 @@ const Home = () => {
 
         <Nav/>
 
-        <div className="grid md:grid-cols-3 md:gap-9 gap-7 md:ml-[30px] md:mt-[50px] ml-[5px] mt-[40px]  ">
+        <div className="grid md:grid-cols-2 md:gap-9 gap-7 md:ml-[180px] md:mt-[50px] ml-[5px] mt-[40px]  ">
             <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px] flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={records} className="md:h-[80px] h-[60px]"/>
                 <p className="md:text-5xl text-4xl font-bold"><Link to={'/viewexpense'}>RECORDS</Link></p>
@@ -33,10 +33,10 @@ const Home = () => {
                 <p className="md:text-5xl text-4xl font-bold"><Link to={'/viewbudget'}>BUDGETS</Link></p>
             </div>
 
-            <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px]  flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
+            {/* <div className="bg-purple-300 md:w-[500px] md:h-[250px] h-[150px] w-[400px]  flex flex-col items-center justify-center border-[10px] border-purple-900 shadow-lg shadow-purple-700 rounded-lg">
                 <img src={charts} className="md:h-[80px] h-[60px]"/>
                 <p className="md:text-5xl text-4xl font-bold"><Link to={'/charts'}>CHARTS</Link></p>
-            </div>
+            </div> */}
         </div>
 
 

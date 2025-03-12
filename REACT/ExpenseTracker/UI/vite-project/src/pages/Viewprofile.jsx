@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import useProfile from '../hooks/Userprofile.js'; // Using the custom hook
-import Nav from '../components/Nav.jsx';
-import Sidebar from '../components/Sidebar.jsx';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import useProfile from '../hooks/Userprofile.js' 
+import Nav from '../components/Nav.jsx'
+import Sidebar from '../components/Sidebar.jsx'
 
 const Viewprofile = () => {
-    const { profile } = useProfile(); // Fetching profile using the hook
+    const { profile } = useProfile() 
 
     return (
         <div className="bg-gray-100 min-h-screen">
@@ -56,8 +56,8 @@ const Viewprofile = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Viewprofile;
+export default Viewprofile
 

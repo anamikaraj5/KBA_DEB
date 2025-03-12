@@ -133,7 +133,6 @@ setbudget.put('/updatebudget', authenticate, async(req, res) => {
             return res.status(404).send("Budget details not found.");
         }
 
-        // Update budget details
         budget.limit = Limit;
 
         await account.save();
@@ -157,14 +156,12 @@ setbudget.delete('/deletebudget', authenticate, async (req, res) => {
             return res.status(404).send("Account not found.");
         }
 
-        // Find index of the budget to delete
         const budgetIndex = account.budgets.findIndex(budget => budget.category === Category && budget.month === Month);
 
         if (budgetIndex === -1) {
             return res.status(404).send("Budget details not found.");
         }
 
-        // Remove the budget entry at the found index
         account.budgets.splice(budgetIndex, 1);
 
         await account.save();

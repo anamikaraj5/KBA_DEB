@@ -4,7 +4,7 @@ const Addcourse = () => {
 
   const[cname,setCname] = useState('')
     const[cid,setCid] = useState('')
-    const[ctype,setCtype] = useState('Self-Paced')
+    // const[ctype,setCtype] = useState('Self-Paced')
     const[description,setDescription] = useState('')
     const[price,setPrice] = useState('')
     const[CourseImage,setCourseimg] = useState('null')
@@ -35,9 +35,10 @@ const Addcourse = () => {
                     body:formdata 
                 })
     
-                if(!response.ok)
-                {
-                    throw new Error('Adding of course failed')
+                const data = await response.json(); // Ensure response is parsed
+
+                if (!response.ok) {
+                    throw new Error(data.message || 'Adding of course failed');
                 }
     
                 alert("Course added successfully")

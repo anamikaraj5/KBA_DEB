@@ -49,7 +49,6 @@ const fetchExpenses = async (month) => {
     }
   }
 
-  // Group expenses by date
   const expenseMap = {}
   for (const expense of expenses) {
     if (!expenseMap[expense.date]) {
@@ -58,7 +57,6 @@ const fetchExpenses = async (month) => {
     expenseMap[expense.date].push(expense)
   }
 
-  // Prepare ExpenseCard components before JSX
   const expenseCards = []
   for (const date in expenseMap) {
     expenseCards.push(<ExpenseCard key={date} date={date} transactions={expenseMap[date]} />)
@@ -79,7 +77,7 @@ const fetchExpenses = async (month) => {
 
         <div className="w-full p-6">
           <div className="flex justify-between items-center ml-[70px]">
-            {/* Month Selector */}
+
             <input
                     type="month"
                     value={selectedMonth}
@@ -87,19 +85,15 @@ const fetchExpenses = async (month) => {
                     className="p-2 border rounded-md h-[70px] text-2xl"
                     />
 
-          
-            {/* Total Income & Expense */}
             <div className="text-3xl flex gap-8 font-bold">
               <p>Total Expense: ${totalExpense}</p>
               <p>Total Income: ${totalIncome}</p>
             </div>
           </div>
 
-          {/* Loading & Error Messages */}
           {loading && <p className="text-center mt-10 text-lg">Loading...</p>}
           {error && <p className="text-center mt-10 text-red-500">{error}</p>}
 
-          {/* Expenses List */}
           {!loading && !error && expenseCards.length > 0 ? (
             expenseCards
           ) : (

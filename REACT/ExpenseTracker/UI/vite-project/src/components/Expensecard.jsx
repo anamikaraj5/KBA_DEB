@@ -14,13 +14,7 @@ const ExpenseCard = ({ date, transactions }) => {
       <div key={i} className="flex justify-between items-center border-b py-2 text-white">
         <p>{entry.category}</p>
         <p className="font-bold text-white">${entry.amount}</p>
-        {/* <a
-          href={`/updateexpense?category=${entry.category}&date=${entry.date}&amount=${entry.amount}`}
-          className="text-blue-500 underline"
-        >
-          Edit
-        </a> */}
-
+       
         <div class="flex items-center gap-4">
         <Link to={`/editexpense?category=${entry.category}&date=${entry.date}&amount=${entry.amount}`}>
               <img src={edit} className="h-[25px]" alt="Edit" />

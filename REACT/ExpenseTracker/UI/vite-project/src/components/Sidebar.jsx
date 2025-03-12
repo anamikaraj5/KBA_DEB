@@ -34,10 +34,7 @@ const Sidebar = () => {
                         <Link to={'/viewbudget'} className='md:ml-[20px] ml-[60px]'>Budgets</Link>
                     </div>
 
-                    <div className="flex flex-col">
-                        <img src={charts} className="md:h-12 md:w-12 h-8 w-8 md:ml-[20px] ml-[60px]"/>
-                        <a href="charts.html" className='md:ml-[20px] ml-[60px]'>Charts</a>
-                    </div>
+                    
                 </div>
 
     </div>

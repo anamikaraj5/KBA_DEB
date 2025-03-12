@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import Nav from '../components/Nav';
+import React, { useState } from 'react'
+import Sidebar from '../components/Sidebar'
+import Nav from '../components/Nav'
 
 const Addbudget = () => {
-  const [category, setCategory] = useState("");
-  const [limit, setLimit] = useState("");
-  const [month, setDate] = useState(""); // Stored as YYYY-MM
+  const [category, setCategory] = useState("")
+  const [limit, setLimit] = useState("")
+  const [month, setDate] = useState("") 
 
   const handleBudget = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
 
     try {
@@ -21,29 +21,29 @@ const Addbudget = () => {
         body: JSON.stringify({
           Category: category,
           Limit: Number(limit),
-          Month: month, // Send MM-YYYY to backend
+          Month: month, 
         }),
-      });
+      })
 
       if (!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(`Error adding budget: ${errorMessage}`);
+        const errorMessage = await response.json()
+        throw new Error(`Error adding budget: ${errorMessage}`)
       }
       
 
-      alert("Budget added successfully!");
+      alert("Budget added successfully!")
 
-      // Reset form
-      setCategory("");
-      setLimit("");
-      setDate("");
+     
+      setCategory("")
+      setLimit("")
+      setDate("")
     } 
     
     catch (err) {
-      console.error(err);
-      alert("Something went wrong: " + err.message);
+      console.error(err)
+      alert("Something went wrong: " + err.message)
     }
-  };
+  }
 
   return (
     <div>
@@ -55,7 +55,7 @@ const Addbudget = () => {
           <p className="text-4xl text-purple-950 text-center mt-[20px] font-bold">Set Budget</p>
           <form onSubmit={handleBudget} className="bg-purple-200 h-[430px] w-[380px] md:w-[500px] pt-[10px] rounded-lg mt-[30px]">
             <div className="flex flex-col gap-4 mx-[20px] mt-[10px] text-2xl">
-              {/* Category */}
+          
               <label>Category:</label>
               <select 
                 className="h-[40px] md:w-[450px] bg-purple-300" 
@@ -81,7 +81,7 @@ const Addbudget = () => {
                 <option value="Others">Others</option>
               </select>
 
-              {/* Limit */}
+     
               <label>Limit:</label>
               <input 
                 type="number" 
@@ -91,7 +91,7 @@ const Addbudget = () => {
                 required
               />
 
-              {/* Date Input */}
+       
               <label>Month:</label>
               <input 
                 type="month" 
@@ -102,7 +102,7 @@ const Addbudget = () => {
               />
             </div>
 
-            {/* Buttons */}
+      
             <div className="flex justify-between mt-[50px] mx-[30px]">
               <button type="button" className="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl pt-[10px] border border-4 border-purple-950 hover:bg-purple-400">
                 <a href="budget.html">CANCEL</a>
@@ -115,7 +115,7 @@ const Addbudget = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Addbudget;
+export default Addbudget

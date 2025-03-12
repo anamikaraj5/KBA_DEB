@@ -1,23 +1,21 @@
-import { useState, useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
-import Sidebar from "../components/Sidebar";
+import { useState, useEffect } from "react"
+import { useSearchParams, useNavigate } from "react-router-dom"
+import Nav from "../components/Nav"
+import Sidebar from "../components/Sidebar"
 
 const EditBudget = () => {
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
 
-  // Extract query parameters (existing expense details)
-  const [category, setCategory] = useState(searchParams.get("category") || "");
-  const [amount, setAmount] = useState(searchParams.get("amount") || "");
-  const [date, setDate] = useState(searchParams.get("month") || "");
-  const [error, setError] = useState("");
+  const [category, setCategory] = useState(searchParams.get("category") || "")
+  const [amount, setAmount] = useState(searchParams.get("amount") || "")
+  const [date, setDate] = useState(searchParams.get("month") || "")
+  const [error, setError] = useState("")
 
 
-  // Function to update expense
   const handleUpdate = async (e) => {
-    e.preventDefault();
-    setError("");
+    e.preventDefault()
+    setError("")
 
     try {
       const response = await fetch("/api/updatebudget", {
@@ -29,21 +27,21 @@ const EditBudget = () => {
           Limit: amount,
           Month: date,
         }),
-      });
+      })
 
-      const data = await response.text(); // If backend sends a plain string
+      const data = await response.json
 
       if (!response.ok) {
-        setError(data.message || "Failed to update budget");
+        setError(data.message || "Failed to update budget")
       } else {
-        alert("Budget updated successfully!");
-        navigate("/viewbudget"); // Redirect back to Expense Tracker
+        alert("Budget updated successfully!")
+        navigate("/viewbudget") 
       }
     } catch (err) {
-      console.error("Error:", err);
-      setError("Something went wrong");
+      console.error("Error:", err)
+      setError("Something went wrong")
     }
-  };
+  }
 
   return (
 
@@ -100,7 +98,7 @@ const EditBudget = () => {
     </div>
 </div>
 
-  );
-};
+  )
+}
 
-export default EditBudget;
+export default EditBudget

@@ -3,7 +3,7 @@ import {model} from 'mongoose'
 
 
 const accountSchema = new Schema({
-    userEmail: { type: String, required: true, unique: true, ref: 'User' }, // Reference to User via email
+    userEmail: { type: String, required: true, unique: true, ref: 'User' }, 
     expenses: [{
         category: { type: String, required: true },
         amount: { type: Number, required: true },

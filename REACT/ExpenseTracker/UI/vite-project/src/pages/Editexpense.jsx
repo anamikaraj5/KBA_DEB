@@ -7,7 +7,6 @@ const EditExpense = () => {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
 
-  // Extract query parameters (existing expense details)
   const [category, setCategory] = useState(searchParams.get("category") || "")
   const [amount, setAmount] = useState(searchParams.get("amount") || "")
   const [date, setDate] = useState(searchParams.get("date") || "")

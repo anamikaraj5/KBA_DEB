@@ -5,7 +5,6 @@ dotenv.config()
 
 const authenticate=(req,res,next)=>
 {
-    // console.log("hiii")
     const cookies = req.headers.cookie
     console.log(cookies)
 

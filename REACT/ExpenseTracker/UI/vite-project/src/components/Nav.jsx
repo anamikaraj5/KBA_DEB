@@ -17,7 +17,7 @@ const Nav = () => {
 
             if (response.ok) {
                 alert("Logged out successfully!")
-                navigate("/front") // Redirect to front page
+                navigate("/front") 
             } 
             else {
                 console.error("Logout failed")
@@ -40,7 +40,6 @@ const Nav = () => {
                 <div className="flex gap-2 md:gap-6">
                     <Link to="/home" className="hover:text-5xl hover:bg-purple-500">Home</Link>
                     <Link to="/about" className="hover:text-5xl hover:bg-purple-500">About</Link>
-                    <Link to="/contact" className="hover:text-5xl hover:bg-purple-500">Contact</Link>
                     <button 
                         onClick={handleLogout} 
                         className="hover:text-5xl hover:bg-purple-500"
