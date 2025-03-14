@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import {Link} from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 import Nav from '../components/Nav'
 
@@ -39,18 +40,18 @@ const Addexpense = () => {
 
 
   return (
-    <div>
+    <div >
 
         <Nav/>
-        <div class="md:flex ">
+        <div className="md:flex bg-purple-200 h-[90vh]">
                 <Sidebar/>
 
                 <div>
-                    <p class="md:mt-[20px] md:ml-[700px] mt-[40px] mx-[160px] text-5xl text-purple-950 font-bold">Add Expense</p>
+                    <p className="md:mt-[20px] md:ml-[630px] ml-[20px] mt-[40px] text-5xl text-purple-950 font-bold">Add Expense</p>
 
-                    <form onSubmit={handleExpense} class="flex flex-col gap-2 md:ml-[590px] mt-[50px] px-[20px] pt-[30px] bg-purple-200 h-[460px] w-[380px] md:w-[500px] pt-[10px] rounded-lg text-2xl border-4 border-purple-950 shadow-lg shadow-purple-900">
+                    <form onSubmit={handleExpense} className="flex flex-col gap-2 md:ml-[520px]  ml-[10px] mt-[40px] px-[20px] pt-[30px]  h-[460px] w-[380px] md:w-[500px] rounded-lg text-2xl border-4 bg-white border-purple-950 shadow-lg shadow-purple-900">
                             <label>Category</label>
-                            <select class="h-[40px] md:w-[450px] bg-purple-300"
+                            <select className="h-[40px] md:w-[450px] border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 "
                                     value={category}
                                     onChange={(e) => setCategory(e.target.value)}
                                     required>
@@ -74,26 +75,26 @@ const Addexpense = () => {
                 
                             </select>
                         
-                            <label class="mt-[20px]">Expense</label>
+                            <label className="mt-[20px]">Expense</label>
                             <input type="text" 
-                                    class="h-[40px] md:w-[450px] bg-purple-300"
+                                    className="h-[40px] md:w-[450px]  border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 "
                                     value={expense}
                                     onChange={(e) => setExpense(e.target.value)}
                                     required
                             /> 
 
 
-                            <label class="mt-[20px]">Date</label>
+                            <label className="mt-[20px]">Date</label>
                             <input type="date" 
-                                    class="h-[40px] md:w-[450px] bg-purple-300"
+                                    className="h-[40px] md:w-[450px]  border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 "
                                     value={date}
                                     onChange={(e) => setDate(e.target.value)}
                                     required
                             />
 
-                            <div class="flex justify-between mt-[30px] mx-[30px]">
-                                <button class="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl  border border-4 border-purple-950 hover:bg-purple-400"><a href="records.html">Cancel</a></button>
-                                <button class="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl border border-4 border-purple-950 hover:bg-purple-400">Submit</button>
+                            <div className="flex justify-between mt-[30px] mx-[30px]">
+                                <button className="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl  border border-4 border-purple-950 hover:bg-purple-400"><Link to={'/home'}>Cancel</Link></button>
+                                <button className="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl border border-4 border-purple-950 hover:bg-purple-400">Submit</button>
                             </div>
                     </form>
                     

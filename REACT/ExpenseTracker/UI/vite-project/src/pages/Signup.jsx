@@ -89,7 +89,7 @@ const Signup = () => {
 
                     <div className="flex flex-col gap-2 mx-[30px] mt-[30px]">
                         <label className="text-violet-600 text-xl">Password</label>
-                        <input type="text" 
+                        <input type="password" 
                                 placeholder="Enter password" 
                                 className="bg-purple-300 rounded-md border-solid border border-black h-[40px] pl-[20px] placeholder:text-purple-400"
                                 value={password}
@@ -111,7 +111,7 @@ const Signup = () => {
             </div>
             </div>
 
-                </div>
+    </div>
   )
 }
 

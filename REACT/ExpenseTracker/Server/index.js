@@ -21,7 +21,7 @@ app.use(cors({
     credentials:true
 }))
 
-mongoose.connect('mongodb://localhost:27017/Expenseupdated').then(()=>
+mongoose.connect('mongodb://localhost:27017/Expenseupdated1').then(()=>
     {
         console.log("MongoBD connected successfully to Expense Tracker....")
     })

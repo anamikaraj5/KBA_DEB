@@ -69,23 +69,23 @@ const fetchExpenses = async (month) => {
     }, [selectedMonth])
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-purple-200 h-[100vh]">
       <Nav />
 
       <div className="md:flex">
         <Sidebar />
 
-        <div className="w-full p-6">
-          <div className="flex justify-between items-center ml-[70px]">
+        <div className="w-full p-6 ">
+          <div className="md:flex justify-between items-center md:ml-[70px] ml-[10px] ">
 
             <input
                     type="month"
                     value={selectedMonth}
                     onChange={(e) => setSelectedMonth(e.target.value)}
-                    className="p-2 border rounded-md h-[70px] text-2xl"
+                    className="p-2 border rounded-md md:h-[70px] md:text-2xl"
                     />
 
-            <div className="text-3xl flex gap-8 font-bold">
+            <div className="md:text-3xl flex gap-8 font-bold text-purple-950">
               <p>Total Expense: ${totalExpense}</p>
               <p>Total Income: ${totalIncome}</p>
             </div>

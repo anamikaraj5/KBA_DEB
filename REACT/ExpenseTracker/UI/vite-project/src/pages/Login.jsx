@@ -65,7 +65,7 @@ const Login = () => {
 
                 <div className="flex flex-col ml-[30px] mt-[40px] mr-[30px]">
                     <label className="text-violet-600 text-xl">Password</label>
-                    <input type="text" 
+                    <input type="password" 
                             placeholder="Enter your password" 
                             className="bg-purple-300 rounded-md border-solid border border-black h-[40px] mt-[20px] pl-[10px] placeholder:text-purple-400"
                             value={password}

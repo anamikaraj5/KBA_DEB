@@ -8,20 +8,20 @@ const Viewprofile = () => {
     const { profile } = useProfile() 
 
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-purple-200 h-[100vh]">
             <Nav />
 
             <div className="md:flex">
                 <Sidebar />
 
-                <div className="mt-[50px] md:ml-[550px]">
+                <div className="mt-[50px] md:ml-[480px] ml-[10px]">
                     <p className="md:text-7xl text-5xl text-purple-950 font-bold text-center">
                         Profile
                     </p>
 
                     <div className="flex flex-col md:gap-10 gap-5 text-2xl md:text-3xl text-purple-950 
-                        mt-[50px]  p-6 bg-purple-300 border-[10px] border-purple-900 
-                        shadow-lg shadow-purple-600 md:w-[550px] h-auto min-h-[200px] md:min-h-[350px] md:px-[30px] md:py-[40px]">
+                        mt-[50px]  p-6 bg-purple-300 md:border-[10px] border-[5px] border-purple-900 
+                        shadow-lg shadow-purple-600 md:w-[550px] w-[380px] h-auto min-h-[200px] md:min-h-[350px] md:px-[30px] md:py-[40px]">
 
                         {profile ? (
                             <>

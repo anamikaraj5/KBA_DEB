@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 import Nav from '../components/Nav'
 
@@ -46,19 +47,19 @@ const Addbudget = () => {
   }
 
   return (
-    <div>
+    <div className='bg-purple-200 h-[100vh]'>
       <Nav />
       <div className="md:flex">
         <Sidebar />
 
-        <div className="md:ml-[550px] mx-[15px] mt-[40px]">
-          <p className="text-4xl text-purple-950 text-center mt-[20px] font-bold">Set Budget</p>
-          <form onSubmit={handleBudget} className="bg-purple-200 h-[430px] w-[380px] md:w-[500px] pt-[10px] rounded-lg mt-[30px]">
+        <div className="md:ml-[550px] md:[30px] mx-[15px] mt-[40px] ">
+          <p className="text-5xl text-purple-950 text-center  font-bold">Set Budget</p>
+          <form onSubmit={handleBudget} className="h-[430px] w-[380px] md:w-[500px] md:h-[460px] pt-[10px] mt-[30px]  text-2xl rounded-lg border-4 bg-white border-purple-950 shadow-lg shadow-purple-900">
             <div className="flex flex-col gap-4 mx-[20px] mt-[10px] text-2xl">
           
               <label>Category:</label>
               <select 
-                className="h-[40px] md:w-[450px] bg-purple-300" 
+                className="h-[40px] md:w-[450px] border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 " 
                 value={category} 
                 onChange={(e) => setCategory(e.target.value)} 
                 required
@@ -85,7 +86,7 @@ const Addbudget = () => {
               <label>Limit:</label>
               <input 
                 type="number" 
-                className="h-[40px] md:w-[450px] bg-purple-300" 
+                className="h-[40px] md:w-[450px] border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 "
                 value={limit} 
                 onChange={(e) => setLimit(e.target.value)} 
                 required
@@ -95,7 +96,7 @@ const Addbudget = () => {
               <label>Month:</label>
               <input 
                 type="month" 
-                className="h-[40px] md:w-[450px] bg-purple-300" 
+                className="h-[40px] md:w-[450px] border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 "
                 value={month} 
                 onChange={(e) => setDate(e.target.value)}
                 required 
@@ -105,7 +106,7 @@ const Addbudget = () => {
       
             <div className="flex justify-between mt-[50px] mx-[30px]">
               <button type="button" className="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl pt-[10px] border border-4 border-purple-950 hover:bg-purple-400">
-                <a href="budget.html">CANCEL</a>
+                <Link to={'/home'}>CANCEL</Link>
               </button>
               <button type="submit" className="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl pt-[10px] border border-4 border-purple-950 hover:bg-purple-400">
                 SET

@@ -51,19 +51,19 @@ const Editprofile = () => {
     }
 
     return (
-        <div>
+        <div className="bg-purple-200 h-[100vh]">
             <Nav />
             <div className="md:flex">
                 <Sidebar />
 
                 <div>
-                    <p className="md:mt-[20px] md:ml-[700px] mt-[40px] mx-[160px] text-5xl text-purple-950 font-bold">
+                    <p className="md:mt-[20px] md:ml-[620px] mt-[40px] ml-[60px] text-5xl text-purple-950 font-bold">
                         Edit Profile
                     </p>
 
                     <form 
                         onSubmit={handleUpdate} 
-                        className="flex flex-col gap-2 md:ml-[590px] mt-[50px] px-[20px] pt-[30px] bg-purple-200 
+                        className="flex flex-col gap-2 md:ml-[510px] ml-[10px] mt-[50px] px-[20px] pt-[30px] bg-white
                         h-[460px] w-[380px] md:w-[500px] rounded-lg text-2xl border-4 border-purple-950 
                         shadow-lg shadow-purple-900"
                     >
@@ -73,7 +73,7 @@ const Editprofile = () => {
                                 type="text"
                                 value={fullname}
                                 onChange={(e) => setFullname(e.target.value)}
-                                className="border p-2 w-full"
+                                className="border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 p-2 w-full"
                                 required
                             />
                         </label>
@@ -84,7 +84,7 @@ const Editprofile = () => {
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="border p-2 w-full"
+                                className="border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 p-2 w-full"
                                 required
                             />
                         </label>
@@ -95,7 +95,7 @@ const Editprofile = () => {
                                 type="text"
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
-                                className="border p-2 w-full"
+                                className="border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 p-2 w-full"
                                 required
                             />
                         </label>

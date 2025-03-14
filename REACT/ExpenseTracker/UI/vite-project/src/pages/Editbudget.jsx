@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useSearchParams, useNavigate } from "react-router-dom"
+import { useSearchParams, useNavigate, Link} from "react-router-dom"
 import Nav from "../components/Nav"
 import Sidebar from "../components/Sidebar"
 
@@ -45,23 +45,23 @@ const EditBudget = () => {
 
   return (
 
-    <div>
+    <div className="bg-purple-200 h-[100vh]">
 
     <Nav/>
     <div className="md:flex ">
             <Sidebar/>
 
             <div>
-                <p className="md:mt-[20px] md:ml-[700px] mt-[40px] mx-[160px] text-5xl text-purple-950 font-bold">Edit Budget</p>
+                <p className="md:mt-[20px] md:ml-[600px] mt-[40px] ml-[30px] text-5xl text-purple-950 font-bold">Edit Budget</p>
 
-                <form onSubmit={handleUpdate} className="flex flex-col gap-2 md:ml-[590px] mt-[50px] px-[20px] pt-[30px] bg-purple-200 h-[460px] w-[380px] md:w-[500px] pt-[10px] rounded-lg text-2xl border-4 border-purple-950 shadow-lg shadow-purple-900">
+                <form onSubmit={handleUpdate} className="flex flex-col gap-2 md:ml-[520px] ml-[6px] mt-[50px] px-[20px] pt-[30px]  h-[460px] w-[380px] md:w-[500px] pt-[10px] bg-white rounded-lg text-2xl border-4 border-purple-950 shadow-lg shadow-purple-900">
                 <label>
                         Category:
                         <input
                             type="text"
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
-                            className="border p-2 w-full"
+                            className="border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 p-2 w-full"
                             required
                         />
                 </label>
@@ -72,7 +72,7 @@ const EditBudget = () => {
                             type="number"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
-                            className="border p-2 w-full"
+                            className="border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 p-2 w-full"
                             required
                         />
                 </label>
@@ -83,13 +83,13 @@ const EditBudget = () => {
                             type="month"
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
-                            className="border p-2 w-full"
+                            className="border-purple-950 border-3 hover:ring-3 hover:ring-purple-950 p-2 w-full"
                             required
                         />
                 </label>
                 
                         <div className="flex justify-between mt-[30px] mx-[30px]">
-                            <button className="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl  border border-4 border-purple-950 hover:bg-purple-400"><a href="records.html">Cancel</a></button>
+                            <button className="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl  border border-4 border-purple-950 hover:bg-purple-400"><Link to={'/viewbudget'}>Cancel</Link></button>
                             <button className="h-[50px] w-[130px] rounded-lg text-center text-purple-950 text-xl border border-4 border-purple-950 hover:bg-purple-400">Submit</button>
                         </div>
                 </form>

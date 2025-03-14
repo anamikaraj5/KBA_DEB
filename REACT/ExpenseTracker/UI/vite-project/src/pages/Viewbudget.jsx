@@ -57,26 +57,26 @@ const BudgetTracker = () => {
   }, [selectedMonth])
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-purple-200 h-[100vh]">
       <Nav />
 
       <div className="md:flex">
         <Sidebar />
 
-        <div className="w-full p-6">
-          <div className="flex justify-between items-center ml-[70px]">
+        <div className="w-full md:p-6 pt-6">
+          <div className="md:flex justify-between items-center md:ml-[70px] ml-[30px]">
 
             <input
               type="month"
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
-              className="p-2 border rounded-md h-[70px] text-2xl"
+              className="p-2 border rounded-md md:h-[70px] text-2xl"
             />
 
-            <div className="text-3xl flex gap-8 font-bold">
-              <p>Total Budget: ${totalBudget}</p>
-              <p>Total Spent: ${totalSpent}</p>
-              <p>Remaining Balance: ${totalBalance}</p>
+            <div className="md:text-3xl flex gap-8 font-bold ">
+              <p className="text-purple-950">Total Budget: ${totalBudget}</p>
+              <p className="text-purple-950">Total Spent: ${totalSpent}</p>
+              <p className="text-red-600">Remaining Balance: ${totalBalance}</p>
             </div>
           </div>
 
